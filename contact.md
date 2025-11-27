@@ -40,4 +40,4 @@ If you are interested in collaborating or discussing a project related to DevOps
 - **LinkedIn:** [linkedin.com/in/casualuser](https://www.linkedin.com/in/casualuser)
 - **Upwork:** [upwork.com/freelancers/casualuser](https://www.upwork.com/freelancers/casualuser)
 
-I am open to remote and hybrid engagements, with a focus on solving challenging infrastructure and AI integration problems.
+I work fully remote (10+ years of remote experience), with a focus on solving challenging infrastructure and AI integration problems.

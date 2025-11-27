@@ -12,7 +12,7 @@ Senior DevOps and Software Engineer · AWS · Kubernetes · Blockchain · AI/LLM
 
 Senior DevOps & Software Engineer with 20+ years of experience designing and operating cloud-native systems on AWS, building Kubernetes- and serverless-based platforms, integrating AI/LLM and blockchain/web3 components, and leading automation and reliability initiatives.
 
-Open to remote/hybrid roles focused on:
+Open to fully remote roles (10+ years of remote work) focused on:
 
 - Cloud & DevOps (AWS, Kubernetes, Terraform, CI/CD)
 - AI/LLM infrastructure and integrations
