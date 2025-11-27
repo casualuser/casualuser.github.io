@@ -1,0 +1,8 @@
+title: Aleksei Tcelishchev
+description: "Senior DevOps and Software Engineer"
+theme: minima
+header_pages:
+  - index.md
+  - cv.md
+  - projects.md
+  - contact.md
