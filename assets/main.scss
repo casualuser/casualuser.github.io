@@ -1,0 +1,55 @@
+---
+# Only the main Sass file needs front matter
+---
+
+@import "minima";
+
+/* Footer social icons: horizontal layout and uniform gray color */
+.social-media-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.social-media-list li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-media-list li + li {
+  padding-top: 0;
+}
+
+.social-media-list a {
+  display: inline-flex;
+  align-items: center;
+  color: #777;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.social-media-list a:hover {
+  color: #555;
+}
+
+.social-media-list .svg-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.25rem;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.social-media-list .svg-icon-upwork {
+  filter: invert(1);
+}
+
+.social-media-list .username {
+  color: currentColor;
+  font-size: 0.95em;
+}

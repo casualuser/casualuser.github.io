@@ -6,3 +6,21 @@ header_pages:
   - cv.md
   - projects.md
   - contact.md
+github_username: casualuser
+linkedin_username: casualuser
+upwork_url: "https://upwork.com/freelancers/casualuser"
+telegram_url: "https://t.me/casualuser"
+minima:
+  social_links:
+    - title: GitHub
+      icon: github
+      url: "https://github.com/casualuser"
+    - title: Upwork
+      icon: upwork
+      url: "https://upwork.com/freelancers/casualuser"
+    - title: LinkedIn
+      icon: linkedin
+      url: "https://linkedin.com/in/casualuser"
+    - title: Telegram
+      icon: telegram
+      url: "https://t.me/casualuser"
