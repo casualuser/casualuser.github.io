@@ -13,9 +13,9 @@ Playa del Carmen, Quintana Roo, Mexico
 ## Contact
 
 - **Website:** [webomage.com](https://webomage.com)
-- **LinkedIn:** [linkedin.com/in/casualuser](https://www.linkedin.com/in/casualuser)
-- **Upwork:** [upwork.com/freelancers/casualuser](https://www.upwork.com/freelancers/casualuser)
-- **Contact form:** [/contact/](/contact/)
+- **LinkedIn:** [linkedin.com/in/casualuser](https://linkedin.com/in/casualuser)
+- **Upwork:** [upwork.com/freelancers/casualuser](https://upwork.com/freelancers/casualuser)
+- **Contact form:** [here](/contact)
 
 ## Summary
 

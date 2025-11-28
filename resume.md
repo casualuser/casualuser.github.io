@@ -49,8 +49,8 @@ Open to fully remote roles (10+ years of remote work) focused on:
 
 ## Contact & Links
 
-- **Contact form:** [/contact/](/contact/)  
+- **Contact form:** [here](/contact)  
 - **Website:** https://webomage.com  
-- **LinkedIn:** https://www.linkedin.com/in/casualuser  
-- **Upwork:** https://www.upwork.com/freelancers/casualuser  
-- **Full CV:** [/cv/](/cv/)
+- **LinkedIn:** https://linkedin.com/in/casualuser  
+- **Upwork:** https://upwork.com/freelancers/casualuser  
+- **Full CV:** [here](/cv)
