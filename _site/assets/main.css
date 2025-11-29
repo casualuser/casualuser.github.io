@@ -211,3 +211,8 @@ table td { border: 1px solid #e8e8e8; }
 .social-media-list .svg-icon-upwork { filter: invert(1); }
 
 .social-media-list .username { color: currentColor; font-size: 0.95em; }
+
+/* Sticky header and footer overrides */
+header.site-header { position: sticky; top: 0; z-index: 1000; background-color: #fdfdfd; border-bottom: 1px solid #e8e8e8; }
+
+footer.site-footer { position: sticky; bottom: 0; z-index: 999; background-color: #fdfdfd; border-top: 1px solid #e8e8e8; }

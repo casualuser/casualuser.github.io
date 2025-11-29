@@ -62,3 +62,108 @@ content:
       - name: telegram_url
         label: Telegram URL
         type: string
+
+  - name: home
+    label: Home page
+    type: file
+    path: index.md
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: cv
+    label: CV page
+    type: file
+    path: cv.md
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: projects
+    label: Projects page
+    type: file
+    path: projects.md
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: ai_infra
+    label: AI & LLM Infrastructure page
+    type: file
+    path: ai-infra.md
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: blockchain
+    label: Blockchain & Web3 page
+    type: file
+    path: blockchain.md
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: devops_stack
+    label: DevOps Stack page
+    type: file
+    path: devops-stack.md
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: resume
+    label: Resume page
+    type: file
+    path: resume.md
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text

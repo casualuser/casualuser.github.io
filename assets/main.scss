@@ -53,3 +53,20 @@
   color: currentColor;
   font-size: 0.95em;
 }
+
+/* Sticky header and footer overrides */
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $background-color;
+  border-bottom: 1px solid $grey-color-light;
+}
+
+footer.site-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 999;
+  background-color: $background-color;
+  border-top: 1px solid $grey-color-light;
+}
