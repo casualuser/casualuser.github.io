@@ -8,7 +8,7 @@ permalink: /contact/
 
 If you are interested in collaborating or discussing a project related to DevOps, cloud infrastructure, blockchain, or AI/ML integrations, feel free to reach out using the form below or via LinkedIn/Upwork.
 
-<form action="https://rqqgjbsneyrlbvbqzdmb.functions.supabase.co/contact-submit" method="POST">
+<form action="https://pqbbjgeapylcengbuvee.functions.supabase.co/contact-submit" method="POST">
   <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
     <div style="flex:1 1 200px;">
       <label for="name">Name</label><br />

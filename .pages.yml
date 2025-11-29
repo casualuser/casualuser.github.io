@@ -1,0 +1,64 @@
+media:
+  input: assets
+  output: /assets
+
+content:
+  - name: services
+    label: Services
+    type: collection
+    path: '_services'
+    format: yaml-frontmatter
+    view:
+      fields: [title, summary]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: summary
+        label: Summary
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: solutions
+    label: Solutions
+    type: collection
+    path: '_solutions'
+    format: yaml-frontmatter
+    view:
+      fields: [title, summary]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: summary
+        label: Summary
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: config
+    label: Site settings
+    path: _config.yml
+    type: file
+    fields:
+      - name: title
+        label: Website title
+        type: string
+      - name: description
+        label: Website description
+        type: string
+      - name: github_username
+        label: GitHub username
+        type: string
+      - name: linkedin_username
+        label: LinkedIn username
+        type: string
+      - name: upwork_url
+        label: Upwork URL
+        type: string
+      - name: telegram_url
+        label: Telegram URL
+        type: string

@@ -321,7 +321,7 @@ You can reach out for:
     if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
 
     try {
-      fetch("https://rqqgjbsneyrlbvbqzdmb.functions.supabase.co/log-event", {
+      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         keepalive: true,
