@@ -5,25 +5,45 @@
 
   <body>
 
-    {%- include header.html -%}
+    <a href="#" class="scroll-to-top" aria-label="Scroll to top">▲ Top</a>
 
-    <div class="site-frame">
-      <div class="site-bg-slideshow" aria-hidden="true">
-        <div class="site-bg-slide site-bg-slide-1"></div>
-        <div class="site-bg-slide site-bg-slide-2"></div>
-        <div class="site-bg-slide site-bg-slide-3"></div>
-        <div class="site-bg-slide site-bg-slide-4"></div>
-        <div class="site-bg-slide site-bg-slide-5"></div>
-      </div>
-
-      <main class="page-content" aria-label="Content">
-        <div class="wrapper">
-          {{ content }}
-        </div>
-      </main>
+    <div class="site-bg-slideshow" aria-hidden="true">
+      <div class="site-bg-slide site-bg-slide-1"></div>
+      <div class="site-bg-slide site-bg-slide-2"></div>
+      <div class="site-bg-slide site-bg-slide-3"></div>
+      <div class="site-bg-slide site-bg-slide-4"></div>
+      <div class="site-bg-slide site-bg-slide-5"></div>
     </div>
 
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
     {%- include footer.html -%}
+
+    <script>
+      (function() {
+        var btn = document.querySelector('.scroll-to-top');
+        if (!btn) return;
+
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 150) {
+            btn.classList.add('is-visible');
+          } else {
+            btn.classList.remove('is-visible');
+          }
+        });
+
+        btn.addEventListener('click', function(event) {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+    </script>
 
   </body>
 
