@@ -4,13 +4,34 @@ title: "Services & Experience"
 permalink: /services/
 ---
 
-## Services & Technical Focus
+## DevOps & Infrastructure
 
-- Next.js + Google Speech-to-Text + Vertex AI MVP refactored into a production-ready solution with tRPC ultra-fast backend. All artefacts from 1.5h+ voice psychiatric sessions stored and processed with HIPAA and SOC 2 considerations.
-- Migration from single big VPS with `docker-compose` to a scalable, managed AWS EKS cluster with Karpenter. Legacy Django/DRF application refactored to be stateless.
+- Migration from a single big VPS with `docker-compose` to scalable, managed AWS EKS clusters with Karpenter.
+- Refactoring legacy Django/DRF applications to be stateless and cloud-native.
+- AWS Elastic Beanstalk to Kubernetes migrations (e.g. Django / Angular.js workloads to GKE).
 - 50+ AWS Lambda functions moved from custom scripts to the Serverless Framework for repeatable, automated deployments.
-- Migration of a Django / Angular.js application from AWS Elastic Beanstalk to Google Kubernetes Engine (GKE).
-- Architecture and delivery of multiple MVPs for startups, tailored to specific business needs and constraints.
+
+## Integrations & Platform Work
+
+- Event-driven and microservice-style integrations between existing systems and new services.
+- API design and implementation for internal and external integrations.
+- Platform hardening, observability, and automation around CI/CD.
+
+## AI / LLM Solutions
+
+- Next.js + Google Speech-to-Text + Vertex AI MVPs refactored into production-ready solutions with tRPC ultra-fast backends.
+- Handling long-running artefacts from 1.5h+ voice psychiatric sessions with storage and processing aligned with HIPAA and SOC 2 considerations.
+
+## Fullstack & Mobile
+
+- Next.js / React frontends integrated with modern backends and existing APIs.
+- Delivery of MVPs for startups, tailored to specific business needs and constraints.
+- Collaboration with mobile app teams where backend and infra need to support native or cross-platform clients.
+
+## Compliance & Reliability
+
+- Security and compliance-aware infrastructure and pipeline design.
+- Observability, logging, and monitoring built in from day one.
 
 ## Engineering Practices (Non‑Negotiables)
 

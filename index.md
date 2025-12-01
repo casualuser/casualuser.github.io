@@ -3,11 +3,11 @@ layout: home
 title: "Home"
 ---
 
-# Aleksei Tcelishchev
+# Webomage
 
-Senior DevOps and Software Engineer · AWS · Kubernetes · AI/LLM · Web3
+DevOps, Integration, AI/LLM, Fullstack, Mobile & Compliance engineering agency led by **Aleksei Tcelishchev**.
 
-I design and operate cloud-native systems on AWS and Kubernetes, integrate AI/LLM and blockchain/Web3 components, and lead automation and reliability initiatives.
+We design and run cloud-native systems on AWS and Kubernetes, integrate AI/LLM and complex backend services, modernize legacy stacks, and ship production-grade MVPs.
 
 ## Start here
 

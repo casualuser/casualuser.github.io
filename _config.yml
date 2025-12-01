@@ -1,5 +1,5 @@
-title: Aleksei Tcelishchev
-description: "Senior DevOps and Software Engineer"
+title: Webomage
+description: "DevOps, Integration, AI/LLM, Fullstack, Mobile & Compliance Engineering led by Aleksei Tcelishchev"
 theme: minima
 url: "https://webomage.com"
 header_pages:
@@ -7,6 +7,7 @@ header_pages:
   - cv.md
   - projects.md
   - services.md
+  - team.md
   - contact.md
 github_username: casualuser
 linkedin_username: casualuser
