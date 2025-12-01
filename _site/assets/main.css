@@ -216,3 +216,36 @@ table td { border: 1px solid #e8e8e8; }
 header.site-header { position: sticky; top: 0; z-index: 1000; background-color: #fdfdfd; border-bottom: 1px solid #e8e8e8; }
 
 footer.site-footer { position: sticky; bottom: 0; z-index: 999; background-color: #fdfdfd; border-top: 1px solid #e8e8e8; }
+
+/* Layout frame: header + central window (with BG + content) + footer */
+html, body { height: 100%; }
+
+body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; background-color: #fdfdfd; /* fallback while images load */ }
+
+.site-frame { position: relative; flex: 1 0 auto; overflow: hidden; }
+
+/* Rotating background slideshow constrained to the central frame */
+.site-bg-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0; }
+
+.site-bg-slideshow::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.35); /* darken for text readability */ }
+
+.site-bg-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat; opacity: 0; animation: webomage-bg-fade 40s infinite; }
+
+/* Ensure page content scrolls inside the central window */
+.site-frame .page-content { position: relative; height: 100%; overflow-y: auto; }
+
+.site-bg-slide-1 { background-image: url("/assets/info1-web.jpg"); animation-delay: 0s; }
+
+.site-bg-slide-2 { background-image: url("/assets/info2-web.jpg"); animation-delay: 8s; }
+
+.site-bg-slide-3 { background-image: url("/assets/info3-web.jpg"); animation-delay: 16s; }
+
+.site-bg-slide-4 { background-image: url("/assets/info4-web.jpg"); animation-delay: 24s; }
+
+.site-bg-slide-5 { background-image: url("/assets/info5-web.jpg"); animation-delay: 32s; }
+
+@keyframes webomage-bg-fade { 0% { opacity: 0; }
+  5% { opacity: 1; }
+  20% { opacity: 1; }
+  25% { opacity: 0; }
+  100% { opacity: 0; } }
