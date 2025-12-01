@@ -6,6 +6,7 @@ header_pages:
   - index.md
   - cv.md
   - projects.md
+  - services.md
   - contact.md
 github_username: casualuser
 linkedin_username: casualuser
