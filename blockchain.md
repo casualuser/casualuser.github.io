@@ -27,6 +27,8 @@ Webomage builds and maintains blockchain and web3 backends, from infrastructure 
 - **Web3 integrations & infrastructure hardening**  
   Solved complex web3 issues around nonce handling, gas spikes, and provider behavior. Migrated shared IPFS to dedicated storage, hosted The Graph instances, and hardened RPC nodes.
 
+See also the dedicated case study: [DeFi Infrastructure Hardening & Observability](/cases/defi-infra-hardening/).
+
 ## Typical Deliverables
 
 - Backend services and APIs for DApps and DeFi platforms

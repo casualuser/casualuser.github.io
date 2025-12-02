@@ -18,6 +18,8 @@ header_pages:
   - services.md
   - team.md
   - contact.md
+  - blog.md
+  - news.md
 github_username: casualuser
 linkedin_username: casualuser
 upwork_url: "https://upwork.com/freelancers/casualuser"

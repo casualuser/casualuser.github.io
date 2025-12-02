@@ -33,10 +33,15 @@ A selection of Webomage engagements across DevOps, cloud infrastructure, blockch
 - **Ethereum & DApps**  
   Worked with Ethereum nodes, smart contracts, ICO/sidechain scenarios, wallet and transaction management, and The Graph for advanced data querying.
 
+- **DeFi infrastructure hardening & observability**  
+  Hardened DeFi infrastructure and indexing around protocols running on Ethereum and sidechains, reducing infra-related incidents and improving monitoring.  
+  See the dedicated case study: [DeFi Infrastructure Hardening & Observability](/cases/defi-infra-hardening/).
+
 ## Cloud & DevOps
 
 - **AWS Infrastructure & Serverless**  
-  Designed secure, scalable AWS architectures with Terraform, Lambda, API Gateway, Auto Scaling, and CI/CD. Implemented asynchronous Lambda flows and complex deployment strategies.
+  Designed secure, scalable AWS architectures with Terraform, Lambda, API Gateway, Auto Scaling, and CI/CD. Implemented asynchronous Lambda flows and complex deployment strategies.  
+  See the dedicated case study: [Serverless Consolidation for Event-Driven Workloads](/cases/serverless-consolidation/).
 
 - **Kubernetes & Containerization**  
   Architected Kubernetes clusters (including EKS and self-hosted) with advanced networking, monitoring, and deployment patterns using Docker and GitOps.  
