@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Home | Webomage</title>
+<title>Case Study: Long-Form Psychiatric Session Voice Analytics | Webomage</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Home" />
+<meta property="og:title" content="Case Study: Long-Form Psychiatric Session Voice Analytics" />
 <meta name="author" content="Aleksei Tcelishchev" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
 <meta property="og:description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/cases/psychiatric-voice-ai/" />
+<meta property="og:url" content="http://localhost:4000/cases/psychiatric-voice-ai/" />
 <meta property="og:site_name" content="Webomage" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Home" />
+<meta property="twitter:title" content="Case Study: Long-Form Psychiatric Session Voice Analytics" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Home","name":"Webomage","sameAs":["https://github.com/casualuser","https://linkedin.com/in/casualuser","https://upwork.com/freelancers/casualuser"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Case Study: Long-Form Psychiatric Session Voice Analytics","url":"http://localhost:4000/cases/psychiatric-voice-ai/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
 <body>
@@ -50,57 +50,100 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
-  <!--<h1 class="page-heading">Home</h1>-->
+        <article class="post">
 
-  <h1 id="webomage">Webomage</h1>
+  <header class="post-header">
+    <h1 class="post-title">Case Study: Long-Form Psychiatric Session Voice Analytics</h1>
+  </header>
 
-<p>Webomage is a small, senior engineering agency for DevOps, integrations, AI/LLM, fullstack backends, mobile, and compliance, led by <strong>Aleksei Tcelishchev</strong>.</p>
+  <div class="post-content">
+    <h2 id="overview">Overview</h2>
 
-<p>We stabilise and modernise cloud-native systems on AWS and Kubernetes, integrate AI/LLM into existing products, and ship production-grade MVPs and platforms.</p>
+<p>A mental health product team needed to turn <strong>1.5h+ psychiatric voice sessions</strong> into structured, searchable artefacts: transcripts, summaries, risk indicators, and follow-up actions.</p>
 
-<h3 id="what-we-help-with">What we help with</h3>
+<p>Their initial MVP (Next.js + Google Speech-to-Text + Vertex AI) proved the idea but was <strong>hard to operate, slow, and not clearly aligned with HIPAA / SOC 2 style requirements</strong>.</p>
 
-<ul>
-  <li>Designing and operating DevOps, SRE, and cloud platforms on AWS and Kubernetes</li>
-  <li>High-traffic system integrations and backends that connect existing and new services</li>
-  <li>AI/LLM-powered products, RAG pipelines, and internal tools</li>
-  <li>Fullstack web and mobile backends for MVPs and production systems</li>
-  <li>Compliance-aware design (HIPAA, SOC 2 style requirements)</li>
-</ul>
+<p>Webomage was brought in to refactor the MVP into a production-ready, observable system.</p>
 
-<p>➡️ Ready to talk? <a href="/contact/">Start a project or request an audit</a> · <a href="/process/">See how we work</a></p>
-
-<h2 id="start-here">Start here</h2>
+<h2 id="challenges">Challenges</h2>
 
 <ul>
-  <li><a href="/resume/">Short Resume</a></li>
-  <li><a href="/cv/">Full Curriculum Vitae</a></li>
-  <li><a href="/projects/">Projects &amp; Case Studies</a></li>
-  <li><a href="/ai-infra/">AI &amp; LLM Infrastructure</a></li>
-  <li><a href="/blockchain/">Blockchain &amp; Web3</a></li>
-  <li><a href="/contact/">Contact</a></li>
+  <li><strong>Very long audio sessions</strong> (1.5h+), with dropouts and partial uploads.</li>
+  <li><strong>Multiple AI components</strong> (STT, LLMs, post-processing) wired together in an ad-hoc way.</li>
+  <li><strong>Latency and reliability</strong> issues during transcription and analysis.</li>
+  <li><strong>Compliance expectations</strong> similar to HIPAA / SOC 2 (data handling, access control, auditability).</li>
+  <li><strong>Product iteration pressure</strong>: the team wanted to keep experimenting while stabilising the platform.</li>
 </ul>
 
-<script>
-  (function () {
-    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+<h2 id="approach">Approach</h2>
 
-    try {
-      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        keepalive: true,
-        body: JSON.stringify({
-          path: window.location.pathname,
-          referrer: document.referrer || null,
-        }),
-      }).catch(function () {});
-    } catch (e) {}
-  })();
-</script>
+<ol>
+  <li><strong>Architecture &amp; data-flow review</strong>
+    <ul>
+      <li>Mapped how audio was uploaded, chunked, transcribed, analysed, and stored.</li>
+      <li>Identified failure points, duplication, and missing observability.</li>
+    </ul>
+  </li>
+  <li><strong>Backend refactor with tRPC</strong>
+    <ul>
+      <li>Introduced a <strong>tRPC-based backend</strong> to formalise API contracts between frontend and backend.</li>
+      <li>Centralised validation, error handling, and request tracking.</li>
+    </ul>
+  </li>
+  <li><strong>Streaming-friendly audio &amp; STT pipeline</strong>
+    <ul>
+      <li>Adjusted how long audio was chunked and queued for STT to avoid timeouts.</li>
+      <li>Improved retries, backoff, and idempotency for STT calls.</li>
+    </ul>
+  </li>
+  <li><strong>LLM processing &amp; artefacts</strong>
+    <ul>
+      <li>Structured LLM prompts and responses to produce clear artefacts: summaries, highlights, tags, and risk indicators.</li>
+      <li>Ensured artefacts were <strong>versioned and traceable</strong> back to raw inputs.</li>
+    </ul>
+  </li>
+  <li><strong>Compliance-aware storage &amp; access</strong>
+    <ul>
+      <li>Clarified what needed to be stored, for how long, and who could access it.</li>
+      <li>Improved separation of concerns between PII, raw audio, transcripts, and derived artefacts.</li>
+      <li>Aligned logging and access patterns with HIPAA / SOC 2 style expectations.</li>
+    </ul>
+  </li>
+  <li><strong>Observability and cost visibility</strong>
+    <ul>
+      <li>Added metrics and logs for STT and LLM usage, latency, and failures.</li>
+      <li>Gave the team dashboards to understand performance and cost per session.</li>
+    </ul>
+  </li>
+</ol>
 
-</div>
+<h2 id="outcomes">Outcomes</h2>
+
+<ul>
+  <li>A <strong>production-ready pipeline</strong> for multi-hour psychiatric voice sessions, with clear failure modes and retries.</li>
+  <li><strong>tRPC-backed backend</strong> that simplified frontend–backend integration and made the system easier to extend.</li>
+  <li><strong>Better compliance posture</strong> through improved data flows, access control patterns, and auditability.</li>
+  <li>Visibility into <strong>performance and cost per session</strong>, enabling informed product decisions.</li>
+</ul>
+
+<h2 id="relevant-capabilities">Relevant capabilities</h2>
+
+<p>This project leveraged several of Webomage’s strengths:</p>
+
+<ul>
+  <li>AI/LLM infrastructure and multi-step pipelines (STT + LLM + post-processing).</li>
+  <li>Strong DevOps and observability practices for AI-heavy workloads.</li>
+  <li>Compliance-aware design for sensitive healthcare/mental health data.</li>
+  <li>Experience turning MVPs into stable, evolvable products.</li>
+</ul>
+
+<hr />
+
+<p>➡️ Have an AI/LLM MVP that needs to become a reliable product? <a href="/contact/">Start a conversation</a>.</p>
+
+  </div>
+
+</article>
 
       </div>
     </main><footer class="site-footer h-card">

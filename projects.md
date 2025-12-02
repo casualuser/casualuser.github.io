@@ -6,15 +6,21 @@ permalink: /projects/
 
 # Projects & Case Studies
 
-A selection of engagements and technical work across DevOps, cloud infrastructure, blockchain, and AI/ML integrations.
+A selection of Webomage engagements across DevOps, cloud infrastructure, blockchain, and AI/ML integrations, with enough detail to see how we actually work.
 
 ## AI & Automation
 
 - **YC-backed AI Startup (Hong Kong)**  
-  Integrated multiple AI tools and LLM services (including LangChain and OpenAI-like APIs) into production infrastructure, with scalable deployments, advanced debugging, and contributions back to open source.
+  Integrated multiple AI tools and LLM services (including LangChain and OpenAI-like APIs) into production infrastructure, with scalable deployments, advanced debugging, and contributions back to open source.  
+  See the dedicated case study: [YC-backed AI Startup – AI Infrastructure & Tooling](/cases/yc-ai-startup/).
 
-- **US Law Firms Association – CRM Automation**  
-  Built large-scale CRM automation integrating AI-based calls and emotional context detection in human responses, enabling more adaptive client interactions.
+- **Long-form psychiatric session voice analytics**  
+  Refactored a Next.js + Google STT + Vertex AI MVP into a production-ready pipeline processing 1.5h+ psychiatric voice sessions with compliance-aware storage and analysis.  
+  See the dedicated case study: [Long-Form Psychiatric Session Voice Analytics](/cases/psychiatric-voice-ai/).
+
+- **US Law Firms Association – CRM Automation & Recovery**  
+  Built large-scale CRM automation integrating AI-based calls and emotional context detection in human responses, enabling more adaptive client interactions.  
+  See also the dedicated case study: [Law Firms Association CRM Recovery](/cases/law-firms-crm/).
 
 - **Healthcare AI Services**  
   Designed and deployed AI-powered healthcare services with strong emphasis on HIPAA, SOC 2, and GDPR readiness, auditable data flows, and reliable pipelines.
@@ -44,6 +50,8 @@ For topic-focused details, see:
 - [DevOps & Cloud Stack](/devops-stack/)
 
 For more details, see the full [Curriculum Vitae](/cv/).
+
+➡️ If one of these sounds close to what you're building, [start a conversation](/contact/).
 
 <script>
   (function () {

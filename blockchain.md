@@ -6,7 +6,7 @@ permalink: /blockchain/
 
 # Blockchain & Web3
 
-I build and maintain blockchain and web3 backends, from infrastructure to smart contract integrations and DApp support.
+Webomage builds and maintains blockchain and web3 backends, from infrastructure to smart contract integrations and DApp support.
 
 ## Focus Areas
 
@@ -33,3 +33,5 @@ I build and maintain blockchain and web3 backends, from infrastructure to smart 
 - Infrastructure on AWS/Kubernetes tailored for blockchain workloads
 - Monitoring and alerting around node health, transaction flows, and contracts
 - Secure integrations with third-party APIs (Coingecko, 1inch, DexGuru, DefiLlama, etc.)
+
+➡️ If you need production-grade blockchain or Web3 infrastructure and integrations, [start a conversation](/contact/).

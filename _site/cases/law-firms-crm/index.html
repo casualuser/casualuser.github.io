@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Home | Webomage</title>
+<title>Case Study: Law Firms Association CRM Recovery | Webomage</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Home" />
+<meta property="og:title" content="Case Study: Law Firms Association CRM Recovery" />
 <meta name="author" content="Aleksei Tcelishchev" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
 <meta property="og:description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/cases/law-firms-crm/" />
+<meta property="og:url" content="http://localhost:4000/cases/law-firms-crm/" />
 <meta property="og:site_name" content="Webomage" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Home" />
+<meta property="twitter:title" content="Case Study: Law Firms Association CRM Recovery" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Home","name":"Webomage","sameAs":["https://github.com/casualuser","https://linkedin.com/in/casualuser","https://upwork.com/freelancers/casualuser"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Case Study: Law Firms Association CRM Recovery","url":"http://localhost:4000/cases/law-firms-crm/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
 <body>
@@ -50,57 +50,86 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
-  <!--<h1 class="page-heading">Home</h1>-->
+        <article class="post">
 
-  <h1 id="webomage">Webomage</h1>
+  <header class="post-header">
+    <h1 class="post-title">Case Study: Law Firms Association CRM Recovery</h1>
+  </header>
 
-<p>Webomage is a small, senior engineering agency for DevOps, integrations, AI/LLM, fullstack backends, mobile, and compliance, led by <strong>Aleksei Tcelishchev</strong>.</p>
+  <div class="post-content">
+    <h2 id="overview">Overview</h2>
 
-<p>We stabilise and modernise cloud-native systems on AWS and Kubernetes, integrate AI/LLM into existing products, and ship production-grade MVPs and platforms.</p>
+<p>A Law Firms Association inherited a large CRM platform with AI services and mobile apps after the original development team (and team lead) disappeared. The system was partially broken, poorly documented, and carried compliance and reliability risks.</p>
 
-<h3 id="what-we-help-with">What we help with</h3>
+<p>Webomage was engaged to audit, stabilise, and modernise the platform so it could be safely used and iterated on.</p>
 
-<ul>
-  <li>Designing and operating DevOps, SRE, and cloud platforms on AWS and Kubernetes</li>
-  <li>High-traffic system integrations and backends that connect existing and new services</li>
-  <li>AI/LLM-powered products, RAG pipelines, and internal tools</li>
-  <li>Fullstack web and mobile backends for MVPs and production systems</li>
-  <li>Compliance-aware design (HIPAA, SOC 2 style requirements)</li>
-</ul>
-
-<p>➡️ Ready to talk? <a href="/contact/">Start a project or request an audit</a> · <a href="/process/">See how we work</a></p>
-
-<h2 id="start-here">Start here</h2>
+<h2 id="challenges">Challenges</h2>
 
 <ul>
-  <li><a href="/resume/">Short Resume</a></li>
-  <li><a href="/cv/">Full Curriculum Vitae</a></li>
-  <li><a href="/projects/">Projects &amp; Case Studies</a></li>
-  <li><a href="/ai-infra/">AI &amp; LLM Infrastructure</a></li>
-  <li><a href="/blockchain/">Blockchain &amp; Web3</a></li>
-  <li><a href="/contact/">Contact</a></li>
+  <li><strong>Partly abandoned codebase</strong> with missing knowledge: the original team and team lead were no longer available.</li>
+  <li><strong>Multiple moving parts</strong>: CRM backend, AI services, mobile apps, and supporting infrastructure.</li>
+  <li><strong>Compliance and data sensitivity</strong>: legal-sector data with high expectations around access control, auditability, and reliability.</li>
+  <li><strong>Operational instability</strong>: fragile deployments, unclear ownership, and ad‑hoc fixes accumulated over time.</li>
 </ul>
 
-<script>
-  (function () {
-    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+<h2 id="approach">Approach</h2>
 
-    try {
-      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        keepalive: true,
-        body: JSON.stringify({
-          path: window.location.pathname,
-          referrer: document.referrer || null,
-        }),
-      }).catch(function () {});
-    } catch (e) {}
-  })();
-</script>
+<ol>
+  <li><strong>Discovery &amp; mapping</strong>
+    <ul>
+      <li>Collected existing documentation, credentials, and infrastructure diagrams (where available).</li>
+      <li>Reverse‑engineered the system from code, infrastructure, and logs to understand data flows and integrations.</li>
+    </ul>
+  </li>
+  <li><strong>Security &amp; reliability audit</strong>
+    <ul>
+      <li>Reviewed access patterns, secrets handling, and network exposure.</li>
+      <li>Analysed logging, monitoring, and failure modes across services.</li>
+      <li>Identified high‑risk components (e.g. outdated dependencies, insecure endpoints, brittle deployment scripts).</li>
+    </ul>
+  </li>
+  <li><strong>Stabilisation and fixes</strong>
+    <ul>
+      <li>Fixed production‑blocking bugs in the CRM and AI services.</li>
+      <li>Normalised configuration and environment handling (secrets, per‑env configs).</li>
+      <li>Cleaned up broken deployment paths and established repeatable build/deploy routines.</li>
+    </ul>
+  </li>
+  <li><strong>Modernisation roadmap</strong>
+    <ul>
+      <li>Proposed a phased plan to modernise the backend and infrastructure (including containerisation and CI/CD improvements).</li>
+      <li>Highlighted quick wins vs. medium‑term refactors, mapped to business priorities.</li>
+    </ul>
+  </li>
+</ol>
 
-</div>
+<h2 id="outcomes">Outcomes</h2>
+
+<ul>
+  <li><strong>Recovered and stabilised</strong> a critical CRM platform that had been partially abandoned.</li>
+  <li>Restored <strong>confidence in deployments</strong> by replacing ad‑hoc scripts with clear, repeatable processes.</li>
+  <li>Reduced <strong>operational and compliance risk</strong> through better configuration management and security hardening.</li>
+  <li>Delivered a <strong>roadmap for future modernisation</strong>, giving the Association a clear path to evolve the system instead of replacing it from scratch.</li>
+</ul>
+
+<h2 id="relevant-capabilities">Relevant capabilities</h2>
+
+<p>This engagement drew on several of Webomage’s strengths:</p>
+
+<ul>
+  <li>Deep experience with <strong>legacy recovery</strong> and stepping into systems without prior handover.</li>
+  <li>Strong <strong>DevOps, automation, and CI/CD</strong> foundations.</li>
+  <li>Understanding of <strong>compliance‑aware design</strong> (data flows, access control, auditability).</li>
+  <li>Ability to collaborate across backend, infra, and mobile teams.</li>
+</ul>
+
+<hr />
+
+<p>➡️ If you have a legacy or partly abandoned system that needs to be stabilised and modernised, <a href="/contact/">start a conversation</a>.</p>
+
+  </div>
+
+</article>
 
       </div>
     </main><footer class="site-footer h-card">

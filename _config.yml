@@ -2,6 +2,15 @@ title: Webomage
 description: "DevOps, Integration, AI/LLM, Fullstack, Mobile & Compliance Engineering led by Aleksei Tcelishchev"
 theme: minima
 url: "https://webomage.com"
+author:
+  name: "Aleksei Tcelishchev"
+  url: "https://webomage.com"
+social:
+  name: "Webomage"
+  links:
+    - "https://github.com/casualuser"
+    - "https://linkedin.com/in/casualuser"
+    - "https://upwork.com/freelancers/casualuser"
 header_pages:
   - index.md
   - cv.md

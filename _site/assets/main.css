@@ -234,10 +234,12 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; back
 .page-content::before { top: 0; background: linear-gradient(to bottom, #fdfdfd 0%, rgba(253, 253, 253, 0) 100%); }
 .page-content::after { bottom: 0; background: linear-gradient(to top, #fdfdfd 0%, rgba(253, 253, 253, 0) 100%); }
 
+@media (max-width: 768px) { .page-content::before, .page-content::after { height: 80px; }
+  .scroll-to-top { top: 3.25rem; font-size: 0.75rem; padding: 0.2rem 0.5rem; } }
 /* Full-viewport rotating background slideshow behind all content */
 .site-bg-slideshow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; }
 
-.site-bg-slideshow::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.55); /* stronger darken for content readability */ }
+.site-bg-slideshow::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); /* stronger darken for content readability */ }
 
 .site-bg-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat; opacity: 0; animation: webomage-bg-fade 40s infinite; }
 
@@ -252,7 +254,7 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; back
 .site-bg-slide-5 { background-image: url("/assets/info5-web.jpg"); animation-delay: 32s; }
 
 @keyframes webomage-bg-fade { 0% { opacity: 0; }
-  5% { opacity: 0.6; }
-  20% { opacity: 0.6; }
+  5% { opacity: 0.5; }
+  20% { opacity: 0.5; }
   25% { opacity: 0; }
   100% { opacity: 0; } }

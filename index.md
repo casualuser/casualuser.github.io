@@ -5,9 +5,19 @@ title: "Home"
 
 # Webomage
 
-DevOps, Integration, AI/LLM, Fullstack, Mobile & Compliance engineering agency led by **Aleksei Tcelishchev**.
+Webomage is a small, senior engineering agency for DevOps, integrations, AI/LLM, fullstack backends, mobile, and compliance, led by **Aleksei Tcelishchev**.
 
-We design and run cloud-native systems on AWS and Kubernetes, integrate AI/LLM and complex backend services, modernize legacy stacks, and ship production-grade MVPs.
+We stabilise and modernise cloud-native systems on AWS and Kubernetes, integrate AI/LLM into existing products, and ship production-grade MVPs and platforms.
+
+### What we help with
+
+- Designing and operating DevOps, SRE, and cloud platforms on AWS and Kubernetes
+- High-traffic system integrations and backends that connect existing and new services
+- AI/LLM-powered products, RAG pipelines, and internal tools
+- Fullstack web and mobile backends for MVPs and production systems
+- Compliance-aware design (HIPAA, SOC 2 style requirements)
+
+➡️ Ready to talk? [Start a project or request an audit](/contact/) · [See how we work](/process/)
 
 ## Start here
 

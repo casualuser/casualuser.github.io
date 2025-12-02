@@ -4,6 +4,8 @@ title: "Team"
 permalink: /team/
 ---
 
+Webomage is a small, senior engineering agency. Here are the core people you’ll work with on most projects.
+
 ## Aleksei Tcelishchev — Head of Engineering
 
 Founder and technical lead of Webomage, focused on:
@@ -15,10 +17,12 @@ Founder and technical lead of Webomage, focused on:
 
 ## Helena Shatalova — Fullstack / Next.js Engineer
 
-Fullstack engineer with a focus on modern web applications:
+Fullstack engineer at Webomage with a focus on modern web applications and product delivery:
 
 - Next.js and React-based frontends
 - Fullstack application development and integrations
 - Modern UI/UX implementation for product MVPs and production apps
 
 More details about Helena’s recent projects and focus areas are coming soon.
+
+➡️ Want to work with this team? [Start a conversation](/contact/).

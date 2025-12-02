@@ -6,7 +6,13 @@ permalink: /contact/
 
 # Contact
 
-If you are interested in collaborating or discussing a project related to DevOps, cloud infrastructure, blockchain, or AI/ML integrations, feel free to reach out using the form below or via LinkedIn/Upwork.
+If you want to discuss a project related to DevOps, integrations, AI/LLM, fullstack/mobile backends, or compliance-minded infrastructure, use the form below or reach out via LinkedIn/Upwork and we'll follow up with next steps.
+
+### What to include
+
+- A short description of your product or organisation
+- The main problems you want to solve (or systems you want to improve/migrate)
+- Any timing or compliance constraints (e.g. HIPAA/SOC 2, go-live dates)
 
 <form action="https://pqbbjgeapylcengbuvee.functions.supabase.co/contact-submit" method="POST">
   <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
@@ -40,4 +46,6 @@ If you are interested in collaborating or discussing a project related to DevOps
 - **LinkedIn:** [linkedin.com/in/casualuser](https://www.linkedin.com/in/casualuser)
 - **Upwork:** [upwork.com/freelancers/casualuser](https://www.upwork.com/freelancers/casualuser)
 
-I work fully remote (10+ years of remote experience), with a focus on solving challenging infrastructure and AI integration problems.
+Typical response time: within 1–2 business days.
+
+Webomage works fully remote (10+ years of remote experience), with a focus on solving challenging infrastructure, integration, and AI/LLM problems.

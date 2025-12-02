@@ -6,7 +6,7 @@ permalink: /devops-stack/
 
 # DevOps & Cloud Stack
 
-I design, build, and operate cloud-native infrastructure with a strong focus on automation, reliability, and observability.
+Webomage designs, builds, and operates cloud-native infrastructure with a strong focus on automation, reliability, and observability.
 
 ## Cloud & Infrastructure as Code
 
@@ -36,4 +36,6 @@ I design, build, and operate cloud-native infrastructure with a strong focus on 
 
 ## Representative Roles
 
-EventCartel, DcentraLab, TokensFarm, BeeTechy, and others where I led or co-led DevOps and platform engineering for production workloads on AWS and Kubernetes.
+EventCartel, DcentraLab, TokensFarm, BeeTechy, and others where Webomage led or co-led DevOps and platform engineering for production workloads on AWS and Kubernetes.
+
+➡️ If you need similar DevOps, platform, or cloud infrastructure help, [start a conversation](/contact/).
