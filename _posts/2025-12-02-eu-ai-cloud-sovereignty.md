@@ -6,6 +6,7 @@ categories: [news]
 tags: [ai, cloud, sovereignty, europe]
 source_url: "https://www.artificialintelligence-news.com/news/sap-outlines-new-approach-to-european-ai-and-cloud-sovereignty/"
 image_prompt: "Illustration of a map of Europe overlaid with secure cloud data centers and AI icons, in blue and yellow tones, clean flat design."
+image: /assets/news/eu-ai-cloud-sovereignty.jpg
 image_alt: "Stylised map of Europe with secure cloud and AI icons representing sovereign infrastructure."
 ---
 

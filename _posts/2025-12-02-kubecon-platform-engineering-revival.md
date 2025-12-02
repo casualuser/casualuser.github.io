@@ -6,6 +6,7 @@ categories: [news]
 tags: [kubernetes, platform-engineering, ai, devops]
 source_url: "https://siliconangle.com/2025/11/15/ai-leads-platform-engineering-revival-kubecon-na-2025/"
 image_prompt: "Conference-style illustration of engineers looking at a platform diagram above Kubernetes clusters and AI icons, with expo lighting and modern flat design."
+image: /assets/news/kubecon-platform-engineering-revival.jpg
 image_alt: "Engineers at a conference discussing a platform diagram above Kubernetes and AI icons."
 ---
 

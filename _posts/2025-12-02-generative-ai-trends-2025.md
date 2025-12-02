@@ -6,6 +6,7 @@ categories: [news]
 tags: [ai, llm, enterprise, rag, synthetic-data]
 source_url: "https://www.artificialintelligence-news.com/news/generative-ai-trends-2025-llms-data-scaling-enterprise-adoption/"
 image_prompt: "Dark, modern illustration of multiple AI model blocks connected to a data pipeline and dashboards, showing cheaper, faster LLMs in an enterprise cloud setting, flat vector style, blue and purple accents."
+image: /assets/news/generative-ai-trends-2025.jpg
 image_alt: "Illustration of enterprise AI models connected to data pipelines and dashboards."
 ---
 

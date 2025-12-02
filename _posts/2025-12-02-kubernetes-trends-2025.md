@@ -6,6 +6,7 @@ categories: [news]
 tags: [kubernetes, serverless, ai, wasm, security]
 source_url: "https://www.opcito.com/blogs/kubernetes-trends-and-predictions-2025"
 image_prompt: "Modern isometric illustration of Kubernetes clusters with serverless functions, AI/ML icons, WASM logos, and security shields over a cloud backdrop."
+image: /assets/news/kubernetes-trends-2025.jpg
 image_alt: "Stylised Kubernetes clusters with icons representing serverless, AI/ML, WebAssembly, and zero trust security."
 ---
 

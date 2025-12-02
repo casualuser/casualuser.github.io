@@ -6,6 +6,7 @@ categories: [news]
 tags: [ai, devops, agents, llm, architecture]
 source_url: "https://www.devopsdigest.com/6-ai-trends-shaping-the-future-of-devops-in-2025"
 image_prompt: "Modern dashboard-style illustration showing AI agents collaborating with DevOps tools (dashboards, pipelines, terminals) on a dark background, neon accents, minimalistic flat style."
+image: /assets/news/ai-trends-devops-2025.jpg
 image_alt: "AI agents collaborating with DevOps tools on a dashboard."
 ---
 

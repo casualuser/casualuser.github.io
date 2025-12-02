@@ -6,6 +6,7 @@ categories: [news]
 tags: [ai, edge, healthcare, devices]
 source_url: "https://www.artificialintelligence-news.com/news/edge-ai-medical-devices-cochlear-implants/"
 image_prompt: "Cross-sectional illustration of a human head showing a cochlear implant with tiny AI circuitry, glowing softly, medical-style but modern and clean."
+image: /assets/news/edge-ai-cochlear-implants.jpg
 image_alt: "Illustration of a cochlear implant with embedded AI circuitry inside a human head outline."
 ---
 
