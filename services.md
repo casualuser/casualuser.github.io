@@ -22,6 +22,8 @@ Webomage is a small, senior engineering agency focused on DevOps, integrations, 
 - AWS Elastic Beanstalk to Kubernetes migrations (e.g. Django / Angular.js workloads to GKE).
 - 50+ AWS Lambda functions moved from custom scripts to the Serverless Framework for repeatable, automated deployments.
 
+Example: [Kubernetes Platform Migration for SaaS](/cases/k8s-platform-migration/).
+
 ## Integrations & Platform Work
 
 - Event-driven and microservice-style integrations between existing systems and new services.

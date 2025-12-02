@@ -39,7 +39,8 @@ A selection of Webomage engagements across DevOps, cloud infrastructure, blockch
   Designed secure, scalable AWS architectures with Terraform, Lambda, API Gateway, Auto Scaling, and CI/CD. Implemented asynchronous Lambda flows and complex deployment strategies.
 
 - **Kubernetes & Containerization**  
-  Architected Kubernetes clusters (including EKS and self-hosted) with advanced networking, monitoring, and deployment patterns using Docker and GitOps.
+  Architected Kubernetes clusters (including EKS and self-hosted) with advanced networking, monitoring, and deployment patterns using Docker and GitOps.  
+  See the dedicated case study: [Kubernetes Platform Migration for SaaS](/cases/k8s-platform-migration/).
 
 ## Deep Dives
 

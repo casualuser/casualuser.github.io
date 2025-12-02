@@ -38,4 +38,6 @@ Webomage designs, builds, and operates cloud-native infrastructure with a strong
 
 EventCartel, DcentraLab, TokensFarm, BeeTechy, and others where Webomage led or co-led DevOps and platform engineering for production workloads on AWS and Kubernetes.
 
+Example: [Kubernetes Platform Migration for SaaS](/cases/k8s-platform-migration/).
+
 ➡️ If you need similar DevOps, platform, or cloud infrastructure help, [start a conversation](/contact/).
