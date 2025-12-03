@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Home | Webomage</title>
+<title>Case Study: DeFi Infrastructure Hardening &amp; Observability | Webomage</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Home" />
+<meta property="og:title" content="Case Study: DeFi Infrastructure Hardening &amp; Observability" />
 <meta name="author" content="Aleksei Tcelishchev" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
 <meta property="og:description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/cases/defi-infra-hardening/" />
+<meta property="og:url" content="http://localhost:4000/cases/defi-infra-hardening/" />
 <meta property="og:site_name" content="Webomage" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Home" />
+<meta property="twitter:title" content="Case Study: DeFi Infrastructure Hardening &amp; Observability" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Home","name":"Webomage","sameAs":["https://github.com/casualuser","https://linkedin.com/in/casualuser","https://upwork.com/freelancers/casualuser"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Case Study: DeFi Infrastructure Hardening &amp; Observability","url":"http://localhost:4000/cases/defi-infra-hardening/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
 <body>
@@ -50,90 +50,90 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
-  <!--<h1 class="page-heading">Home</h1>-->
+        <article class="post">
 
-  <h1 id="webomage">Webomage</h1>
+  <header class="post-header">
+    <h1 class="post-title">Case Study: DeFi Infrastructure Hardening &amp; Observability</h1>
+  </header>
 
-<p>Webomage is a small, senior engineering agency for DevOps, integrations, AI/LLM, fullstack backends, mobile, and compliance, led by <strong>Aleksei Tcelishchev</strong>.</p>
+  <div class="post-content">
+    <h2 id="overview">Overview</h2>
 
-<p>We stabilise and modernise cloud-native systems on AWS and Kubernetes, integrate AI/LLM into existing products, and ship production-grade MVPs and platforms.</p>
+<p>A DeFi platform running on Ethereum and sidechains was experiencing <strong>intermittent outages, stuck transactions, and unreliable indexers</strong>. RPC providers, gas spikes, and fragile node setups made it hard to trust on-chain data.</p>
 
-<h3 id="what-we-help-with">What we help with</h3>
+<p>Webomage worked with the team to <strong>harden their infrastructure and observability</strong>, so they could operate their protocol with more confidence.</p>
 
-<ul>
-  <li>Designing and operating DevOps, SRE, and cloud platforms on AWS and Kubernetes</li>
-  <li>High-traffic system integrations and backends that connect existing and new services</li>
-  <li>AI/LLM-powered products, RAG pipelines, and internal tools</li>
-  <li>Fullstack web and mobile backends for MVPs and production systems</li>
-  <li>Compliance-aware design (HIPAA, SOC 2 style requirements)</li>
-</ul>
-
-<p>➡️ Ready to talk? <a href="/contact/">Start a project or request an audit</a> · <a href="/process/">See how we work</a></p>
-
-<h2 id="start-here">Start here</h2>
+<h2 id="challenges">Challenges</h2>
 
 <ul>
-  <li><a href="/resume/">Short Resume</a></li>
-  <li><a href="/cv/">Full Curriculum Vitae</a></li>
-  <li><a href="/projects/">Projects &amp; Case Studies</a></li>
-  <li><a href="/ai-infra/">AI &amp; LLM Infrastructure</a></li>
-  <li><a href="/blockchain/">Blockchain &amp; Web3</a></li>
-  <li><a href="/contact/">Contact</a></li>
+  <li><strong>Unreliable RPC and node providers</strong> – intermittent errors and rate limits under load.</li>
+  <li><strong>Nonce and gas issues</strong> – stuck, duplicated, or excessively expensive transactions.</li>
+  <li><strong>Fragile indexing stack</strong> – shared IPFS and lightly configured indexers made data incomplete or late.</li>
+  <li><strong>Limited observability</strong> – hard to see where failures occurred in on-chain/off-chain flows.</li>
+  <li><strong>High expectations from users and partners</strong> – outages directly affected TVL, trading, and user trust.</li>
 </ul>
 
-<script>
-  (function () {
-    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+<h2 id="approach">Approach</h2>
 
-    try {
-      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        keepalive: true,
-        body: JSON.stringify({
-          path: window.location.pathname,
-          referrer: document.referrer || null,
-        }),
-      }).catch(function () {});
-    } catch (e) {}
-  })();
-</script>
+<ol>
+  <li><strong>End-to-end flow mapping</strong>
+    <ul>
+      <li>Mapped how transactions flowed from the app through signers, nodes, and smart contracts, into indexers and analytics.</li>
+      <li>Identified failure points around RPC, indexing, and third-party dependencies.</li>
+    </ul>
+  </li>
+  <li><strong>Node &amp; provider strategy</strong>
+    <ul>
+      <li>Introduced a mix of dedicated nodes and high-quality providers for redundancy.</li>
+      <li>Tuned connection settings, batching, and retry behaviour to handle spikes.</li>
+      <li>Clarified which flows required low latency vs. eventual consistency.</li>
+    </ul>
+  </li>
+  <li><strong>Indexing &amp; data layer improvements</strong>
+    <ul>
+      <li>Moved from shared/community IPFS to dedicated storage where appropriate.</li>
+      <li>Improved The Graph subgraphs and related indexers for critical contracts.</li>
+      <li>Ensured key metrics and balances were derived from trustworthy data paths.</li>
+    </ul>
+  </li>
+  <li><strong>Observability &amp; alerts</strong>
+    <ul>
+      <li>Added monitoring for node health, RPC error rates, queue backlogs, and key contract events.</li>
+      <li>Defined alerts around conditions that mattered to users (e.g. withdrawal/claim failures).</li>
+      <li>Gave dashboards for protocol operators and support teams.</li>
+    </ul>
+  </li>
+  <li><strong>Operational playbooks</strong>
+    <ul>
+      <li>Created runbooks for common incident types (RPC provider issues, indexer lag, chain events).</li>
+      <li>Documented safe procedures for rolling node upgrades and configuration changes.</li>
+    </ul>
+  </li>
+</ol>
 
-<h2 class="post-list-heading">Posts</h2>
-    <ul class="post-list"><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/kubernetes-trends-2025.html">
-            Kubernetes Trends 2025: Serverless K8s, AI/ML Workloads, WASM, and Zero Trust
-          </a>
-        </h3></li><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/kubecon-platform-engineering-revival.html">
-            KubeCon NA 2025: AI Sparks a Platform Engineering Revival
-          </a>
-        </h3></li><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/generative-ai-trends-2025.html">
-            Generative AI in 2025: Cheaper LLMs, Agentic Workflows, and the Data Wall
-          </a>
-        </h3></li><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/eu-ai-cloud-sovereignty.html">
-            EU AI Cloud: SAP’s Take on European AI &amp; Cloud Sovereignty
-          </a>
-        </h3></li><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/edge-ai-cochlear-implants.html">
-            Edge AI in Cochlear Implants: Decision Trees, Power Budgets, and Upgradeable Firmware
-          </a>
-        </h3></li><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/ai-trends-devops-2025.html">
-            AI Trends in DevOps 2025: Agents, Open Models, and New Architectures
-          </a>
-        </h3></li></ul>
+<h2 id="outcomes">Outcomes</h2>
 
-    <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
+<ul>
+  <li><strong>Higher reliability</strong> – fewer protocol incidents tied to infra or indexing problems.</li>
+  <li><strong>Faster incident response</strong> – clearer signals and runbooks when things did go wrong.</li>
+  <li><strong>Better partner and user confidence</strong> – infra issues no longer dominated the risk story.</li>
+  <li><strong>Stronger foundation</strong> – the team could keep iterating on product and protocol design without fear of infra collapse.</li>
+</ul>
+
+<h2 id="relevant-capabilities">Relevant capabilities</h2>
+
+<ul>
+  <li>Ethereum and sidechain infrastructure operations.</li>
+  <li>DeFi application backends and indexers (The Graph and related tooling).</li>
+  <li>Monitoring, logging, and alerting for blockchain workloads.</li>
+  <li>Secure integrations with price feeds and analytics APIs.</li>
+</ul>
+
+<p>➡️ If your DeFi or Web3 product is limited by infrastructure issues, <a href="/contact/">start a conversation</a>.</p>
+
+  </div>
+
+</article>
 
       </div>
     </main><footer class="site-footer h-card">

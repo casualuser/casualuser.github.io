@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Home | Webomage</title>
+<title>Case Study: Kubernetes Platform Migration for SaaS | Webomage</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Home" />
+<meta property="og:title" content="Case Study: Kubernetes Platform Migration for SaaS" />
 <meta name="author" content="Aleksei Tcelishchev" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
 <meta property="og:description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/cases/k8s-platform-migration/" />
+<meta property="og:url" content="http://localhost:4000/cases/k8s-platform-migration/" />
 <meta property="og:site_name" content="Webomage" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Home" />
+<meta property="twitter:title" content="Case Study: Kubernetes Platform Migration for SaaS" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Home","name":"Webomage","sameAs":["https://github.com/casualuser","https://linkedin.com/in/casualuser","https://upwork.com/freelancers/casualuser"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Case Study: Kubernetes Platform Migration for SaaS","url":"http://localhost:4000/cases/k8s-platform-migration/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
 <body>
@@ -50,90 +50,94 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
-  <!--<h1 class="page-heading">Home</h1>-->
+        <article class="post">
 
-  <h1 id="webomage">Webomage</h1>
+  <header class="post-header">
+    <h1 class="post-title">Case Study: Kubernetes Platform Migration for SaaS</h1>
+  </header>
 
-<p>Webomage is a small, senior engineering agency for DevOps, integrations, AI/LLM, fullstack backends, mobile, and compliance, led by <strong>Aleksei Tcelishchev</strong>.</p>
+  <div class="post-content">
+    <h2 id="overview">Overview</h2>
 
-<p>We stabilise and modernise cloud-native systems on AWS and Kubernetes, integrate AI/LLM into existing products, and ship production-grade MVPs and platforms.</p>
+<p>A SaaS product team had outgrown a single large VPS and ad-hoc deployment scripts. Releases were risky, scaling was manual, and outages were increasingly common.</p>
 
-<h3 id="what-we-help-with">What we help with</h3>
+<p>Webomage was brought in to design and execute a migration to a managed Kubernetes platform on AWS (EKS), with infrastructure-as-code, observability, and a safer deployment story.</p>
 
-<ul>
-  <li>Designing and operating DevOps, SRE, and cloud platforms on AWS and Kubernetes</li>
-  <li>High-traffic system integrations and backends that connect existing and new services</li>
-  <li>AI/LLM-powered products, RAG pipelines, and internal tools</li>
-  <li>Fullstack web and mobile backends for MVPs and production systems</li>
-  <li>Compliance-aware design (HIPAA, SOC 2 style requirements)</li>
-</ul>
-
-<p>➡️ Ready to talk? <a href="/contact/">Start a project or request an audit</a> · <a href="/process/">See how we work</a></p>
-
-<h2 id="start-here">Start here</h2>
+<h2 id="challenges">Challenges</h2>
 
 <ul>
-  <li><a href="/resume/">Short Resume</a></li>
-  <li><a href="/cv/">Full Curriculum Vitae</a></li>
-  <li><a href="/projects/">Projects &amp; Case Studies</a></li>
-  <li><a href="/ai-infra/">AI &amp; LLM Infrastructure</a></li>
-  <li><a href="/blockchain/">Blockchain &amp; Web3</a></li>
-  <li><a href="/contact/">Contact</a></li>
+  <li><strong>Single point of failure</strong> – one big VPS hosting the main app, background workers, and cron jobs.</li>
+  <li><strong>Manual, brittle deploys</strong> – SSH + custom scripts, with limited rollbacks and little visibility.</li>
+  <li><strong>Growing traffic and data</strong> – more users, more integrations, and higher expectations around uptime.</li>
+  <li><strong>No clear environments</strong> – production and “staging” were too similar, making safe testing hard.</li>
+  <li><strong>Limited observability</strong> – logs scattered across the VPS, minimal metrics and alerting.</li>
 </ul>
 
-<script>
-  (function () {
-    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+<h2 id="approach">Approach</h2>
 
-    try {
-      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        keepalive: true,
-        body: JSON.stringify({
-          path: window.location.pathname,
-          referrer: document.referrer || null,
-        }),
-      }).catch(function () {});
-    } catch (e) {}
-  })();
-</script>
+<ol>
+  <li><strong>Discovery &amp; baseline</strong>
+    <ul>
+      <li>Mapped existing services, dependencies, and deployment paths.</li>
+      <li>Identified resource usage patterns and peak-load scenarios.</li>
+      <li>Documented external integrations and data stores (DBs, queues, third-party APIs).</li>
+    </ul>
+  </li>
+  <li><strong>Target architecture &amp; migration plan</strong>
+    <ul>
+      <li>Designed an AWS EKS-based architecture with managed node groups and autoscaling.</li>
+      <li>Defined Kubernetes resources for web, workers, and scheduled jobs.</li>
+      <li>Chose Terraform for infrastructure-as-code and Git-based workflows for manifests.</li>
+    </ul>
+  </li>
+  <li><strong>Incremental migration</strong>
+    <ul>
+      <li>Containerised the application (web + workers) with clear separation of config and secrets.</li>
+      <li>Created dev/staging/prod environments with separate namespaces and config.</li>
+      <li>Gradually moved traffic from the VPS to EKS using controlled DNS and load balancer changes.</li>
+    </ul>
+  </li>
+  <li><strong>Observability &amp; operations</strong>
+    <ul>
+      <li>Introduced metrics, dashboards, and alerts for pods, nodes, and key application flows.</li>
+      <li>Standardised logging, capturing both platform and app logs in a central place.</li>
+      <li>Documented runbooks for common operational tasks and failure modes.</li>
+    </ul>
+  </li>
+  <li><strong>Handover &amp; enablement</strong>
+    <ul>
+      <li>Ran walkthroughs with the client team on how to operate the new platform.</li>
+      <li>Provided examples of safe deployment patterns (blue/green, canary) and rollback procedures.</li>
+      <li>Left a clear backlog of future improvements, rather than a black-box setup.</li>
+    </ul>
+  </li>
+</ol>
 
-<h2 class="post-list-heading">Posts</h2>
-    <ul class="post-list"><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/kubernetes-trends-2025.html">
-            Kubernetes Trends 2025: Serverless K8s, AI/ML Workloads, WASM, and Zero Trust
-          </a>
-        </h3></li><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/kubecon-platform-engineering-revival.html">
-            KubeCon NA 2025: AI Sparks a Platform Engineering Revival
-          </a>
-        </h3></li><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/generative-ai-trends-2025.html">
-            Generative AI in 2025: Cheaper LLMs, Agentic Workflows, and the Data Wall
-          </a>
-        </h3></li><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/eu-ai-cloud-sovereignty.html">
-            EU AI Cloud: SAP’s Take on European AI &amp; Cloud Sovereignty
-          </a>
-        </h3></li><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/edge-ai-cochlear-implants.html">
-            Edge AI in Cochlear Implants: Decision Trees, Power Budgets, and Upgradeable Firmware
-          </a>
-        </h3></li><li><span class="post-meta">Dec 2, 2025</span>
-        <h3>
-          <a class="post-link" href="/news/2025/12/02/ai-trends-devops-2025.html">
-            AI Trends in DevOps 2025: Agents, Open Models, and New Architectures
-          </a>
-        </h3></li></ul>
+<h2 id="outcomes">Outcomes</h2>
 
-    <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
+<ul>
+  <li><strong>Reduced deployment risk</strong> – repeatable, observable deploys with easier rollbacks and environment separation.</li>
+  <li><strong>Better scalability</strong> – the platform could handle load spikes without manual intervention on a single VPS.</li>
+  <li><strong>Improved reliability</strong> – fewer outages tied to single-host failures, plus clearer monitoring and alerts.</li>
+  <li><strong>Team enablement</strong> – the internal team could ship changes faster and with more confidence.</li>
+</ul>
+
+<h2 id="relevant-capabilities">Relevant capabilities</h2>
+
+<p>This engagement drew on several of Webomage’s strengths:</p>
+
+<ul>
+  <li>Kubernetes and containerisation on AWS EKS.</li>
+  <li>Terraform-based infrastructure-as-code and GitOps-style workflows.</li>
+  <li>Observability and SRE practices for production SaaS workloads.</li>
+  <li>Pragmatic, incremental migrations from “one big server” to a managed platform.</li>
+</ul>
+
+<p>➡️ Planning a similar migration or struggling with a fragile platform? <a href="/contact/">Start a conversation</a>.</p>
+
+  </div>
+
+</article>
 
       </div>
     </main><footer class="site-footer h-card">
