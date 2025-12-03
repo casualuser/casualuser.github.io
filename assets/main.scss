@@ -258,3 +258,42 @@ body {
   object-fit: cover;
   border-radius: 6px;
 }
+
+.team-portraits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.team-member-card {
+  flex: 1 1 200px;
+  max-width: 240px;
+  text-align: center;
+}
+
+.team-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid $grey-color-light;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  margin: 0 auto 0.75rem;
+}
+
+.team-member-name {
+  font-weight: 600;
+  color: $text-color;
+}
+
+.team-member-role {
+  font-size: 0.9rem;
+  color: $grey-color-dark;
+}
+
+@media (max-width: 600px) {
+  .team-portraits {
+    justify-content: center;
+  }
+}

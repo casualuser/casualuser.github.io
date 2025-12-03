@@ -4,6 +4,19 @@ title: "Team"
 permalink: /team/
 ---
 
+<div class="team-portraits">
+  <div class="team-member-card">
+    <img src="{{ '/assets/team/aleksei.jpg' | relative_url }}" alt="Aleksei Tcelishchev — Head of Engineering" class="team-photo" />
+    <div class="team-member-name">Aleksei Tcelishchev</div>
+    <div class="team-member-role">Head of Engineering</div>
+  </div>
+  <div class="team-member-card">
+    <img src="{{ '/assets/team/helena.jpg' | relative_url }}" alt="Helena Shatalova — Fullstack / Next.js Engineer" class="team-photo" />
+    <div class="team-member-name">Helena Shatalova</div>
+    <div class="team-member-role">Fullstack / Next.js Engineer</div>
+  </div>
+</div>
+
 Webomage is a small, senior engineering agency. Here are the core people you’ll work with on most projects.
 
 ## Aleksei Tcelishchev — Head of Engineering
