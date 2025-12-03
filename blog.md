@@ -6,7 +6,7 @@ permalink: /blog/
 
 # Blog
 
-Longer-form write-ups about DevOps, integrations, AI/LLM infrastructure, and product delivery at Webomage.
+Longer-form write-ups, deep dives, and case-style notes on DevOps, integrations, AI/LLM infrastructure, and product delivery at Webomage.
 
 <ul class="post-list">
   {% assign blog_posts = site.posts | where_exp: "post", "post.categories contains 'blog'" %}

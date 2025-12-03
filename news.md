@@ -6,7 +6,7 @@ permalink: /news/
 
 # News & Updates
 
-Short updates about Webomage work-in-progress, releases, talks, and small changes you might care about.
+Curated AI, DevOps, and cloud news relevant to Webomage clients, plus short updates on our work-in-progress, releases, and talks.
 
 <ul class="post-list">
   {% assign news_posts = site.posts | where_exp: "post", "post.categories contains 'news'" %}

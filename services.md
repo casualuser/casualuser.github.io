@@ -8,12 +8,12 @@ Webomage is a small, senior engineering agency focused on DevOps, integrations, 
 
 ### Core services & solutions
 
-- **AI/LLM integration & modernization (compliance-aware)** – adding or refactoring AI features in existing products so they are reliable, observable, and ready for HIPAA/SOC 2-style reviews.
-- **Kubernetes & platform engineering for SaaS** – moving from single servers or fragile clusters to managed EKS/GKE-style platforms with IaC, GitOps, and proper observability.
-- **Serverless & event-driven systems consolidation** – taming Lambda/function sprawl into a structured, testable, and cost-aware serverless architecture.
+- **AI/LLM integration & modernization (compliance-aware)** – integrating or refactoring AI features in existing products with guardrails, observability, and HIPAA/SOC 2-style readiness.
+- **Kubernetes & platform engineering for SaaS** – moving from single servers or fragile clusters to managed EKS/GKE-style platforms with IaC, GitOps, SLOs, and proper observability.
+- **Serverless & event-driven systems consolidation** – turning Lambda/function sprawl into a structured, testable, and cost-aware serverless architecture.
 - **Healthcare & legal AI data platforms** – turning long-form audio, documents, or CRM data into searchable, auditable artefacts via RAG, pipelines, and careful data flows.
-- **Fintech & DeFi infrastructure & observability** – hardening blockchain/DeFi workloads with dedicated nodes, indexers, and monitoring.
-- **Legacy system recovery & compliance hardening** – stabilising partly abandoned systems (CRMs, platforms, AI services) and giving them a clear, safe path forward.
+- **Fintech & DeFi infrastructure & observability** – hardening blockchain/DeFi workloads with dedicated nodes, indexers, monitoring, and production runbooks.
+- **Legacy system recovery & compliance hardening** – stabilising partly abandoned systems (CRMs, platforms, AI services) and giving them a clear, safe path back to product delivery.
 
 ## DevOps & Infrastructure
 
