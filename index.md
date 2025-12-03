@@ -21,10 +21,10 @@ We stabilise and modernise cloud-native systems on AWS and Kubernetes, plug AI/L
 
 ## Start here
 
-- [Short Resume](/resume/)
-- [Full Curriculum Vitae](/cv/)
+- [Team & Aleksei's background](/team/)
 - [Projects & Case Studies](/projects/)
 - [AI & LLM Infrastructure](/ai-infra/)
+- [DevOps & Cloud Stack](/devops-stack/)
 - [Blockchain & Web3](/blockchain/)
 - [Contact](/contact/)
 

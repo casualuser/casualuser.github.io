@@ -13,13 +13,11 @@ social:
     - "https://upwork.com/freelancers/casualuser"
 header_pages:
   - index.md
-  - cv.md
-  - projects.md
   - services.md
+  - solutions.md
+  - news.md
   - team.md
   - contact.md
-  - blog.md
-  - news.md
 github_username: casualuser
 linkedin_username: casualuser
 upwork_url: "https://upwork.com/freelancers/casualuser"

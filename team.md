@@ -28,6 +28,14 @@ Founder and technical lead of Webomage, focused on:
 - AI/LLM infrastructure and data pipelines
 - Compliance-aware design (HIPAA/SOC 2 considerations)
 
+### Background & CV
+
+- 20+ years of DevOps and software engineering across SaaS, legal, healthcare, and web3.
+- Representative stack spanning AWS, Kubernetes, Terraform, serverless, AI/LLM infrastructure, and blockchain.
+- For detailed experience, see:
+  - [Short Resume](/resume/)
+  - [Full Curriculum Vitae](/cv/)
+
 ## Helena Shatalova — Fullstack / Next.js Engineer
 
 Fullstack engineer at Webomage with a focus on modern web applications and product delivery:

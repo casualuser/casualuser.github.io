@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Services & Experience"
+title: "Services"
 permalink: /services/
 ---
 

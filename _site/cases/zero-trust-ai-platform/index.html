@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Case Study: Zero-Trust AI Platform on Kubernetes | Webomage</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Case Study: Zero-Trust AI Platform on Kubernetes" />
+<meta name="author" content="Aleksei Tcelishchev" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
+<meta property="og:description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
+<link rel="canonical" href="http://localhost:4000/cases/zero-trust-ai-platform/" />
+<meta property="og:url" content="http://localhost:4000/cases/zero-trust-ai-platform/" />
+<meta property="og:site_name" content="Webomage" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Case Study: Zero-Trust AI Platform on Kubernetes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Case Study: Zero-Trust AI Platform on Kubernetes","url":"http://localhost:4000/cases/zero-trust-ai-platform/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
+<body>
+
+    <a href="#" class="scroll-to-top" aria-label="Scroll to top">▲ Top</a>
+
+    <div class="site-bg-slideshow" aria-hidden="true">
+      <div class="site-bg-slide site-bg-slide-1"></div>
+      <div class="site-bg-slide site-bg-slide-2"></div>
+      <div class="site-bg-slide site-bg-slide-3"></div>
+      <div class="site-bg-slide site-bg-slide-4"></div>
+      <div class="site-bg-slide site-bg-slide-5"></div>
+    </div><header class="site-header" role="banner">
+
+  <div class="wrapper"><!-- <a class="site-title" rel="author" href="/">Webomage</a> -->
+    <div class="site-header-inner">
+      <div class="site-branding"></div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/">Contact</a></div>
+      </nav></div>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Case Study: Zero-Trust AI Platform on Kubernetes</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="overview">Overview</h2>
+
+<p>A product team was scaling AI-powered features on Kubernetes without a clear security or reliability model. LLM gateways, feature stores, and background workers all shared the same flat network. One compromised pod or leaked API key could expose sensitive data and burn through cloud budget.</p>
+
+<p>Webomage was brought in to define and implement a zero-trust architecture for their AI workloads on Kubernetes: tightening network paths, hardening ingress, and improving observability while keeping the development pace high.</p>
+
+<h2 id="context">Context</h2>
+
+<ul>
+  <li>AI features were already in production: LLM-backed endpoints, embeddings, and async pipelines.</li>
+  <li>The platform ran on managed Kubernetes in the cloud, with default networking and ad‑hoc policies.</li>
+  <li>Multiple teams were shipping microservices, but there was no single view of how traffic actually flowed.</li>
+  <li>Compliance and customer security questionnaires were becoming more frequent and more detailed.</li>
+</ul>
+
+<h2 id="challenges">Challenges</h2>
+
+<ul>
+  <li><strong>Flat, permissive networking</strong> – most pods could talk to most other pods, including AI gateways and data stores.</li>
+  <li><strong>Powerful AI endpoints</strong> – LLM and vector search endpoints exposed high‑privilege APIs and secrets.</li>
+  <li><strong>Limited observability</strong> – logs and traces for AI traffic were incomplete; it was hard to see cross‑service flows.</li>
+  <li><strong>No clear zero‑trust story</strong> – security controls were described in terms of best effort, not enforceable policy.</li>
+  <li><strong>Production risk</strong> – introducing stricter policies without breaking live AI features required careful rollout.</li>
+</ul>
+
+<h2 id="approach">Approach</h2>
+
+<ol>
+  <li><strong>Discovery &amp; threat modeling</strong>
+    <ul>
+      <li>Mapped services involved in AI workloads: gateways, feature stores, model backends, data pipelines.</li>
+      <li>Identified trust boundaries, sensitive paths, and failure modes (e.g. lateral movement, key leakage).</li>
+      <li>Reviewed existing manifests, ingress configuration, and cluster networking.</li>
+    </ul>
+  </li>
+  <li><strong>Zero‑trust blueprint for AI on Kubernetes</strong>
+    <ul>
+      <li>Defined a reference architecture using namespace boundaries, NetworkPolicies, and mTLS where possible.</li>
+      <li>Chose a CNI with strong policy support (e.g. Calico/Cilium) for pod‑level controls.</li>
+      <li>Documented which services were allowed to reach each AI endpoint and data store, and on which ports.</li>
+    </ul>
+  </li>
+  <li><strong>Incremental network policy rollout</strong>
+    <ul>
+      <li>Started with “observe”-style policies that only logged flows instead of blocking.</li>
+      <li>Used metrics and flow logs to refine which pods actually needed to talk.</li>
+      <li>Gradually tightened NetworkPolicies around LLM gateways, feature stores, and admin APIs.</li>
+    </ul>
+  </li>
+  <li><strong>Ingress, identity, and secrets</strong>
+    <ul>
+      <li>Hardened ingress routes for AI endpoints with stricter authentication and rate limiting.</li>
+      <li>Ensured sensitive AI services used identity-aware access (service accounts, RBAC, and scoped tokens).</li>
+      <li>Standardised secrets management so model keys and API tokens were rotated and scoped correctly.</li>
+    </ul>
+  </li>
+  <li><strong>Observability &amp; runbooks</strong>
+    <ul>
+      <li>Enhanced tracing, logging, and dashboards for AI request paths across services.</li>
+      <li>Added alerts for unexpected traffic patterns (e.g. new callers to AI gateways, unusual error spikes).</li>
+      <li>Wrote runbooks for investigating suspicious traffic and safely tightening policies further.</li>
+    </ul>
+  </li>
+  <li><strong>Handover &amp; enablement</strong>
+    <ul>
+      <li>Documented the zero‑trust model in plain language for engineering and security stakeholders.</li>
+      <li>Paired with the internal team on adding policies for new services and features.</li>
+      <li>Left a backlog of future improvements (e.g. cluster‑to‑cluster trust, stronger mTLS coverage).</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="outcomes">Outcomes</h2>
+
+<ul>
+  <li><strong>Reduced blast radius</strong> – LLM gateways, feature stores, and admin APIs were no longer reachable from arbitrary pods.</li>
+  <li><strong>Clearer security story</strong> – the client could answer questionnaires with concrete, enforced controls, not intentions.</li>
+  <li><strong>Better visibility</strong> – AI traffic patterns were visible in dashboards, with alerts for anomalous behavior.</li>
+  <li><strong>Safer iteration</strong> – the team had patterns for adding new services and tightening policies without breaking prod.</li>
+</ul>
+
+<h2 id="relevant-capabilities">Relevant capabilities</h2>
+
+<p>This engagement drew on several of Webomage’s strengths:</p>
+
+<ul>
+  <li>Kubernetes and platform engineering for AI workloads.</li>
+  <li>Zero‑trust networking and NetworkPolicies with Calico/Cilium‑style CNIs.</li>
+  <li>Observability for complex, AI‑heavy traffic flows.</li>
+  <li>Pragmatic security work that fits real delivery constraints.</li>
+</ul>
+
+<p>➡️ Planning AI features on Kubernetes or revisiting your security posture? <a href="/contact/">Start a conversation</a>.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3">
+    <h2 class="footer-heading">Webomage</h2>
+        <!-- <ul class="contact-list"> -->
+          <!-- <li class="p-name">{&quot;name&quot;=&gt;&quot;Aleksei Tcelishchev&quot;, &quot;url&quot;=&gt;&quot;https://webomage.com&quot;}</li> -->
+            <!-- <li> -->
+            <p>DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev</p>
+            <!-- </li> -->
+        <!-- </ul> -->
+      </div>
+
+      <div class="footer-col footer-col-7"><ul class="social-media-list"><li><a href="https://github.com/casualuser"><svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#github"></use></svg> <span class="username">casualuser</span></a></li><li><a href="https://www.linkedin.com/in/casualuser"><svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#linkedin"></use></svg> <span class="username">casualuser</span></a></li><li>
+      <a href="https://upwork.com/freelancers/casualuser">
+        <svg class="svg-icon svg-icon-upwork"><use xlink:href="/assets/custom-social-icons.svg#upwork"></use></svg>
+        <span class="username">Upwork</span>
+      </a>
+    </li><li>
+      <a href="https://t.me/casualuser">
+        <svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#telegram"></use></svg>
+        <span class="username">Telegram</span>
+      </a>
+    </li></ul>
+
+</div>
+    </div>
+
+  </div>
+
+</footer>
+<script>
+      (function() {
+        var btn = document.querySelector('.scroll-to-top');
+        if (!btn) return;
+
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 150) {
+            btn.classList.add('is-visible');
+          } else {
+            btn.classList.remove('is-visible');
+          }
+        });
+
+        btn.addEventListener('click', function(event) {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+    </script>
+
+  </body>
+
+</html>
