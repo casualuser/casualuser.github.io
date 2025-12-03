@@ -44,6 +44,7 @@ See also:
 - **HIPAA-ready AI & data platforms** – designing data flows, storage, and access controls for US healthcare scenarios, with PHI protection, auditability, and clear separation between clinical and non-clinical workloads.
 - **GDPR-aware data architecture** – handling data residency, data minimisation, and deletion/export flows for EU/EEA users, with clear boundaries between processors and controllers in your architecture.
 - **SOC 2-aligned infra & logging** – structuring infrastructure, logging, and change management so they map cleanly onto SOC 2 controls (security, availability, confidentiality) and are easier to evidence during audits.
+- **PCI DSS-aware payment infrastructure** – designing and hardening card-processing components and their surrounding environment to minimise PCI scope and keep most application workloads out of high-scrutiny zones.
 - **ISO 27001-oriented cloud security** – aligning cloud infrastructure, secrets management, and backup/DR patterns with ISO 27001-style information security management practices.
 
 See also:
@@ -51,4 +52,4 @@ See also:
 - [Law Firms Association CRM Recovery](/cases/law-firms-crm/)
 - [Healthcare AI Services](/services/#compliance--reliability)
 
-➡️ Not sure which solution fits your situation? [Start a conversation](/contact/) and we’ll map your context to one or more of these patterns.
+➡️ Not sure which solution fits your situation? [Start a conversation](/contact/){:data-analytics-cta="solutions_contact_cta"} and we’ll map your context to one or more of these patterns.

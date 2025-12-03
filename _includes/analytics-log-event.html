@@ -1,0 +1,18 @@
+<script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    try {
+      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        keepalive: true,
+        body: JSON.stringify({
+          path: window.location.pathname,
+          referrer: document.referrer || null,
+          eventType: "pageview",
+        }),
+      }).catch(function () {});
+    } catch (e) {}
+  })();
+</script>

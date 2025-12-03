@@ -29,7 +29,7 @@ Webomage designs and operates production-grade AI/LLM infrastructure that connec
   Built AI-based CRM automation that analyzes emotional context in client responses, integrating AI calls into existing workflows with observability and safe failure modes.
 
 - **Healthcare AI services**  
-  Architected AI services in healthcare contexts with HIPAA, SOC 2, and GDPR readiness, emphasizing data protection, auditability, and robust monitoring.
+  Architected AI services in healthcare contexts with HIPAA, SOC 2, PCI, and GDPR readiness, emphasizing data protection, auditability, and robust monitoring.
 
 - **Long-form psychiatric session voice analytics**  
   Designed and operated AI pipelines for 1.5h+ psychiatric voice sessions, combining STT, LLM post-processing, and compliance-aware storage. See the case study: [Long-Form Psychiatric Session Voice Analytics](/cases/psychiatric-voice-ai/).

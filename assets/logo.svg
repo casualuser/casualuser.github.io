@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="900" height="720" viewBox="330 -60 900 720" xmlns="http://www.w3.org/2000/svg">
+  <g class="logo" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Central O -->
+    <circle cx="840" cy="300" r="240" />
+
+    <!-- Left W: outer arc, inner arc, golden-style curve, vertical stroke -->
+    <path d="M 720 540 A 240 240 0 1 1 720 60" />
+    <path d="M 720 540 A 120 120 0 1 1 720 300" />
+    <path d="M 825 525 Q 630 420 720 300" />
+    <path d="M 825 75 L 825 525" />
+
+    <!-- Right M: mirror of W with same proportions and spacing -->
+    <path d="M 960 60 A 240 240 0 1 1 960 540" />
+    <path d="M 960 300 A 120 120 0 1 1 960 60" />
+    <path d="M 855 75 Q 1080 60 960 300" />
+    <path d="M 855 75 L 855 525" />
+  </g>
+</svg>

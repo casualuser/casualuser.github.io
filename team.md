@@ -26,7 +26,7 @@ Founder and technical lead of Webomage, focused on:
 - DevOps, SRE, and cloud infrastructure (AWS, Kubernetes, Terraform)
 - Systems integration, event-driven architectures, and automation
 - AI/LLM infrastructure and data pipelines
-- Compliance-aware design (HIPAA/SOC 2 considerations)
+- Compliance-aware design (HIPAA/SOC 2/PCI considerations)
 
 ### Background & CV
 
@@ -46,4 +46,4 @@ Fullstack engineer at Webomage with a focus on modern web applications and produ
 
 More details about Helena’s recent projects and focus areas are coming soon.
 
-➡️ Want to work with this team? [Start a conversation](/contact/).
+➡️ Want to work with this team? [Start a conversation](/contact/){:data-analytics-cta="team_contact_cta"}.

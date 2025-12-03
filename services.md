@@ -8,12 +8,12 @@ Webomage is a small, senior engineering agency focused on DevOps, integrations, 
 
 ### Core services & solutions
 
-- **AI/LLM integration & modernization (compliance-aware)** – integrating or refactoring AI features in existing products with guardrails, observability, and HIPAA/SOC 2-style readiness.
-- **Kubernetes & platform engineering for SaaS** – moving from single servers or fragile clusters to managed EKS/GKE-style platforms with IaC, GitOps, SLOs, and proper observability.
-- **Serverless & event-driven systems consolidation** – turning Lambda/function sprawl into a structured, testable, and cost-aware serverless architecture.
+- **AI/LLM modernisation sprints (compliance-aware)** – integrating or refactoring AI features in existing products with guardrails, observability, and HIPAA/SOC 2/PCI-style readiness.
+- **Kubernetes platform rescue for SaaS** – moving from single servers or fragile clusters to managed EKS/GKE-style platforms with IaC, GitOps, SLOs, and proper observability.
+- **Serverless & event-driven consolidation** – turning Lambda/function sprawl into a structured, testable, and cost-aware serverless architecture.
 - **Healthcare & legal AI data platforms** – turning long-form audio, documents, or CRM data into searchable, auditable artefacts via RAG, pipelines, and careful data flows.
-- **Fintech & DeFi infrastructure & observability** – hardening blockchain/DeFi workloads with dedicated nodes, indexers, monitoring, and production runbooks.
-- **Legacy system recovery & compliance hardening** – stabilising partly abandoned systems (CRMs, platforms, AI services) and giving them a clear, safe path back to product delivery.
+- **Fintech & DeFi infra hardening & observability** – hardening blockchain/DeFi workloads with dedicated nodes, indexers, monitoring, and production runbooks.
+- **Legacy recovery & compliance hardening** – stabilising partly abandoned systems (CRMs, platforms, AI services) and giving them a clear, safe path back to product delivery.
 
 ## DevOps & Infrastructure
 
@@ -36,7 +36,7 @@ Examples:
 ## AI / LLM Solutions
 
 - Next.js + Google Speech-to-Text + Vertex AI MVPs refactored into production-ready solutions with tRPC ultra-fast backends.
-- Handling long-running artefacts from 1.5h+ voice psychiatric sessions with storage and processing aligned with HIPAA and SOC 2 considerations.
+- Handling long-running artefacts from 1.5h+ voice psychiatric sessions with storage and processing aligned with HIPAA, SOC 2, and PCI-style considerations.
 
 Example: [Long-form psychiatric session voice analytics](/cases/psychiatric-voice-ai/).
 
@@ -69,4 +69,4 @@ Example: [Law Firms Association CRM Recovery](/cases/law-firms-crm/).
 
 - Security audit and recovery of a partly abandoned CRM for a Law Firms Association, including AI services and mobile apps, after the original dev team and team lead were lost.
 
-➡️ Have a similar challenge or need a fresh perspective? [Start a conversation](/contact/), or browse more [Projects & Case Studies](/projects/) first.
+➡️ Have a similar challenge or need a fresh perspective? [Start a conversation](/contact/){:data-analytics-cta="services_contact_cta"}, or browse more [Projects & Case Studies](/projects/) first.

@@ -53,7 +53,7 @@ I am a collaborative team player with strong cross-functional communication skil
 - **AI / LLM Infrastructure & Integrations**
   - End-to-end integration of AI tools and LLM-based services into production systems
   - Real-world integrations for YC-backed startups and large US law firms associations
-  - Healthcare AI services engineered for HIPAA, SOC 2, and GDPR compliance readiness
+  - Healthcare AI services engineered for HIPAA, SOC 2, PCI, and GDPR compliance readiness
   - Multi-provider LLM routing and evaluation, including SWE-bench–based benchmarking
   - Experience with OpenAI-like LLMs and a2a protocol–based cross-framework integration
   - RAG architectures with optimized data flows and domain-specific processing rules
@@ -76,7 +76,7 @@ I am a collaborative team player with strong cross-functional communication skil
   - Design of robust, observable APIs for high-traffic and mission-critical systems
 
 - **Security & Compliance**
-  - Architectures designed with HIPAA, SOC 2, and GDPR compliance readiness
+  - Architectures designed with HIPAA, SOC 2, PCI, and GDPR compliance readiness
   - Secure handling of sensitive healthcare and legal data
 
 ## Selected Project Highlights
@@ -92,7 +92,7 @@ I am a collaborative team player with strong cross-functional communication skil
 - **Healthcare AI Services**
   - Designed and deployed AI-powered healthcare services with strong focus on:
     - Data protection and privacy
-    - HIPAA, SOC 2, and GDPR compliance readiness
+    - HIPAA, SOC 2, PCI, and GDPR compliance readiness
     - Reliable and auditable data-processing pipelines
 
 - **AI Evaluation & Routing**
@@ -128,7 +128,7 @@ I am a collaborative team player with strong cross-functional communication skil
   - GitOps and CI/CD across major git hosting platforms
 
 - **Compliance & Operations**
-  - Architectures aligned with HIPAA, SOC 2, and GDPR requirements
+  - Architectures aligned with HIPAA, SOC 2, PCI, and GDPR requirements
   - Monitoring, logging, and alerting for production systems
   - Backup and disaster recovery strategies
 
@@ -315,21 +315,3 @@ You can reach out for:
 - DevOps and cloud architecture engagements
 - AI/LLM infrastructure and integrations
 - Backend/API engineering and high-scale automation
-
-<script>
-  (function () {
-    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
-
-    try {
-      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        keepalive: true,
-        body: JSON.stringify({
-          path: window.location.pathname,
-          referrer: document.referrer || null,
-        }),
-      }).catch(function () {});
-    } catch (e) {}
-  })();
-</script>

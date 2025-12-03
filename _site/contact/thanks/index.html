@@ -120,8 +120,68 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       })();
-    </script>
+    </script><script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
 
-  </body>
+    try {
+      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        keepalive: true,
+        body: JSON.stringify({
+          path: window.location.pathname,
+          referrer: document.referrer || null,
+        }),
+      }).catch(function () {});
+    } catch (e) {}
+  })();
+</script>
+<script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    try {
+      var params = new URLSearchParams(window.location.search || "");
+      if (!params.has("heatmap")) return;
+
+      var script = document.createElement("script");
+      script.src = "https://unpkg.com/heatmap.js@2.0.5/build/heatmap.min.js";
+      script.async = true;
+      script.onload = function () {
+        try {
+          var container = document.createElement("div");
+          container.id = "wm-heatmap-overlay";
+          container.style.position = "fixed";
+          container.style.left = "0";
+          container.style.top = "0";
+          container.style.width = "100%";
+          container.style.height = "100%";
+          container.style.pointerEvents = "none";
+          container.style.zIndex = "9999";
+          document.body.appendChild(container);
+
+          var heatmap = window.h337 && window.h337.create({
+            container: container,
+            radius: 30,
+            maxOpacity: 0.6,
+            blur: 0.85,
+          });
+          if (!heatmap) return;
+
+          document.addEventListener("click", function (event) {
+            heatmap.addData({
+              x: event.clientX,
+              y: event.clientY,
+              value: 1,
+            });
+          });
+        } catch (e) {}
+      };
+      document.head.appendChild(script);
+    } catch (e) {}
+  })();
+</script>
+</body>
 
 </html>

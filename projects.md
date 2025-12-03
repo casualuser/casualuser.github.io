@@ -23,7 +23,7 @@ A selection of Webomage engagements across DevOps, cloud infrastructure, blockch
   See also the dedicated case study: [Law Firms Association CRM Recovery](/cases/law-firms-crm/).
 
 - **Healthcare AI Services**  
-  Designed and deployed AI-powered healthcare services with strong emphasis on HIPAA, SOC 2, and GDPR readiness, auditable data flows, and reliable pipelines.
+  Designed and deployed AI-powered healthcare services with strong emphasis on HIPAA, SOC 2, PCI, and GDPR readiness, auditable data flows, and reliable pipelines.
 
 - **Zero-Trust AI Platform on Kubernetes** — locking down AI workloads on Kubernetes with zero-trust networking and better observability.  
   Defined and implemented a zero-trust blueprint around LLM gateways, feature stores, and data pipelines, tightening traffic paths and improving monitoring without slowing delivery.  
@@ -61,22 +61,4 @@ For topic-focused details, see:
 
 For more details, see the full [Curriculum Vitae](/cv/).
 
-➡️ If one of these sounds close to what you're building, [start a conversation](/contact/).
-
-<script>
-  (function () {
-    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
-
-    try {
-      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        keepalive: true,
-        body: JSON.stringify({
-          path: window.location.pathname,
-          referrer: document.referrer || null,
-        }),
-      }).catch(function () {});
-    } catch (e) {}
-  })();
-</script>
+➡️ If one of these sounds close to what you're building, [start a conversation](/contact/){:data-analytics-cta="projects_contact_cta"}.

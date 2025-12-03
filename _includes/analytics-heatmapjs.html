@@ -1,0 +1,72 @@
+<script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    try {
+      var params = new URLSearchParams(window.location.search || "");
+      if (!params.has("heatmap")) return;
+
+      var sessionId = Math.random().toString(36).slice(2) + Date.now().toString(36);
+
+      var script = document.createElement("script");
+      script.src = "https://unpkg.com/heatmap.js@2.0.5/build/heatmap.min.js";
+      script.async = true;
+      script.onload = function () {
+        try {
+          var container = document.createElement("div");
+          container.id = "wm-heatmap-overlay";
+          container.style.position = "fixed";
+          container.style.left = "0";
+          container.style.top = "0";
+          container.style.width = "100%";
+          container.style.height = "100%";
+          container.style.pointerEvents = "none";
+          container.style.zIndex = "9999";
+          document.body.appendChild(container);
+
+          var heatmap = window.h337 && window.h337.create({
+            container: container,
+            radius: 30,
+            maxOpacity: 0.6,
+            blur: 0.85,
+          });
+          if (!heatmap) return;
+
+          document.addEventListener("click", function (event) {
+            heatmap.addData({
+              x: event.clientX,
+              y: event.clientY,
+              value: 1,
+            });
+
+            try {
+              var payload = {
+                path: window.location.pathname,
+                sessionId: sessionId,
+                x: event.clientX,
+                y: event.clientY,
+                viewportWidth: window.innerWidth || null,
+                viewportHeight: window.innerHeight || null,
+              };
+
+              var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/heatmap-event";
+
+              if (navigator.sendBeacon) {
+                var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+                navigator.sendBeacon(url, blob);
+              } else {
+                fetch(url, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  keepalive: true,
+                  body: JSON.stringify(payload),
+                }).catch(function () {});
+              }
+            } catch (e) {}
+          });
+        } catch (e) {}
+      };
+      document.head.appendChild(script);
+    } catch (e) {}
+  })();
+</script>

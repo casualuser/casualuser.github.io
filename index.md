@@ -15,9 +15,9 @@ We stabilise and modernise cloud-native systems on AWS and Kubernetes, plug AI/L
 - Systems integration, data pipelines, and high-traffic backends that connect existing and new services
 - AI/LLM-powered products, RAG pipelines, and internal copilots for operations and support
 - Fullstack web and mobile backends that can start as MVPs and grow to production systems
-- Compliance-aware design for regulated domains (HIPAA, SOC 2 style requirements)
+- Compliance-aware design for regulated domains (HIPAA, SOC 2, PCI style requirements)
 
-➡️ Ready to talk? [Start a project or request an audit](/contact/) · [See how we work](/process/)
+➡️ Ready to talk? [Start a project or request an audit](/contact/){:data-analytics-cta="home_contact_primary"} · [See how we work](/process/){:data-analytics-cta="home_process"}
 
 ## Start here
 
@@ -27,21 +27,3 @@ We stabilise and modernise cloud-native systems on AWS and Kubernetes, plug AI/L
 - [DevOps & Cloud Stack](/devops-stack/)
 - [Blockchain & Web3](/blockchain/)
 - [Contact](/contact/)
-
-<script>
-  (function () {
-    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
-
-    try {
-      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        keepalive: true,
-        body: JSON.stringify({
-          path: window.location.pathname,
-          referrer: document.referrer || null,
-        }),
-      }).catch(function () {});
-    } catch (e) {}
-  })();
-</script>

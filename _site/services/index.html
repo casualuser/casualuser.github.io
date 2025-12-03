@@ -62,12 +62,12 @@
 <h3 id="core-services--solutions">Core services &amp; solutions</h3>
 
 <ul>
-  <li><strong>AI/LLM integration &amp; modernization (compliance-aware)</strong> – integrating or refactoring AI features in existing products with guardrails, observability, and HIPAA/SOC 2-style readiness.</li>
-  <li><strong>Kubernetes &amp; platform engineering for SaaS</strong> – moving from single servers or fragile clusters to managed EKS/GKE-style platforms with IaC, GitOps, SLOs, and proper observability.</li>
-  <li><strong>Serverless &amp; event-driven systems consolidation</strong> – turning Lambda/function sprawl into a structured, testable, and cost-aware serverless architecture.</li>
+  <li><strong>AI/LLM modernisation sprints (compliance-aware)</strong> – integrating or refactoring AI features in existing products with guardrails, observability, and HIPAA/SOC 2-style readiness.</li>
+  <li><strong>Kubernetes platform rescue for SaaS</strong> – moving from single servers or fragile clusters to managed EKS/GKE-style platforms with IaC, GitOps, SLOs, and proper observability.</li>
+  <li><strong>Serverless &amp; event-driven consolidation</strong> – turning Lambda/function sprawl into a structured, testable, and cost-aware serverless architecture.</li>
   <li><strong>Healthcare &amp; legal AI data platforms</strong> – turning long-form audio, documents, or CRM data into searchable, auditable artefacts via RAG, pipelines, and careful data flows.</li>
-  <li><strong>Fintech &amp; DeFi infrastructure &amp; observability</strong> – hardening blockchain/DeFi workloads with dedicated nodes, indexers, monitoring, and production runbooks.</li>
-  <li><strong>Legacy system recovery &amp; compliance hardening</strong> – stabilising partly abandoned systems (CRMs, platforms, AI services) and giving them a clear, safe path back to product delivery.</li>
+  <li><strong>Fintech &amp; DeFi infra hardening &amp; observability</strong> – hardening blockchain/DeFi workloads with dedicated nodes, indexers, monitoring, and production runbooks.</li>
+  <li><strong>Legacy recovery &amp; compliance hardening</strong> – stabilising partly abandoned systems (CRMs, platforms, AI services) and giving them a clear, safe path back to product delivery.</li>
 </ul>
 
 <h2 id="devops--infrastructure">DevOps &amp; Infrastructure</h2>
@@ -201,8 +201,68 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       })();
-    </script>
+    </script><script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
 
-  </body>
+    try {
+      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        keepalive: true,
+        body: JSON.stringify({
+          path: window.location.pathname,
+          referrer: document.referrer || null,
+        }),
+      }).catch(function () {});
+    } catch (e) {}
+  })();
+</script>
+<script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    try {
+      var params = new URLSearchParams(window.location.search || "");
+      if (!params.has("heatmap")) return;
+
+      var script = document.createElement("script");
+      script.src = "https://unpkg.com/heatmap.js@2.0.5/build/heatmap.min.js";
+      script.async = true;
+      script.onload = function () {
+        try {
+          var container = document.createElement("div");
+          container.id = "wm-heatmap-overlay";
+          container.style.position = "fixed";
+          container.style.left = "0";
+          container.style.top = "0";
+          container.style.width = "100%";
+          container.style.height = "100%";
+          container.style.pointerEvents = "none";
+          container.style.zIndex = "9999";
+          document.body.appendChild(container);
+
+          var heatmap = window.h337 && window.h337.create({
+            container: container,
+            radius: 30,
+            maxOpacity: 0.6,
+            blur: 0.85,
+          });
+          if (!heatmap) return;
+
+          document.addEventListener("click", function (event) {
+            heatmap.addData({
+              x: event.clientX,
+              y: event.clientY,
+              value: 1,
+            });
+          });
+        } catch (e) {}
+      };
+      document.head.appendChild(script);
+    } catch (e) {}
+  })();
+</script>
+</body>
 
 </html>

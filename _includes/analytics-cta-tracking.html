@@ -1,0 +1,45 @@
+<script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    function sendCtaEvent(label, href) {
+      try {
+        var payload = {
+          path: window.location.pathname,
+          referrer: document.referrer || null,
+          eventType: "cta_click",
+          label: label,
+          href: href || null,
+        };
+
+        var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+        if (navigator.sendBeacon) {
+          var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+          navigator.sendBeacon(url, blob);
+        } else {
+          fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            keepalive: true,
+            body: JSON.stringify(payload),
+          }).catch(function () {});
+        }
+      } catch (e) {}
+    }
+
+    try {
+      document.addEventListener("DOMContentLoaded", function () {
+        var ctas = document.querySelectorAll("[data-analytics-cta]");
+        if (!ctas.length) return;
+
+        ctas.forEach(function (el) {
+          var label = el.getAttribute("data-analytics-cta") || "cta";
+          el.addEventListener("click", function () {
+            sendCtaEvent(label, el.getAttribute("href"));
+          });
+        });
+      });
+    } catch (e) {}
+  })();
+</script>
