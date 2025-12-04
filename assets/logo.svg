@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="330 -60 900 720" width="900px" height="720px">
   <g class="logo" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Central O -->
-    <circle cx="840" cy="300" r="240" />
-
-    <!-- Left W: outer arc, inner arc, golden-style curve, vertical stroke -->
-    <path d="M 720 540 A 240 240 0 1 1 720 60" />
-    <path d="M 720 540 A 120 120 0 1 1 720 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 825 525 C 672.003 458.92 643.708 388.583 720 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 825 75 L 824.999 525" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 12;"/>
 
     <!-- Right M: mirror of W with same proportions and spacing -->
-    <path d="M 960 60 A 240 240 0 1 1 960 540" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 1073.45 60 C 986.117 60 931.532 160 975.2 240 C 995.466 277.128 1032.92 300 1073.45 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" style="transform-origin: 1016.64px 180px;" transform="matrix(-1, 0, 0, -1, 0, 0)"/>
-    <path d="M 855 75 C 1007.997 141.08 1036.292 211.417 960 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 855 75 L 855 525" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 12;"/>
+    <path d="M 960 60 A 240 240 0 1 1 960 540" fill="none" stroke="#ff8d29" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 960 60 A 120 120 0 1 1 960 300" fill="none" stroke="#ff8d29" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 855 100 C 1007.997 141.08 1036.292 211.417 960 300" fill="none" stroke="#ff8d29" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 855 100 L 855 500" fill="none" stroke="#ff8d29" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 12;"/>
+
+    <!-- Central O -->
+    <circle cx="840" cy="300" r="240" fill="none" stroke="#01612f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Left W: outer arc, inner arc, golden-style curve, vertical stroke -->
+    <path d="M 720 540 A 240 240 0 1 1 720 60" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 720 540 A 120 120 0 1 1 720 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 825 500 C 672.003 458.92 643.708 388.583 720 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 825 100 L 825 500" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+
   </g>
 </svg>
