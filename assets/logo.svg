@@ -5,8 +5,8 @@
     <!-- Right M: mirror of W with same proportions and spacing -->
     <path d="M 960 60 A 240 240 0 1 1 960 540" fill="none" stroke="#ff8d29" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M 960 60 A 120 120 0 1 1 960 300" fill="none" stroke="#ff8d29" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 855 100 C 1007.997 141.08 1036.292 211.417 960 300" fill="none" stroke="#ff8d29" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 855 100 L 855 500" fill="none" stroke="#ff8d29" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 12;"/>
+    <path d="M 860 100 C 1007.997 141.08 1036.292 211.417 960 300" fill="none" stroke="#ff8d29" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 860 100 L 860 500" fill="none" stroke="#ff8d29" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 12;"/>
 
     <!-- Central O -->
     <circle cx="840" cy="300" r="240" fill="none" stroke="#01612f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
@@ -14,8 +14,8 @@
     <!-- Left W: outer arc, inner arc, golden-style curve, vertical stroke -->
     <path d="M 720 540 A 240 240 0 1 1 720 60" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M 720 540 A 120 120 0 1 1 720 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 825 500 C 672.003 458.92 643.708 388.583 720 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 825 100 L 825 500" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 820 500 C 672.003 458.92 643.708 388.583 720 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 820 100 L 820 500" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
 
   </g>
 </svg>
