@@ -11,3 +11,8 @@ and the last line is vertical straight line
 the M letter is mirroring W, but with the same proportions and spacing
 all lines should have consistent stroke width and color (e.g., blue or teal)
 the overall design should be clean, modern, and scalable for both web and print
+
+element metaphors:
+- W = water (outer left arcs and curves read as waves / flow)
+- O = earth / planet (central circle, stable core)
+- M = air (right-side arcs and curves, lighter/upward motion)

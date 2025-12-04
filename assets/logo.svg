@@ -15,5 +15,5 @@
     <path d="M 1073.45 60 C 986.117 60 931.532 160 975.2 240 C 995.466 277.128 1032.92 300 1073.45 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" style="transform-origin: 1016.64px 180px;" transform="matrix(-1, 0, 0, -1, 0, 0)"/>
     <path d="M 855 75 C 1007.997 141.08 1036.292 211.417 960 300" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M 855 75 L 855 525" fill="none" stroke="#29adff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 12;"/>
-
+  </g>
 </svg>
