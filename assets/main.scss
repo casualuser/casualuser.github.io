@@ -297,3 +297,25 @@ body {
     justify-content: center;
   }
 }
+
+/* Logo sizing and footer blur */
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-logo img {
+  height: 54px;
+  width: auto;
+  display: block;
+  filter: blur(0.3px);
+}
+
+.footer-logo {
+  height: 84px;
+  width: auto;
+  display: block;
+  filter: blur(0.3px);
+}

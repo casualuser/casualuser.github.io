@@ -20,7 +20,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"dateModified":"2025-12-03T00:00:00-05:00","datePublished":"2025-12-03T00:00:00-05:00","description":"layout: post title: Microsoft Retires Niche Azure Certifications for Broader Role-Based Paths date: 2025-12-03 categories: [“news”] tags: [“azure”, “certifications”, “microsoft”, “devops”] source_url: https://techcommunity.microsoft.com/blog/skills-hub-blog/announcing-updates-to-azure-and-support-engineer-training-and-certification-port/3719266 image_prompt: Illustration of a certification roadmap shifting from narrow Azure icons like IoT and Teams to broader cloud admin and networking paths on a hybrid cloud background. image_alt: Azure certification evolution from niche to role-based certifications.","headline":"Azure Support Cert Updates","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/12/03/azure-support-cert-updates.html"},"url":"http://localhost:4000/2025/12/03/azure-support-cert-updates.html"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
 <body>
 
     <a href="#" class="scroll-to-top" aria-label="Scroll to top">▲ Top</a>
@@ -35,7 +37,11 @@
 
   <div class="wrapper"><!-- <a class="site-title" rel="author" href="/">Webomage</a> -->
     <div class="site-header-inner">
-      <div class="site-branding"></div><nav class="site-nav">
+      <div class="site-branding">
+        <a class="site-logo" rel="author" href="/" aria-label="Webomage home">
+          <img src="/assets/logo.svg" alt="Webomage logo">
+        </a>
+      </div><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -45,7 +51,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/">Contact</a></div>
+        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
       </nav></div>
   </div>
 </header>
@@ -87,13 +93,10 @@ image_alt: Azure certification evolution from niche to role-based certifications
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-3">
-    <h2 class="footer-heading">Webomage</h2>
-        <!-- <ul class="contact-list"> -->
-          <!-- <li class="p-name">{&quot;name&quot;=&gt;&quot;Aleksei Tcelishchev&quot;, &quot;url&quot;=&gt;&quot;https://webomage.com&quot;}</li> -->
-            <!-- <li> -->
-            <p>DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev</p>
-            <!-- </li> -->
-        <!-- </ul> -->
+        <div class="footer-branding" style="display:flex;align-items:center;gap:0.5rem;">
+          <img class="footer-logo" src="/assets/logo.svg" alt="Webomage logo">
+          <h2 class="footer-heading">Webomage</h2>
+        </div>
       </div>
 
       <div class="footer-col footer-col-7"><ul class="social-media-list"><li><a href="https://github.com/casualuser"><svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#github"></use></svg> <span class="username">casualuser</span></a></li><li><a href="https://www.linkedin.com/in/casualuser"><svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#linkedin"></use></svg> <span class="username">casualuser</span></a></li><li>
@@ -109,6 +112,9 @@ image_alt: Azure certification evolution from niche to role-based certifications
     </li></ul>
 
 </div>
+
+      <div class="footer-col footer-col-7">DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev</div>
+
     </div>
 
   </div>
@@ -144,8 +150,54 @@ image_alt: Azure certification evolution from niche to role-based certifications
         body: JSON.stringify({
           path: window.location.pathname,
           referrer: document.referrer || null,
+          eventType: "pageview",
         }),
       }).catch(function () {});
+    } catch (e) {}
+  })();
+</script>
+<script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    function sendCtaEvent(label, href) {
+      try {
+        var payload = {
+          path: window.location.pathname,
+          referrer: document.referrer || null,
+          eventType: "cta_click",
+          label: label,
+          href: href || null,
+        };
+
+        var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+        if (navigator.sendBeacon) {
+          var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+          navigator.sendBeacon(url, blob);
+        } else {
+          fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            keepalive: true,
+            body: JSON.stringify(payload),
+          }).catch(function () {});
+        }
+      } catch (e) {}
+    }
+
+    try {
+      document.addEventListener("DOMContentLoaded", function () {
+        var ctas = document.querySelectorAll("[data-analytics-cta]");
+        if (!ctas.length) return;
+
+        ctas.forEach(function (el) {
+          var label = el.getAttribute("data-analytics-cta") || "cta";
+          el.addEventListener("click", function () {
+            sendCtaEvent(label, el.getAttribute("href"));
+          });
+        });
+      });
     } catch (e) {}
   })();
 </script>
@@ -156,6 +208,8 @@ image_alt: Azure certification evolution from niche to role-based certifications
     try {
       var params = new URLSearchParams(window.location.search || "");
       if (!params.has("heatmap")) return;
+
+      var sessionId = Math.random().toString(36).slice(2) + Date.now().toString(36);
 
       var script = document.createElement("script");
       script.src = "https://unpkg.com/heatmap.js@2.0.5/build/heatmap.min.js";
@@ -187,6 +241,31 @@ image_alt: Azure certification evolution from niche to role-based certifications
               y: event.clientY,
               value: 1,
             });
+
+            try {
+              var payload = {
+                path: window.location.pathname,
+                sessionId: sessionId,
+                x: event.clientX,
+                y: event.clientY,
+                viewportWidth: window.innerWidth || null,
+                viewportHeight: window.innerHeight || null,
+              };
+
+              var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/heatmap-event";
+
+              if (navigator.sendBeacon) {
+                var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+                navigator.sendBeacon(url, blob);
+              } else {
+                fetch(url, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  keepalive: true,
+                  body: JSON.stringify(payload),
+                }).catch(function () {});
+              }
+            } catch (e) {}
           });
         } catch (e) {}
       };

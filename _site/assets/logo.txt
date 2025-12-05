@@ -1,0 +1,18 @@
+so this is concept of logo
+
+styled letters W, O and M
+
+O is the central circle
+W looks like arc outside O following O shape
+central hill of W is in the center of left half of O and second line up to the central hill is also an arc(half-circle) with full diameter height
+third line is a part of golden spiral
+and the last line is vertical straight line
+
+the M letter is mirroring W, but with the same proportions and spacing
+all lines should have consistent stroke width and color (e.g., blue or teal)
+the overall design should be clean, modern, and scalable for both web and print
+
+element metaphors:
+- W = water (outer left arcs and curves read as waves / flow)
+- O = earth / planet (central circle, stable core)
+- M = air (right-side arcs and curves, lighter/upward motion)
