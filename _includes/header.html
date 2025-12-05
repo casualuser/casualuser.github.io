@@ -5,7 +5,11 @@
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <!-- <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a> -->
     <div class="site-header-inner">
-      <div class="site-branding"></div>
+      <div class="site-branding">
+        <a class="site-logo" rel="author" href="{{ "/" | relative_url }}" aria-label="{{ site.title | escape }} home">
+          <img src="{{ "/assets/logo.svg" | relative_url }}" alt="{{ site.title | escape }} logo">
+        </a>
+      </div>
 
       {%- if page_paths -%}
       <nav class="site-nav">
