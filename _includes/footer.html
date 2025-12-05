@@ -2,25 +2,20 @@
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
   <div class="wrapper">
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-3">
-        <div class="footer-branding" style="display:flex;align-items:center;gap:0.5rem;">
+    <div class="footer-content">
+      <div class="footer-primary">
+        <div class="footer-branding">
           <img class="footer-logo" src="{{ "/assets/logo.svg" | relative_url }}" alt="{{ site.title | escape }} logo">
           <h2 class="footer-heading">{{ site.title | escape }}</h2>
+          <div class="footer-social">
+            {%- include social.html -%}
+          </div>
         </div>
       </div>
-
-      <div class="footer-col footer-col-7">
-        {%- include social.html -%}
-      </div>
-
-      <div class="footer-col footer-col-7">
-        {{- site.description | escape -}}
-      </div>
-
     </div>
-
+    <div class="footer-description">
+      {{- site.description | escape -}}
+    </div>
   </div>
 
 </footer>

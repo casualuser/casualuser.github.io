@@ -2,6 +2,6 @@
     "builder.serverUrl": "http://localhost:4000",
     "builder.command": "bundle exec jekyll serve",
     "builder.runDevServer": true,
-    "builder.autoDetectDevServer": false,
+    "builder.autoDetectDevServer": true,
     "builder.launchType": "editor"
 }

@@ -215,7 +215,9 @@ table td { border: 1px solid #374151; }
 /* Sticky header and footer overrides */
 header.site-header { position: sticky; top: 0; z-index: 1000; background-color: #020617; border-bottom: 1px solid #374151; }
 
-footer.site-footer { position: sticky; bottom: 0; z-index: 999; background-color: #020617; border-top: 1px solid #374151; }
+footer.site-footer { position: sticky; bottom: 0; z-index: 999; background-color: #020617; border-top: 1px solid #374151; padding-bottom: 10px; }
+
+footer.site-footer .wrapper { padding: 0 1.5rem; }
 
 /* Scroll-to-top button: top-left corner, shown after scrolling */
 .scroll-to-top { position: fixed; top: 0.75rem; left: 0.75rem; z-index: 1100; /* above header */ padding: 0.25rem 0.6rem; border-radius: 999px; border: 1px solid #374151; background: rgba(2, 6, 23, 0.9); color: #e5e7eb; font-size: 0.8rem; text-decoration: none; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 0.2s ease-in-out; }
@@ -279,4 +281,20 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; back
 
 .site-logo img { height: 54px; width: auto; display: block; filter: blur(0.3px); }
 
-.footer-logo { height: 84px; width: auto; display: block; filter: blur(0.3px); }
+.footer-logo { height: 60px; width: auto; display: block; filter: blur(0.3px); }
+
+/* Compact footer layout */
+.footer-content { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; padding-bottom: 24px; }
+
+.footer-primary { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.footer-branding { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; width: 100%; }
+
+.footer-heading { margin-right: auto; font-size: 1.125rem; line-height: 1.4; }
+
+.footer-description { font-size: 0.9rem; line-height: 1.4; color: #4b5563; }
+
+.footer-branding .social-media-list { display: flex; align-items: center; align-self: center; gap: 0.5rem; margin-left: auto; overflow-x: auto; overflow-y: auto; }
+
+@media (max-width: 600px) { .footer-content { grid-template-columns: 1fr; gap: 1rem; }
+  .footer-social { justify-content: flex-start; } }
