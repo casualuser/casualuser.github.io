@@ -17,7 +17,7 @@ Webomage is a small, senior engineering agency focused on DevOps, integrations, 
 
 ## DevOps & Infrastructure
 
-- Migration from a single big VPS with `docker-compose` to scalable, managed AWS EKS clusters with Karpenter.
+- Migration from a single big VPS with docker-compose to scalable, managed AWS EKS clusters with Karpenter.
 - Refactoring legacy Django/DRF applications to be stateless and cloud-native.
 - AWS Elastic Beanstalk to Kubernetes migrations (e.g. Django / Angular.js workloads to GKE).
 - 50+ AWS Lambda functions moved from custom scripts to the Serverless Framework for repeatable, automated deployments.
