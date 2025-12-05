@@ -79,7 +79,7 @@
 <h2 id="devops--infrastructure">DevOps &amp; Infrastructure</h2>
 
 <ul>
-  <li>Migration from a single big VPS with <code class="language-plaintext highlighter-rouge">docker-compose</code> to scalable, managed AWS EKS clusters with Karpenter.</li>
+  <li>Migration from a single big VPS with docker-compose to scalable, managed AWS EKS clusters with Karpenter.</li>
   <li>Refactoring legacy Django/DRF applications to be stateless and cloud-native.</li>
   <li>AWS Elastic Beanstalk to Kubernetes migrations (e.g. Django / Angular.js workloads to GKE).</li>
   <li>50+ AWS Lambda functions moved from custom scripts to the Serverless Framework for repeatable, automated deployments.</li>
@@ -205,6 +205,28 @@
         btn.addEventListener('click', function(event) {
           event.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+    </script>
+
+    <script>
+      (function() {
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.site-bg-slide'));
+        if (!slides.length) return;
+
+        // Base delays (seconds) from CSS: 0, 8, 16, 24, 32
+        var delays = [0, 8, 16, 24, 32].slice(0, slides.length);
+
+        // Fisher-Yates shuffle
+        for (var i = delays.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = delays[i];
+          delays[i] = delays[j];
+          delays[j] = tmp;
+        }
+
+        slides.forEach(function(slide, idx) {
+          slide.style.animationDelay = delays[idx] + 's';
         });
       })();
     </script><script>
