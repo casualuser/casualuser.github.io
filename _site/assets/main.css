@@ -279,9 +279,9 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; back
 /* Logo sizing and footer blur */
 .site-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 
-.site-logo img { height: 54px; width: auto; display: block; filter: blur(0.3px); }
+.site-logo img { height: clamp(24px, 3vw, 40px); width: auto; display: block; }
 
-.footer-logo { height: 60px; width: auto; display: block; filter: blur(0.3px); }
+.footer-logo { height: clamp(40px, 8vw, 72px); width: auto; display: block; filter: blur(0.3px); }
 
 /* Compact footer layout */
 .footer-content { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; padding-bottom: 24px; }
@@ -290,9 +290,9 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; back
 
 .footer-branding { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; width: 100%; }
 
-.footer-heading { margin-right: auto; font-size: 1.125rem; line-height: 1.4; }
+.footer-heading { margin-right: auto; font-size: clamp(1rem, 1.1vw, 1.25rem); line-height: 1.4; }
 
-.footer-description { font-size: 0.9rem; line-height: 1.4; color: #4b5563; }
+.footer-description { font-size: clamp(0.85rem, 0.95vw, 1rem); line-height: 1.4; color: #4b5563; }
 
 .footer-branding .social-media-list { display: flex; align-items: center; align-self: center; gap: 0.5rem; margin-left: auto; overflow-x: auto; overflow-y: auto; }
 

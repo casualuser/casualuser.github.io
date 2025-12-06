@@ -312,14 +312,13 @@ body {
 }
 
 .site-logo img {
-  height: 54px;
+  height: clamp(24px, 3vw, 40px);
   width: auto;
   display: block;
-  filter: blur(0.3px);
 }
 
 .footer-logo {
-  height: 60px;
+  height: clamp(40px, 8vw, 72px);
   width: auto;
   display: block;
   filter: blur(0.3px);
@@ -350,12 +349,12 @@ body {
 
 .footer-heading {
   margin-right: auto;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 1.1vw, 1.25rem);
   line-height: 1.4;
 }
 
 .footer-description {
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 0.95vw, 1rem);
   line-height: 1.4;
   color: $grey-color;
 }

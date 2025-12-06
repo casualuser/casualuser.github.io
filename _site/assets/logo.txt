@@ -16,3 +16,16 @@ element metaphors:
 - W = water (outer left arcs and curves read as waves / flow)
 - O = earth / planet (central circle, stable core)
 - M = air (right-side arcs and curves, lighter/upward motion)
+
+color palette (CSS keywords):
+- W stroke: DodgerBlue (#1e90ff)
+- O stroke: ForestGreen (#228b22)
+- M stroke: DarkOrange (#ff8c00)
+
+golden-ratio and spiral guides:
+- base circle O: center (840, 300), radius R = 240
+- guides in logo_check.svg show:
+  - axes through O center and vertical lines at x = 840 ± R/φ (≈ 691.7, 988.3)
+  - additional harmonic lines for fine-tuning W/M stroke positions
+  - two phi-spiral guide curves approximating quarter-turn golden spirals into/out of the circle
+- production logo paths follow these guides visually using cubic Bézier curves (not exact analytic spirals).
