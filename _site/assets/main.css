@@ -231,7 +231,7 @@ html, body { height: 100%; }
 body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; background-color: #020617; /* fallback while images load */ }
 
 /* Fade page content into header/footer edges with overlay gradients */
-.page-content { position: relative; flex: 1 0 auto; padding: 0 !important; /* Top fade: content becomes fully covered right at the header edge */ /* Bottom fade: mirrored effect up to the footer edge */ }
+.page-content { position: relative; flex: 1 0 auto; padding: 0 !important; min-height: 100vh; /* Top fade: content becomes fully covered right at the header edge */ /* Bottom fade: mirrored effect up to the footer edge */ }
 .page-content::before, .page-content::after { content: ""; position: absolute; left: 0; right: 0; height: 64px; pointer-events: none; z-index: 1; }
 .page-content::before { top: 0; background: linear-gradient(to bottom, #020617 0%, rgba(2, 6, 23, 0) 100%); }
 .page-content::after { bottom: 0; background: linear-gradient(to top, #020617 0%, rgba(2, 6, 23, 0) 100%); }
@@ -239,11 +239,13 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; back
 @media (max-width: 768px) { .page-content::before, .page-content::after { height: 80px; }
   .scroll-to-top { top: 3.25rem; font-size: 0.75rem; padding: 0.2rem 0.5rem; } }
 /* Full-viewport rotating background slideshow behind all content */
-.site-bg-slideshow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; }
+.site-bg-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; pointer-events: none; }
 
 .site-bg-slideshow::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); /* stronger darken for content readability */ }
 
 .site-bg-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat; opacity: 0; animation: webomage-bg-fade 40s infinite; }
+
+.page-content > .wrapper { position: relative; z-index: 1; }
 
 .site-bg-slide-1 { background-image: url("/assets/info1-web.jpg"); animation-delay: 0s; }
 
