@@ -215,7 +215,7 @@ table td { border: 1px solid #374151; }
 /* Sticky header and footer overrides */
 header.site-header { position: sticky; top: 0; z-index: 1000; background-color: #020617; border-bottom: 1px solid #374151; }
 
-footer.site-footer { position: sticky; bottom: 0; z-index: 999; background-color: #020617; border-top: 1px solid #374151; padding-top: 12px; }
+footer.site-footer { position: sticky; bottom: 0; z-index: 999; background-color: #020617; border-top: 1px solid #374151; padding: 12px 0; }
 
 footer.site-footer .wrapper { padding: 0 1.5rem; }
 
