@@ -386,3 +386,26 @@ body {
     justify-content: flex-start;
   }
 }
+
+/* Contact form validation */
+.contact-form-field {
+  position: relative;
+}
+
+.contact-error {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+}
+
+.contact-field-invalid input,
+.contact-field-invalid textarea {
+  border-color: #fca5a5;
+  outline-color: #fca5a5;
+}
+
+#contact-form.contact-form-submitting button[type="submit"],
+#contact-form button[disabled] {
+  opacity: 0.7;
+  cursor: default;
+}

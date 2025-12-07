@@ -14,21 +14,24 @@ If you want to discuss a project related to DevOps, integrations, AI/LLM, fullst
 - The main problems you want to solve (or systems you want to improve/migrate)
 - Any timing or compliance constraints (e.g. HIPAA/SOC 2, go-live dates)
 
-<form action="https://pqbbjgeapylcengbuvee.functions.supabase.co/contact-submit" method="POST">
+<form id="contact-form" action="https://pqbbjgeapylcengbuvee.functions.supabase.co/contact-submit" method="POST" novalidate>
   <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
-    <div style="flex:1 1 200px;">
+    <div class="contact-form-field" style="flex:1 1 200px;">
       <label for="name">Name</label><br />
       <input type="text" id="name" name="name" style="width:100%;" required />
     </div>
 
-    <div style="flex:1 1 200px;">
+    <div class="contact-form-field" style="flex:1 1 200px;">
       <label for="email">Your email</label><br />
       <input type="email" id="email" name="email" style="width:100%;" required />
     </div>
   </div>
 
-  <label for="message">Message</label><br />
-  <textarea id="message" name="message" rows="5" style="width:100%;" required></textarea><br /><br />
+  <div class="contact-form-field">
+    <label for="message">Message</label><br />
+    <textarea id="message" name="message" rows="5" style="width:100%;" required></textarea>
+  </div>
+  <br />
 
   <div style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
     <label for="website">Website</label>

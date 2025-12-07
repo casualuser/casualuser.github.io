@@ -40,4 +40,4 @@ EventCartel, DcentraLab, TokensFarm, BeeTechy, and others where Webomage led or 
 
 Example: [Kubernetes Platform Migration for SaaS](/cases/k8s-platform-migration/).
 
-➡️ If you need similar DevOps, platform, or cloud infrastructure help, [start a conversation](/contact/).
+➡️ If you need similar DevOps, platform, or cloud infrastructure help, [start a conversation](/contact/){:data-analytics-cta="devops_stack_contact_cta"}.

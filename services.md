@@ -51,7 +51,58 @@ Example: [Long-form psychiatric session voice analytics](/cases/psychiatric-voic
 - Security and compliance-aware infrastructure and pipeline design.
 - Observability, logging, and monitoring built in from day one.
 
+### Compliance certifications (paid & free)
+
+- **Paid third-party audits and attestations** we can help you prepare for (working with your auditor, not replacing them):
+  - SOC 2 Type I/II (security, availability, confidentiality-style scopes).
+  - ISO/IEC 27001 for information security management.
+  - PCI DSS (from SAQ-level e‑commerce workloads up to Level 1 with a QSA).
+  - HIPAA/HITECH "readiness" (BAAs, Security Rule alignment, logging and PHI handling) for healthcare and adjacent products.
+- **Free and open frameworks / checklists** we can align your systems to when a full audit is not yet required:
+  - NIST Cybersecurity Framework and NIST 800‑53/800‑171 style control sets.
+  - CIS Benchmarks and CIS Controls for cloud infrastructure and Kubernetes.
+  - OWASP ASVS and OWASP Top 10 for application and API security.
+  - AWS / GCP / Azure Well‑Architected reviews for cloud-native workloads.
+
+In practice this often looks like:
+
+- taking your current product and data flows, classifying data (PHI/PII/financial, etc.);
+- picking a target standard or mix that matches your stage and budget;
+- turning that into a concrete, prioritised backlog of infra, observability, and process changes;
+- helping you gather and automate the evidence auditors will later need (logs, reports, diagrams, runbooks).
+
 Example: [Law Firms Association CRM Recovery](/cases/law-firms-crm/).
+
+## Developer & DevOps Certifications & Training
+
+We help teams use certifications and structured training as a way to **grow real skills**, not just collect badges.
+
+### What we offer
+
+- Team‑oriented prep for cloud and DevOps certifications, for example:
+  - AWS: Solutions Architect, DevOps Engineer, SysOps, and associate/professional tracks.
+  - Azure: AZ‑104, AZ‑305, AZ‑400 and Google Cloud Associate / Professional tracks.
+  - HashiCorp Terraform Associate and related IaC tracks.
+  - Linux Foundation / CNCF: CKA, CKAD, CKS.
+- Optional add‑ons around Linux / containers / Kubernetes fundamentals for engineers who are still building that base.
+
+### How we run it
+
+- Short **6–12 week programs** designed to run alongside real work.
+- Week 0–1: assess current skills, pick target exams and timelines that match your roadmap.
+- Weeks 2–N: weekly focus topics and labs mapped to your stack (not just generic examples).
+- Final 1–2 weeks: structured exam prep, practice questions, and optional mock interviews.
+
+We are not an "official" training partner for vendors; instead, we help you get the most out of the subscriptions and materials you already have (A Cloud Guru, Udemy, vendor docs) and tie them back to your actual systems.
+
+➡️ Planning a certification or training cohort for your team? [Talk about training options](/contact/){:data-analytics-cta="services_training_cta"}.
+
+### Problem‑solving and competitive programming
+
+Where algorithmic and problem‑solving skills matter, we can also:
+
+- use **CodeChef, Codeforces, Topcoder, and similar platforms** to benchmark and grow skills;
+- run lightweight internal contests, katas, and review sessions based on real constraints from your stack and hiring process.
 
 ## Engagement Models
 

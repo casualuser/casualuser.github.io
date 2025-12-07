@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="468 48 744 504" width="744" height="504">
-  <g class="logo" fill="none" stroke="#1e90ff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 746 746" width="746" height="746">
+  <g class="logo" transform="translate(-467,73)" fill="none" stroke="#1e90ff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
 
     <!-- Right M: mirror of W with same proportions and spacing -->
     <path d="M 960 60 A 240 240 0 1 1 960 540" fill="none" stroke="#ff8c00" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>

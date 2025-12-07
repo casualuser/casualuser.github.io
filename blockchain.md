@@ -36,4 +36,4 @@ See also the dedicated case study: [DeFi Infrastructure Hardening & Observabilit
 - Monitoring and alerting around node health, transaction flows, and contracts
 - Secure integrations with third-party APIs (Coingecko, 1inch, DexGuru, DefiLlama, etc.)
 
-➡️ If you need production-grade blockchain or Web3 infrastructure and integrations, [start a conversation](/contact/).
+➡️ If you need production-grade blockchain or Web3 infrastructure and integrations, [start a conversation](/contact/){:data-analytics-cta="blockchain_contact_cta"}.

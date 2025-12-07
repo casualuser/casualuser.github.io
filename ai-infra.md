@@ -42,4 +42,4 @@ Webomage designs and operates production-grade AI/LLM infrastructure that connec
 - Monitoring, logging, and tracing for model performance and reliability
 - Documentation and onboarding materials for engineering and operations teams
 
-➡️ If you need AI/LLM infrastructure that is reliable, observable, and compliance-aware, [start a conversation](/contact/).
+➡️ If you need AI/LLM infrastructure that is reliable, observable, and compliance-aware, [start a conversation](/contact/){:data-analytics-cta="ai_infra_contact_cta"}.

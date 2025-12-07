@@ -38,4 +38,4 @@ Webomage is a small, senior engineering agency. We run projects in a lightweight
 
 ---
 
-➡️ Ready to run a project like this? [Start a conversation](/contact/).
+➡️ Ready to run a project like this? [Start a conversation](/contact/){:data-analytics-cta="process_contact_cta"}.

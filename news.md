@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Blog"
-permalink: /blog/
+title: "Webomage News"
+permalink: /webomage-news/
 ---
 
-# Blog
+# Webomage News
 
 Curated AI, DevOps, and cloud news relevant to Webomage clients, plus short updates on our work-in-progress, releases, and talks.
 

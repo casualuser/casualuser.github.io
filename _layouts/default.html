@@ -66,6 +66,162 @@
       })();
     </script>
 
+    <script>
+      (function() {
+        var form = document.getElementById('contact-form');
+        if (!form) return;
+
+        var fields = [
+          { id: 'name', required: true, minLength: 2 },
+          { id: 'email', required: true, type: 'email' },
+          { id: 'message', required: true, minLength: 10 }
+        ];
+
+        var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+        var submitOriginalText = submitBtn ? submitBtn.textContent : null;
+        var hasSentSubmitEvent = false;
+
+        function findFieldWrapper(el) {
+          while (el && el !== form) {
+            if (el.classList && el.classList.contains('contact-form-field')) {
+              return el;
+            }
+            el = el.parentNode;
+          }
+          return null;
+        }
+
+        function showError(input, message) {
+          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+          if (!fieldWrapper) return;
+
+          var errorEl = fieldWrapper.querySelector('.contact-error');
+          if (!errorEl) {
+            errorEl = document.createElement('div');
+            errorEl.className = 'contact-error';
+            fieldWrapper.appendChild(errorEl);
+          }
+
+          errorEl.textContent = message;
+          fieldWrapper.classList.add('contact-field-invalid');
+        }
+
+        function clearError(input) {
+          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+          if (!fieldWrapper) return;
+
+          fieldWrapper.classList.remove('contact-field-invalid');
+          var errorEl = fieldWrapper.querySelector('.contact-error');
+          if (errorEl) {
+            errorEl.textContent = '';
+          }
+        }
+
+        function validateField(field) {
+          var input = document.getElementById(field.id);
+          if (!input) return true;
+
+          clearError(input);
+
+          var value = (input.value || '').trim();
+
+          if (field.required && !value) {
+            showError(input, 'This field is required.');
+            return false;
+          }
+
+          if (field.minLength && value.length < field.minLength) {
+            showError(input, 'Please enter at least ' + field.minLength + ' characters.');
+            return false;
+          }
+
+          if (field.type === 'email') {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (value && !emailPattern.test(value)) {
+              showError(input, 'Please enter a valid email address.');
+              return false;
+            }
+          }
+
+          return true;
+        }
+
+        function sendContactSubmitEvent() {
+          try {
+            if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+            var payload = {
+              path: window.location.pathname,
+              referrer: document.referrer || null,
+              eventType: "cta_click",
+              label: "contact_form_submit",
+              href: "/contact/"
+            };
+
+            var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+            if (navigator.sendBeacon) {
+              var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+              navigator.sendBeacon(url, blob);
+            } else {
+              fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                keepalive: true,
+                body: JSON.stringify(payload)
+              }).catch(function () {});
+            }
+          } catch (e) {}
+        }
+
+        form.addEventListener('submit', function(event) {
+          var isValid = true;
+
+          for (var i = 0; i < fields.length; i++) {
+            if (!validateField(fields[i])) {
+              isValid = false;
+            }
+          }
+
+          if (!isValid) {
+            event.preventDefault();
+
+            var firstInvalid = form.querySelector('.contact-field-invalid input, .contact-field-invalid textarea');
+            if (firstInvalid && typeof firstInvalid.focus === 'function') {
+              firstInvalid.focus();
+            }
+            return;
+          }
+
+          if (submitBtn && !submitBtn.disabled) {
+            submitBtn.disabled = true;
+            if (submitOriginalText != null) {
+              submitBtn.textContent = 'Sending…';
+            }
+            form.classList.add('contact-form-submitting');
+          }
+
+          if (!hasSentSubmitEvent) {
+            hasSentSubmitEvent = true;
+            sendContactSubmitEvent();
+          }
+        });
+
+        fields.forEach(function(field) {
+          var input = document.getElementById(field.id);
+          if (!input) return;
+
+          input.addEventListener('blur', function() {
+            validateField(field);
+          });
+
+          input.addEventListener('input', function() {
+            clearError(input);
+          });
+        });
+      })();
+    </script>
+
     {%- include analytics-log-event.html -%}
     {%- include analytics-cta-tracking.html -%}
     {%- include analytics-heatmapjs.html -%}
