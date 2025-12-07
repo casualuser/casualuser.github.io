@@ -3,9 +3,6 @@ layout: page
 title: "Contact"
 permalink: /contact/
 ---
-
-# Contact
-
 If you want to discuss a project related to DevOps, integrations, AI/LLM, fullstack/mobile backends, or compliance-minded infrastructure, use the form below or reach out via LinkedIn/Upwork and we'll follow up with next steps.
 
 ### What to include

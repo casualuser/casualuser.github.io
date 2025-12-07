@@ -3,9 +3,6 @@ layout: page
 title: "News"
 permalink: /news/
 ---
-
-# News
-
 Curated AI, DevOps, and cloud news relevant to Webomage clients, plus short updates on our work-in-progress, releases, and talks.
 
 <ul class="post-list">
