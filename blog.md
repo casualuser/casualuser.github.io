@@ -14,14 +14,21 @@ Longer-form write-ups, deep dives, and case-style notes on DevOps, integrations,
   <p>No blog posts yet. Stay tuned.</p>
   {% else %}
   {% for post in blog_posts %}
-  <li>
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-    <h3>
-      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h3>
-    {% if post.excerpt %}
-    <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+  <li class="post-list-item">
+    {% if post.image %}
+    <a class="post-list-image" href="{{ post.url | relative_url }}">
+      <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title | escape }}">
+    </a>
     {% endif %}
+    <div class="post-list-content">
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      {% if post.excerpt %}
+      <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+      {% endif %}
+    </div>
   </li>
   {% endfor %}
   {% endif %}

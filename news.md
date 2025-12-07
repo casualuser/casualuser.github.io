@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Webomage News"
-permalink: /webomage-news/
+title: "News"
+permalink: /news/
 ---
 
-# Webomage News
+# News
 
 Curated AI, DevOps, and cloud news relevant to Webomage clients, plus short updates on our work-in-progress, releases, and talks.
 
@@ -14,14 +14,21 @@ Curated AI, DevOps, and cloud news relevant to Webomage clients, plus short upda
   <p>No news yet. When there is, it will show up here.</p>
   {% else %}
   {% for post in news_posts %}
-  <li>
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-    <h3>
-      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h3>
-    {% if post.excerpt %}
-    <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+  <li class="post-list-item">
+    {% if post.image %}
+    <a class="post-list-image" href="{{ post.url | relative_url }}">
+      <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title | escape }}">
+    </a>
     {% endif %}
+    <div class="post-list-content">
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      {% if post.excerpt %}
+      <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+      {% endif %}
+    </div>
   </li>
   {% endfor %}
   {% endif %}

@@ -272,6 +272,25 @@ body {
   border-radius: 6px;
 }
 
+.post-list-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.post-list-image img {
+  display: block;
+  width: 160px;
+  max-height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.post-list-content {
+  flex: 1 1 auto;
+}
+
 .team-portraits {
   display: flex;
   flex-wrap: wrap;
