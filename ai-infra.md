@@ -3,9 +3,6 @@ layout: page
 title: "AI & LLM Infrastructure"
 permalink: /ai-infra/
 ---
-
-# AI & LLM Infrastructure
-
 Webomage designs and operates production-grade AI/LLM infrastructure that connects models, data, and applications with robust cloud and DevOps practices.
 
 ## Focus Areas

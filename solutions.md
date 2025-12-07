@@ -3,9 +3,6 @@ layout: page
 title: "Solutions"
 permalink: /solutions/
 ---
-
-# Solutions
-
 Webomage helps SaaS and infra-heavy teams in a few recurring ways. This page collects the main solution shapes and points you to the deeper pages and case studies.
 
 ## Platform & Reliability
@@ -46,6 +43,40 @@ See also:
 - **SOC 2-aligned infra & logging** – structuring infrastructure, logging, and change management so they map cleanly onto SOC 2 controls (security, availability, confidentiality) and are easier to evidence during audits.
 - **PCI DSS-aware payment infrastructure** – designing and hardening card-processing components and their surrounding environment to minimise PCI scope and keep most application workloads out of high-scrutiny zones.
 - **ISO 27001-oriented cloud security** – aligning cloud infrastructure, secrets management, and backup/DR patterns with ISO 27001-style information security management practices.
+
+See also:
+
+- [Law Firms Association CRM Recovery](/cases/law-firms-crm/)
+- [Healthcare AI Services](/services/#compliance--reliability)
+ 
+## Training & Certification Programs
+
+- Team-focused DevOps, cloud, and AI training cohorts that run alongside real work.
+- Support for vendor certifications (AWS, Azure, GCP, Kubernetes, Terraform, etc.) tied back to your systems.
+- Internal "certifying" tracks that connect training outcomes to specific roles and responsibilities.
+
+See also:
+
+- [Developer & DevOps Certifications & Training](/services/#developer--devops-certifications--training)
+
+## Architecture & Infra Blueprints
+
+- Reusable infrastructure patterns for typical SaaS and platform workloads.
+- Living diagrams and codemaps we keep alongside code and tests.
+- Used both for initial design and for explaining architecture to non-engineering stakeholders.
+
+Example blueprints we work with:
+
+- **Python API on Kubernetes (AWS EKS)** – FastAPI-style API + workers + Postgres + Redis, with observability baked in.  
+  ➡️ [Discuss this Python/Kubernetes blueprint](/contact/){:data-analytics-cta="blueprint_python_k8s_cta"}
+- **Node.js / Next.js with Supabase** – Vercel-hosted frontend and API routes backed by Supabase Postgres, Auth, Storage, and Edge Functions.  
+  ➡️ [Discuss this Next.js/Supabase blueprint](/contact/){:data-analytics-cta="blueprint_node_next_supabase_cta"}
+- **Go microservices behind an API gateway** – public and internal Go services exposed via ingress/gateway, with Postgres, Redis, and full observability.  
+  ➡️ [Discuss this Go microservices blueprint](/contact/){:data-analytics-cta="blueprint_go_microservices_cta"}
+- **Rust API with Postgres and Redis** – containerised Rust service behind Nginx or an ingress controller, focused on performance-sensitive workloads.  
+  ➡️ [Discuss this Rust/Postgres blueprint](/contact/){:data-analytics-cta="blueprint_rust_api_postgres_cta"}
+
+Behind the scenes we maintain codemaps and Mermaid diagrams for these patterns in our internal API/infra repo, so every engagement starts with a concrete, versioned architecture sketch rather than ad-hoc drawings.
 
 See also:
 

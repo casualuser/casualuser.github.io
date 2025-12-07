@@ -3,9 +3,6 @@ layout: page
 title: "Projects & Case Studies"
 permalink: /projects/
 ---
-
-# Projects & Case Studies
-
 A selection of Webomage engagements across DevOps, cloud infrastructure, blockchain, and AI/ML integrations, with enough detail to see how we actually work.
 
 ## AI & Automation

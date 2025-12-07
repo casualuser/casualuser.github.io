@@ -76,6 +76,8 @@ Example: [Law Firms Association CRM Recovery](/cases/law-firms-crm/).
 ## Developer & DevOps Certifications & Training
 
 We help teams use certifications and structured training as a way to **grow real skills**, not just collect badges.
+This is where the **Training** and **Certifying** parts of the Webomage services ladder live: short, real-work-aligned
+programs that move engineers from "interested" to "certified and effective" on your stack.
 
 ### What we offer
 

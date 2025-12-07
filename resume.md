@@ -3,9 +3,6 @@ layout: page
 title: "Resume (Short)"
 permalink: /resume/
 ---
-
-# Resume (Short)
-
 Senior DevOps and Software Engineer · AWS · Kubernetes · Blockchain · AI/LLM
 
 ## Profile

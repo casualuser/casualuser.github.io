@@ -3,9 +3,6 @@ layout: page
 title: "Blog"
 permalink: /blog/
 ---
-
-# Blog
-
 Longer-form write-ups, deep dives, and case-style notes on DevOps, integrations, AI/LLM infrastructure, and product delivery at Webomage.
 
 <ul class="post-list">

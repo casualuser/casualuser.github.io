@@ -3,9 +3,6 @@ layout: page
 title: "Blockchain & Web3"
 permalink: /blockchain/
 ---
-
-# Blockchain & Web3
-
 Webomage builds and maintains blockchain and web3 backends, from infrastructure to smart contract integrations and DApp support.
 
 ## Focus Areas

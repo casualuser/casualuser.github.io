@@ -3,9 +3,6 @@ layout: page
 title: "DevOps & Cloud Stack"
 permalink: /devops-stack/
 ---
-
-# DevOps & Cloud Stack
-
 Webomage designs, builds, and operates cloud-native infrastructure with a strong focus on automation, reliability, and observability.
 
 ## Cloud & Infrastructure as Code
