@@ -113,6 +113,8 @@ Many teams arrive with familiar named stacks. We focus on **production** Linux d
 
 ## Architecture & Infra Blueprints
 
+These are deeper infrastructure blueprints that sit under or alongside the **Stack Blueprints** above – used when we need to design or explain the platform itself, not just the application stack.
+
 - Reusable infrastructure patterns for typical SaaS and platform workloads.
 - Living diagrams and codemaps we keep alongside code and tests.
 - Used both for initial design and for explaining architecture to non-engineering stakeholders.
