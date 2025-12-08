@@ -59,6 +59,58 @@ See also:
 
 - [Developer & DevOps Certifications & Training](/services/#developer--devops-certifications--training)
 
+## Stack Blueprints
+
+Many teams arrive with familiar named stacks. We focus on **production** Linux deployments, not local dev bundles like WAMP/XAMPP/MAMP.
+
+### LAMP (Linux, Apache, MySQL/MariaDB, PHP)
+
+- **Techs:** Classic PHP apps and CMSes (WordPress, Drupal, custom PHP) backed by MySQL or MariaDB on Linux.
+- **Typical deployment:**
+  - **AWS EC2:** One or more EC2 instances running Apache + PHP-FPM, RDS MySQL for the database, S3/CloudFront for assets, and backup/monitoring wired in.
+  - **DigitalOcean Droplet:** A Droplet running Apache + PHP, managed MySQL or a separate DB Droplet, with backups, UFW/Firewall rules, and DO load balancer if needed.
+  ➡️ [Discuss your LAMP stack](/contact/){:data-analytics-cta="stack_lamp_cta"}
+
+### LEMP (Linux, Nginx, MySQL/MariaDB, PHP)
+
+- **Techs:** PHP apps behind Nginx with PHP-FPM, often tuned for higher concurrency than Apache setups.
+- **Typical deployment:**
+  - **AWS EC2:** Nginx + PHP-FPM on EC2, RDS MySQL, ALB in front, CloudWatch metrics/alarms for slow queries and error rates.
+  - **DigitalOcean Droplet:** Nginx + PHP-FPM on a Droplet, managed MySQL, DO Load Balancer in front, Uptime and metrics via DO/third-party monitors.
+  ➡️ [Discuss your LEMP stack](/contact/){:data-analytics-cta="stack_lemp_cta"}
+
+### MERN (MongoDB, Express, React, Node.js)
+
+- **Techs:** React SPA or Next.js frontend talking to an Express/Node API, MongoDB for document storage.
+- **Typical deployment:**
+  - **AWS EC2:** Node API on EC2 (or ECS/Fargate), MongoDB Atlas or self-managed on EC2, CloudFront or S3 for static React assets, with logs centralised in CloudWatch.
+  - **DigitalOcean Droplet:** Node API on a Droplet (optionally PM2), MongoDB Atlas or DO Managed MongoDB, static assets via DO Spaces + CDN.
+  ➡️ [Discuss your MERN stack](/contact/){:data-analytics-cta="stack_mern_cta"}
+
+### MEAN (MongoDB, Express, Angular, Node.js)
+
+- **Techs:** Angular SPA served by an Express/Node backend, MongoDB for data.
+- **Typical deployment:**
+  - **AWS EC2:** Angular built to static assets on S3/CloudFront, Node/Express API on EC2 or ECS, MongoDB Atlas, with IAM-locked access and VPC peering.
+  - **DigitalOcean Droplet:** Node/Express serving Angular assets and API from a Droplet, MongoDB Atlas or managed Mongo, Nginx reverse proxy, and DO firewall.
+  ➡️ [Discuss your MEAN stack](/contact/){:data-analytics-cta="stack_mean_cta"}
+
+### MEVN (MongoDB, Express, Vue, Node.js)
+
+- **Techs:** Vue (Nuxt or SPA) frontend with an Express/Node API and MongoDB.
+- **Typical deployment:**
+  - **AWS EC2:** Nuxt/Vue static build to S3/CloudFront, Node/Express API on EC2/ECS, MongoDB Atlas, with central logging and simple blue/green rollouts.
+  - **DigitalOcean Droplet:** Node/Express + Vue app on a Droplet behind Nginx, MongoDB Atlas or managed Mongo, DO Spaces/ CDN for heavier assets.
+  ➡️ [Discuss your MEVN stack](/contact/){:data-analytics-cta="stack_mevn_cta"}
+
+### PERN (Postgres, Express, React, Node.js)
+
+- **Techs:** React SPA or Next.js frontend with an Express/Node API and PostgreSQL.
+- **Typical deployment:**
+  - **AWS EC2:** Node/Express API on EC2/ECS, RDS Postgres, S3/CloudFront for React assets, with migrations handled via CI/CD and IAM-scoped DB access.
+  - **DigitalOcean Droplet:** Node/Express API on a Droplet, DO Managed Postgres or DB Droplet, static assets via DO Spaces/CDN, with firewall and backup policies.
+  ➡️ [Discuss your PERN stack](/contact/){:data-analytics-cta="stack_pern_cta"}
+
 ## Architecture & Infra Blueprints
 
 - Reusable infrastructure patterns for typical SaaS and platform workloads.
