@@ -11,6 +11,8 @@ This page collects the live Mermaid diagrams for the main Webomage blueprints.
 - **Architecture & infra blueprints** – platform-level diagrams (clusters, gateways, databases, observability).
 - **Stack blueprints** – application-stack patterns (LAMP, MERN, MEAN, MEVN, PERN) that often sit on top of those platforms.
 
+Labels on arrows indicate the protocol/port between components (for example, `443 HTTPS`, `80 HTTP`, `5432`, `6379`).
+
 ## Site map
 
 <div class="mermaid">

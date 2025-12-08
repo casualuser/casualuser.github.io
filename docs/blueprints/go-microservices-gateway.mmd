@@ -6,8 +6,10 @@ graph TD
   db["Postgres database (postgres)"]
   cache["Redis cache / queue (redis)"]
   observability["Metrics, logs, tracing (observability)"]
-  gateway --> svc_public
-  gateway --> svc_admin
-  svc_public --> db
-  svc_public --> cache
-  svc_admin --> db
+  gateway --|80 HTTP|--> svc_public
+  gateway --|443 HTTPS|--> svc_public
+  gateway --|80 HTTP|--> svc_admin
+  gateway --|443 HTTPS|--> svc_admin
+  svc_public --|80 HTTP|--> db
+  svc_public --|80 HTTP|--> cache
+  svc_admin --|8080 HTTP|--> db

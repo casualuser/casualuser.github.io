@@ -442,3 +442,17 @@ body {
   margin-top: 0;
   margin-bottom: 0.75rem;
 }
+
+/* Mermaid diagram containers */
+.mermaid {
+  background-color: #020617; /* near-black slate */
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.5);
+  overflow-x: auto;
+}
+
+.mermaid svg {
+  background-color: transparent;
+}

@@ -123,13 +123,17 @@ These are deeper infrastructure blueprints that sit under or alongside the **Sta
 
 Example blueprints we work with:
 
-- **[Python API on Kubernetes (AWS EKS)](/blueprints/python-api-k8s/)** – FastAPI-style API + workers + Postgres + Redis, with observability baked in.  
+- **Python API on Kubernetes (AWS EKS)** – FastAPI-style API + workers + Postgres + Redis, with observability baked in.  
+  Diagram: [View diagram](/blueprints/python-api-k8s/)  
   ➡️ [Discuss this Python/Kubernetes blueprint](/contact/){:data-analytics-cta="blueprint_python_k8s_cta"}
-- **[Node.js / Next.js with Supabase](/blueprints/node-next-supabase/)** – Vercel-hosted frontend and API routes backed by Supabase Postgres, Auth, Storage, and Edge Functions.  
+- **Node.js / Next.js with Supabase** – Vercel-hosted frontend and API routes backed by Supabase Postgres, Auth, Storage, and Edge Functions.  
+  Diagram: [View diagram](/blueprints/node-next-supabase/)  
   ➡️ [Discuss this Next.js/Supabase blueprint](/contact/){:data-analytics-cta="blueprint_node_next_supabase_cta"}
-- **[Go microservices behind an API gateway](/blueprints/go-microservices-gateway/)** – public and internal Go services exposed via ingress/gateway, with Postgres, Redis, and full observability.  
+- **Go microservices behind an API gateway** – public and internal Go services exposed via ingress/gateway, with Postgres, Redis, and full observability.  
+  Diagram: [View diagram](/blueprints/go-microservices-gateway/)  
   ➡️ [Discuss this Go microservices blueprint](/contact/){:data-analytics-cta="blueprint_go_microservices_cta"}
-- **[Rust API with Postgres and Redis](/blueprints/rust-api-postgres/)** – containerised Rust service behind Nginx or an ingress controller, focused on performance-sensitive workloads.  
+- **Rust API with Postgres and Redis** – containerised Rust service behind Nginx or an ingress controller, focused on performance-sensitive workloads.  
+  Diagram: [View diagram](/blueprints/rust-api-postgres/)  
   ➡️ [Discuss this Rust/Postgres blueprint](/contact/){:data-analytics-cta="blueprint_rust_api_postgres_cta"}
 
 Behind the scenes we maintain codemaps and Mermaid diagrams for these patterns in our internal API/infra repo, so every engagement starts with a concrete, versioned architecture sketch rather than ad-hoc drawings.

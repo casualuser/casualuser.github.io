@@ -5,6 +5,7 @@ graph TD
   cache["Redis cache (redis)"]
   proxy["Nginx / reverse proxy (proxy)"]
   observability["Metrics and logs (observability)"]
-  api --> db
-  api --> cache
-  proxy --> api
+  api --|80 HTTP|--> db
+  api --|80 HTTP|--> cache
+  proxy --|80 HTTP|--> api
+  proxy --|443 HTTPS|--> api

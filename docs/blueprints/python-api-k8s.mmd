@@ -7,4 +7,5 @@ graph TD
   observability["Metrics & logging stack (observability)"]
   api --> db
   api --> cache
-  ingress --> api
+  ingress --|80 HTTP|--> api
+  ingress --|443 HTTPS|--> api

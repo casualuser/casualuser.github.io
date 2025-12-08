@@ -6,8 +6,8 @@ graph TD
   edge_functions["Supabase Edge Functions (function)"]
   storage["Supabase Storage buckets (storage)"]
   observability["Monitoring and logs (observability)"]
-  web --> api
-  web --> supabase
-  api --> supabase
+  web --|443 HTTPS|--> api
+  web --|443 HTTPS|--> supabase
+  api --|443 HTTPS|--> supabase
   edge_functions --> supabase
   storage --> supabase
