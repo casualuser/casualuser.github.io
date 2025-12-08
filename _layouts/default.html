@@ -222,6 +222,14 @@
       })();
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      (function() {
+        if (!window.mermaid) return;
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+      })();
+    </script>
+
     {%- include analytics-log-event.html -%}
     {%- include analytics-cta-tracking.html -%}
     {%- include analytics-heatmapjs.html -%}

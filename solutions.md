@@ -48,6 +48,8 @@ See also:
 
 - [Law Firms Association CRM Recovery](/cases/law-firms-crm/)
 - [Healthcare AI Services](/services/#compliance--reliability)
+
+To explore the diagrams themselves, see the [Blueprint Diagrams](/blueprints/) page.
  
 ## Training & Certification Programs
 
