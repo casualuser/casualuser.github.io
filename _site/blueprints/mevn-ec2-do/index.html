@@ -178,22 +178,51 @@ graph TD
         var footer = document.querySelector('footer.site-footer');
         if (!header || !footer) return;
 
-        function updateBands() {
-          var headerRect = header.getBoundingClientRect();
-          var footerRect = footer.getBoundingClientRect();
-          var headerH = headerRect.height || header.offsetHeight || 0;
-          var footerH = footerRect.height || footer.offsetHeight || 0;
-
-          // console.log("offset size"); 
-          // console.log(headerH, footerH); 
-
-          var root = document.documentElement;
-          root.style.setProperty('--header-band-height', headerH + 'px');
-          root.style.setProperty('--footer-band-height', footerH + 'px');
-
+        function measureBand(element) {
+          // Prefer the inner .wrapper so we exclude outer borders/shadows.
+          var target = element.querySelector('.wrapper') || element;
+          var rect = target.getBoundingClientRect();
+          return rect.height || target.offsetHeight || 0;
         }
 
-        window.addEventListener('load', updateBands);
+        function updateBands() {
+          var measuredHeader = measureBand(header);
+          var measuredFooter = measureBand(footer);
+
+          // Clamp to minima derived from the more generous (Firefox) layout
+          // so that engines which under-estimate (e.g. some Chrome builds)
+          // still get a band that is at least this tall.
+          var headerMin = 58;  // px, inner header content band
+          var footerMin = 112; // px, inner footer content band
+
+          var headerH = Math.max(measuredHeader, headerMin);
+          var footerH = Math.max(measuredFooter, footerMin);
+
+          // Small fixed padding so we always have a solid dark band
+          // directly under the header and above the footer, even if
+          // fonts or layout shift slightly after load.
+          var headerPad = 4;
+          var footerPad = 4;
+
+          var root = document.documentElement;
+          root.style.setProperty('--header-band-height', (headerH + headerPad) + 'px');
+          root.style.setProperty('--footer-band-height', (footerH + footerPad) + 'px');
+        }
+
+        function scheduleUpdates() {
+          updateBands();
+          // Re-run after small delays to catch late font/layout changes
+          // that some engines (e.g. Chrome) apply after window load.
+          setTimeout(updateBands, 250);
+          setTimeout(updateBands, 1000);
+        }
+
+        if (document.readyState === 'complete') {
+          scheduleUpdates();
+        } else {
+          window.addEventListener('load', scheduleUpdates);
+        }
+
         window.addEventListener('resize', updateBands);
       })();
     </script>
