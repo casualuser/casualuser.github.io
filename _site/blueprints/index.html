@@ -421,6 +421,32 @@ graph TD
 
     <script>
       (function() {
+        var header = document.querySelector('header.site-header');
+        var footer = document.querySelector('footer.site-footer');
+        if (!header || !footer) return;
+
+        function updateBands() {
+          var headerRect = header.getBoundingClientRect();
+          var footerRect = footer.getBoundingClientRect();
+          var headerH = headerRect.height || header.offsetHeight || 0;
+          var footerH = footerRect.height || footer.offsetHeight || 0;
+
+          // console.log("offset size"); 
+          // console.log(headerH, footerH); 
+
+          var root = document.documentElement;
+          root.style.setProperty('--header-band-height', headerH + 'px');
+          root.style.setProperty('--footer-band-height', footerH + 'px');
+
+        }
+
+        window.addEventListener('load', updateBands);
+        window.addEventListener('resize', updateBands);
+      })();
+    </script>
+
+    <script>
+      (function() {
         var form = document.getElementById('contact-form');
         if (!form) return;
 

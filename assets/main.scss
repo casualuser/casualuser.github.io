@@ -109,7 +109,15 @@ footer.site-footer .wrapper {
 }
 
 /* Layout: header + content + footer stacked vertically */
-$page-edge-fade-height: 64px; /* header/footer-height band for padding & fades */
+$page-edge-fade-height: 54px;  /* approximate header band height for fades */
+$footer-edge-fade-height: 91px; /* measured footer outer height (includes 12px top/bottom padding) */
+
+/* Expose header/footer band heights as CSS custom properties so JS can
+ * refine them at runtime for pixel-perfect background positioning. */
+:root {
+  --header-band-height: #{$page-edge-fade-height};
+  --footer-band-height: #{$footer-edge-fade-height};
+}
 
 html,
 body {
@@ -181,13 +189,19 @@ body {
  * - Always scale images with background-size: cover.
  * - Stay fixed behind the main content area only (not under header/footer).
  * - Must never visually overflow under the sticky header or sticky footer.
+ * - Uses separate approximations for header and footer band heights to avoid overlap.
  */
 .site-bg-slideshow {
   position: fixed;
   left: 0;
   width: 100%;
-  top: $page-edge-fade-height;
-  height: calc(100vh - #{2 * $page-edge-fade-height});
+  top: var(--header-band-height, #{$page-edge-fade-height});
+  height: calc(
+    100vh - (
+      var(--header-band-height, #{$page-edge-fade-height}) +
+      var(--footer-band-height, #{$footer-edge-fade-height})
+    )
+  );
   overflow: hidden;
   z-index: -1; /* always behind header, content, and footer */
   pointer-events: none;
