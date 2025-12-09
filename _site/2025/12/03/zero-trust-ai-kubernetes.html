@@ -10,21 +10,21 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="layout: post title: Zero-Trust Blueprint for AI on Kubernetes date: 2025-12-03 categories: [“news”] tags: [“kubernetes”, “zero-trust”, “ai”, “security”, “devops”] source_url: https://www.cncf.io/blog/2025/10/10/a-blueprint-for-zero-trust-ai-on-kubernetes/ image_prompt: Blueprint diagram of Kubernetes pods running AI workloads secured by zero-trust network policies, mTLS locks, and observability flows. image_alt: Zero-trust security architecture for AI on Kubernetes." />
 <meta property="og:description" content="layout: post title: Zero-Trust Blueprint for AI on Kubernetes date: 2025-12-03 categories: [“news”] tags: [“kubernetes”, “zero-trust”, “ai”, “security”, “devops”] source_url: https://www.cncf.io/blog/2025/10/10/a-blueprint-for-zero-trust-ai-on-kubernetes/ image_prompt: Blueprint diagram of Kubernetes pods running AI workloads secured by zero-trust network policies, mTLS locks, and observability flows. image_alt: Zero-trust security architecture for AI on Kubernetes." />
-<link rel="canonical" href="http://0.0.0.0:4000/2025/12/03/zero-trust-ai-kubernetes.html" />
-<meta property="og:url" content="http://0.0.0.0:4000/2025/12/03/zero-trust-ai-kubernetes.html" />
+<link rel="canonical" href="http://localhost:4000/2025/12/03/zero-trust-ai-kubernetes.html" />
+<meta property="og:url" content="http://localhost:4000/2025/12/03/zero-trust-ai-kubernetes.html" />
 <meta property="og:site_name" content="Webomage" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-12-03T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Zero Trust Ai Kubernetes" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"dateModified":"2025-12-03T00:00:00-05:00","datePublished":"2025-12-03T00:00:00-05:00","description":"layout: post title: Zero-Trust Blueprint for AI on Kubernetes date: 2025-12-03 categories: [“news”] tags: [“kubernetes”, “zero-trust”, “ai”, “security”, “devops”] source_url: https://www.cncf.io/blog/2025/10/10/a-blueprint-for-zero-trust-ai-on-kubernetes/ image_prompt: Blueprint diagram of Kubernetes pods running AI workloads secured by zero-trust network policies, mTLS locks, and observability flows. image_alt: Zero-trust security architecture for AI on Kubernetes.","headline":"Zero Trust Ai Kubernetes","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/2025/12/03/zero-trust-ai-kubernetes.html"},"url":"http://0.0.0.0:4000/2025/12/03/zero-trust-ai-kubernetes.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"dateModified":"2025-12-03T00:00:00-05:00","datePublished":"2025-12-03T00:00:00-05:00","description":"layout: post title: Zero-Trust Blueprint for AI on Kubernetes date: 2025-12-03 categories: [“news”] tags: [“kubernetes”, “zero-trust”, “ai”, “security”, “devops”] source_url: https://www.cncf.io/blog/2025/10/10/a-blueprint-for-zero-trust-ai-on-kubernetes/ image_prompt: Blueprint diagram of Kubernetes pods running AI workloads secured by zero-trust network policies, mTLS locks, and observability flows. image_alt: Zero-trust security architecture for AI on Kubernetes.","headline":"Zero Trust Ai Kubernetes","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/12/03/zero-trust-ai-kubernetes.html"},"url":"http://localhost:4000/2025/12/03/zero-trust-ai-kubernetes.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/favicon-16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Webomage" /></head>
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
 <body>
 
     <a href="#" class="scroll-to-top" aria-label="Scroll to top">▲ Top</a><header class="site-header" role="banner">
@@ -45,7 +45,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
+        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/news/">News</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
       </nav></div>
   </div>
 </header>
@@ -154,6 +154,170 @@ image_alt: Zero-trust security architecture for AI on Kubernetes.</p>
         slides.forEach(function(slide, idx) {
           slide.style.animationDelay = delays[idx] + 's';
         });
+      })();
+    </script>
+
+    <script>
+      (function() {
+        var form = document.getElementById('contact-form');
+        if (!form) return;
+
+        var fields = [
+          { id: 'name', required: true, minLength: 2 },
+          { id: 'email', required: true, type: 'email' },
+          { id: 'message', required: true, minLength: 10 }
+        ];
+
+        var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+        var submitOriginalText = submitBtn ? submitBtn.textContent : null;
+        var hasSentSubmitEvent = false;
+
+        function findFieldWrapper(el) {
+          while (el && el !== form) {
+            if (el.classList && el.classList.contains('contact-form-field')) {
+              return el;
+            }
+            el = el.parentNode;
+          }
+          return null;
+        }
+
+        function showError(input, message) {
+          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+          if (!fieldWrapper) return;
+
+          var errorEl = fieldWrapper.querySelector('.contact-error');
+          if (!errorEl) {
+            errorEl = document.createElement('div');
+            errorEl.className = 'contact-error';
+            fieldWrapper.appendChild(errorEl);
+          }
+
+          errorEl.textContent = message;
+          fieldWrapper.classList.add('contact-field-invalid');
+        }
+
+        function clearError(input) {
+          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+          if (!fieldWrapper) return;
+
+          fieldWrapper.classList.remove('contact-field-invalid');
+          var errorEl = fieldWrapper.querySelector('.contact-error');
+          if (errorEl) {
+            errorEl.textContent = '';
+          }
+        }
+
+        function validateField(field) {
+          var input = document.getElementById(field.id);
+          if (!input) return true;
+
+          clearError(input);
+
+          var value = (input.value || '').trim();
+
+          if (field.required && !value) {
+            showError(input, 'This field is required.');
+            return false;
+          }
+
+          if (field.minLength && value.length < field.minLength) {
+            showError(input, 'Please enter at least ' + field.minLength + ' characters.');
+            return false;
+          }
+
+          if (field.type === 'email') {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (value && !emailPattern.test(value)) {
+              showError(input, 'Please enter a valid email address.');
+              return false;
+            }
+          }
+
+          return true;
+        }
+
+        function sendContactSubmitEvent() {
+          try {
+            if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+            var payload = {
+              path: window.location.pathname,
+              referrer: document.referrer || null,
+              eventType: "cta_click",
+              label: "contact_form_submit",
+              href: "/contact/"
+            };
+
+            var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+            if (navigator.sendBeacon) {
+              var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+              navigator.sendBeacon(url, blob);
+            } else {
+              fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                keepalive: true,
+                body: JSON.stringify(payload)
+              }).catch(function () {});
+            }
+          } catch (e) {}
+        }
+
+        form.addEventListener('submit', function(event) {
+          var isValid = true;
+
+          for (var i = 0; i < fields.length; i++) {
+            if (!validateField(fields[i])) {
+              isValid = false;
+            }
+          }
+
+          if (!isValid) {
+            event.preventDefault();
+
+            var firstInvalid = form.querySelector('.contact-field-invalid input, .contact-field-invalid textarea');
+            if (firstInvalid && typeof firstInvalid.focus === 'function') {
+              firstInvalid.focus();
+            }
+            return;
+          }
+
+          if (submitBtn && !submitBtn.disabled) {
+            submitBtn.disabled = true;
+            if (submitOriginalText != null) {
+              submitBtn.textContent = 'Sending…';
+            }
+            form.classList.add('contact-form-submitting');
+          }
+
+          if (!hasSentSubmitEvent) {
+            hasSentSubmitEvent = true;
+            sendContactSubmitEvent();
+          }
+        });
+
+        fields.forEach(function(field) {
+          var input = document.getElementById(field.id);
+          if (!input) return;
+
+          input.addEventListener('blur', function() {
+            validateField(field);
+          });
+
+          input.addEventListener('input', function() {
+            clearError(input);
+          });
+        });
+      })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      (function() {
+        if (!window.mermaid) return;
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
       })();
     </script><script>
   (function () {

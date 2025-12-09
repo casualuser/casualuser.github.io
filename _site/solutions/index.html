@@ -10,20 +10,20 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
 <meta property="og:description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
-<link rel="canonical" href="http://0.0.0.0:4000/solutions/" />
-<meta property="og:url" content="http://0.0.0.0:4000/solutions/" />
+<link rel="canonical" href="http://localhost:4000/solutions/" />
+<meta property="og:url" content="http://localhost:4000/solutions/" />
 <meta property="og:site_name" content="Webomage" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Solutions" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Solutions","url":"http://0.0.0.0:4000/solutions/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Solutions","url":"http://localhost:4000/solutions/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/favicon-16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Webomage" /></head>
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
 <body>
 
     <a href="#" class="scroll-to-top" aria-label="Scroll to top">▲ Top</a><header class="site-header" role="banner">
@@ -44,7 +44,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
+        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/news/">News</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
       </nav></div>
   </div>
 </header>
@@ -64,9 +64,7 @@
   </header>
 
   <div class="post-content">
-    <h1 id="solutions">Solutions</h1>
-
-<p>Webomage helps SaaS and infra-heavy teams in a few recurring ways. This page collects the main solution shapes and points you to the deeper pages and case studies.</p>
+    <p>Webomage helps SaaS and infra-heavy teams in a few recurring ways. This page collects the main solution shapes and points you to the deeper pages and case studies.</p>
 
 <h2 id="platform--reliability">Platform &amp; Reliability</h2>
 
@@ -118,6 +116,140 @@
   <li><strong>PCI DSS-aware payment infrastructure</strong> – designing and hardening card-processing components and their surrounding environment to minimise PCI scope and keep most application workloads out of high-scrutiny zones.</li>
   <li><strong>ISO 27001-oriented cloud security</strong> – aligning cloud infrastructure, secrets management, and backup/DR patterns with ISO 27001-style information security management practices.</li>
 </ul>
+
+<p>See also:</p>
+
+<ul>
+  <li><a href="/cases/law-firms-crm/">Law Firms Association CRM Recovery</a></li>
+  <li><a href="/services/#compliance--reliability">Healthcare AI Services</a></li>
+</ul>
+
+<p>To explore the diagrams themselves, see the <a href="/blueprints/">Blueprint Diagrams</a> page.</p>
+
+<h2 id="training--certification-programs">Training &amp; Certification Programs</h2>
+
+<ul>
+  <li>Team-focused DevOps, cloud, and AI training cohorts that run alongside real work.</li>
+  <li>Support for vendor certifications (AWS, Azure, GCP, Kubernetes, Terraform, etc.) tied back to your systems.</li>
+  <li>Internal “certifying” tracks that connect training outcomes to specific roles and responsibilities.</li>
+</ul>
+
+<p>See also:</p>
+
+<ul>
+  <li><a href="/services/#developer--devops-certifications--training">Developer &amp; DevOps Certifications &amp; Training</a></li>
+</ul>
+
+<h2 id="stack-blueprints">Stack Blueprints</h2>
+
+<p>Many teams arrive with familiar named stacks. We focus on <strong>production</strong> Linux deployments, not local dev bundles like WAMP/XAMPP/MAMP.</p>
+
+<h3 id="lamp-linux-apache-mysqlmariadb-php"><a href="/blueprints/lamp-ec2-do/">LAMP (Linux, Apache, MySQL/MariaDB, PHP)</a></h3>
+
+<ul>
+  <li><strong>Techs:</strong> Classic PHP apps and CMSes (WordPress, Drupal, custom PHP) backed by MySQL or MariaDB on Linux.</li>
+  <li><strong>Typical deployment:</strong>
+    <ul>
+      <li><strong>AWS EC2:</strong> One or more EC2 instances running Apache + PHP-FPM, RDS MySQL for the database, S3/CloudFront for assets, and backup/monitoring wired in.</li>
+      <li><strong>DigitalOcean Droplet:</strong> A Droplet running Apache + PHP, managed MySQL or a separate DB Droplet, with backups, UFW/Firewall rules, and DO load balancer if needed.
+➡️ <a href="/contact/" data-analytics-cta="stack_lamp_cta">Discuss your LAMP stack</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="lemp-linux-nginx-mysqlmariadb-php"><a href="/blueprints/lemp-ec2-do/">LEMP (Linux, Nginx, MySQL/MariaDB, PHP)</a></h3>
+
+<ul>
+  <li><strong>Techs:</strong> PHP apps behind Nginx with PHP-FPM, often tuned for higher concurrency than Apache setups.</li>
+  <li><strong>Typical deployment:</strong>
+    <ul>
+      <li><strong>AWS EC2:</strong> Nginx + PHP-FPM on EC2, RDS MySQL, ALB in front, CloudWatch metrics/alarms for slow queries and error rates.</li>
+      <li><strong>DigitalOcean Droplet:</strong> Nginx + PHP-FPM on a Droplet, managed MySQL, DO Load Balancer in front, Uptime and metrics via DO/third-party monitors.
+➡️ <a href="/contact/" data-analytics-cta="stack_lemp_cta">Discuss your LEMP stack</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="mern-mongodb-express-react-nodejs"><a href="/blueprints/mern-ec2-do/">MERN (MongoDB, Express, React, Node.js)</a></h3>
+
+<ul>
+  <li><strong>Techs:</strong> React SPA or Next.js frontend talking to an Express/Node API, MongoDB for document storage.</li>
+  <li><strong>Typical deployment:</strong>
+    <ul>
+      <li><strong>AWS EC2:</strong> Node API on EC2 (or ECS/Fargate), MongoDB Atlas or self-managed on EC2, CloudFront or S3 for static React assets, with logs centralised in CloudWatch.</li>
+      <li><strong>DigitalOcean Droplet:</strong> Node API on a Droplet (optionally PM2), MongoDB Atlas or DO Managed MongoDB, static assets via DO Spaces + CDN.
+➡️ <a href="/contact/" data-analytics-cta="stack_mern_cta">Discuss your MERN stack</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="mean-mongodb-express-angular-nodejs"><a href="/blueprints/mean-ec2-do/">MEAN (MongoDB, Express, Angular, Node.js)</a></h3>
+
+<ul>
+  <li><strong>Techs:</strong> Angular SPA served by an Express/Node backend, MongoDB for data.</li>
+  <li><strong>Typical deployment:</strong>
+    <ul>
+      <li><strong>AWS EC2:</strong> Angular built to static assets on S3/CloudFront, Node/Express API on EC2 or ECS, MongoDB Atlas, with IAM-locked access and VPC peering.</li>
+      <li><strong>DigitalOcean Droplet:</strong> Node/Express serving Angular assets and API from a Droplet, MongoDB Atlas or managed Mongo, Nginx reverse proxy, and DO firewall.
+➡️ <a href="/contact/" data-analytics-cta="stack_mean_cta">Discuss your MEAN stack</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="mevn-mongodb-express-vue-nodejs"><a href="/blueprints/mevn-ec2-do/">MEVN (MongoDB, Express, Vue, Node.js)</a></h3>
+
+<ul>
+  <li><strong>Techs:</strong> Vue (Nuxt or SPA) frontend with an Express/Node API and MongoDB.</li>
+  <li><strong>Typical deployment:</strong>
+    <ul>
+      <li><strong>AWS EC2:</strong> Nuxt/Vue static build to S3/CloudFront, Node/Express API on EC2/ECS, MongoDB Atlas, with central logging and simple blue/green rollouts.</li>
+      <li><strong>DigitalOcean Droplet:</strong> Node/Express + Vue app on a Droplet behind Nginx, MongoDB Atlas or managed Mongo, DO Spaces/ CDN for heavier assets.
+➡️ <a href="/contact/" data-analytics-cta="stack_mevn_cta">Discuss your MEVN stack</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="pern-postgres-express-react-nodejs"><a href="/blueprints/pern-ec2-do/">PERN (Postgres, Express, React, Node.js)</a></h3>
+
+<ul>
+  <li><strong>Techs:</strong> React SPA or Next.js frontend with an Express/Node API and PostgreSQL.</li>
+  <li><strong>Typical deployment:</strong>
+    <ul>
+      <li><strong>AWS EC2:</strong> Node/Express API on EC2/ECS, RDS Postgres, S3/CloudFront for React assets, with migrations handled via CI/CD and IAM-scoped DB access.</li>
+      <li><strong>DigitalOcean Droplet:</strong> Node/Express API on a Droplet, DO Managed Postgres or DB Droplet, static assets via DO Spaces/CDN, with firewall and backup policies.
+➡️ <a href="/contact/" data-analytics-cta="stack_pern_cta">Discuss your PERN stack</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="architecture--infra-blueprints">Architecture &amp; Infra Blueprints</h2>
+
+<p>These are deeper infrastructure blueprints that sit under or alongside the <strong>Stack Blueprints</strong> above – used when we need to design or explain the platform itself, not just the application stack.</p>
+
+<ul>
+  <li>Reusable infrastructure patterns for typical SaaS and platform workloads.</li>
+  <li>Living diagrams and codemaps we keep alongside code and tests.</li>
+  <li>Used both for initial design and for explaining architecture to non-engineering stakeholders.</li>
+</ul>
+
+<p>Example blueprints we work with:</p>
+
+<ul>
+  <li><strong>Python API on Kubernetes (AWS EKS)</strong> – FastAPI-style API + workers + Postgres + Redis, with observability baked in.<br />
+Diagram: <a href="/blueprints/python-api-k8s/">View diagram</a><br />
+➡️ <a href="/contact/" data-analytics-cta="blueprint_python_k8s_cta">Discuss this Python/Kubernetes blueprint</a></li>
+  <li><strong>Node.js / Next.js with Supabase</strong> – Vercel-hosted frontend and API routes backed by Supabase Postgres, Auth, Storage, and Edge Functions.<br />
+Diagram: <a href="/blueprints/node-next-supabase/">View diagram</a><br />
+➡️ <a href="/contact/" data-analytics-cta="blueprint_node_next_supabase_cta">Discuss this Next.js/Supabase blueprint</a></li>
+  <li><strong>Go microservices behind an API gateway</strong> – public and internal Go services exposed via ingress/gateway, with Postgres, Redis, and full observability.<br />
+Diagram: <a href="/blueprints/go-microservices-gateway/">View diagram</a><br />
+➡️ <a href="/contact/" data-analytics-cta="blueprint_go_microservices_cta">Discuss this Go microservices blueprint</a></li>
+  <li><strong>Rust API with Postgres and Redis</strong> – containerised Rust service behind Nginx or an ingress controller, focused on performance-sensitive workloads.<br />
+Diagram: <a href="/blueprints/rust-api-postgres/">View diagram</a><br />
+➡️ <a href="/contact/" data-analytics-cta="blueprint_rust_api_postgres_cta">Discuss this Rust/Postgres blueprint</a></li>
+</ul>
+
+<p>Behind the scenes we maintain codemaps and Mermaid diagrams for these patterns in our internal API/infra repo, so every engagement starts with a concrete, versioned architecture sketch rather than ad-hoc drawings.</p>
 
 <p>See also:</p>
 
@@ -200,6 +332,170 @@
         slides.forEach(function(slide, idx) {
           slide.style.animationDelay = delays[idx] + 's';
         });
+      })();
+    </script>
+
+    <script>
+      (function() {
+        var form = document.getElementById('contact-form');
+        if (!form) return;
+
+        var fields = [
+          { id: 'name', required: true, minLength: 2 },
+          { id: 'email', required: true, type: 'email' },
+          { id: 'message', required: true, minLength: 10 }
+        ];
+
+        var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+        var submitOriginalText = submitBtn ? submitBtn.textContent : null;
+        var hasSentSubmitEvent = false;
+
+        function findFieldWrapper(el) {
+          while (el && el !== form) {
+            if (el.classList && el.classList.contains('contact-form-field')) {
+              return el;
+            }
+            el = el.parentNode;
+          }
+          return null;
+        }
+
+        function showError(input, message) {
+          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+          if (!fieldWrapper) return;
+
+          var errorEl = fieldWrapper.querySelector('.contact-error');
+          if (!errorEl) {
+            errorEl = document.createElement('div');
+            errorEl.className = 'contact-error';
+            fieldWrapper.appendChild(errorEl);
+          }
+
+          errorEl.textContent = message;
+          fieldWrapper.classList.add('contact-field-invalid');
+        }
+
+        function clearError(input) {
+          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+          if (!fieldWrapper) return;
+
+          fieldWrapper.classList.remove('contact-field-invalid');
+          var errorEl = fieldWrapper.querySelector('.contact-error');
+          if (errorEl) {
+            errorEl.textContent = '';
+          }
+        }
+
+        function validateField(field) {
+          var input = document.getElementById(field.id);
+          if (!input) return true;
+
+          clearError(input);
+
+          var value = (input.value || '').trim();
+
+          if (field.required && !value) {
+            showError(input, 'This field is required.');
+            return false;
+          }
+
+          if (field.minLength && value.length < field.minLength) {
+            showError(input, 'Please enter at least ' + field.minLength + ' characters.');
+            return false;
+          }
+
+          if (field.type === 'email') {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (value && !emailPattern.test(value)) {
+              showError(input, 'Please enter a valid email address.');
+              return false;
+            }
+          }
+
+          return true;
+        }
+
+        function sendContactSubmitEvent() {
+          try {
+            if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+            var payload = {
+              path: window.location.pathname,
+              referrer: document.referrer || null,
+              eventType: "cta_click",
+              label: "contact_form_submit",
+              href: "/contact/"
+            };
+
+            var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+            if (navigator.sendBeacon) {
+              var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+              navigator.sendBeacon(url, blob);
+            } else {
+              fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                keepalive: true,
+                body: JSON.stringify(payload)
+              }).catch(function () {});
+            }
+          } catch (e) {}
+        }
+
+        form.addEventListener('submit', function(event) {
+          var isValid = true;
+
+          for (var i = 0; i < fields.length; i++) {
+            if (!validateField(fields[i])) {
+              isValid = false;
+            }
+          }
+
+          if (!isValid) {
+            event.preventDefault();
+
+            var firstInvalid = form.querySelector('.contact-field-invalid input, .contact-field-invalid textarea');
+            if (firstInvalid && typeof firstInvalid.focus === 'function') {
+              firstInvalid.focus();
+            }
+            return;
+          }
+
+          if (submitBtn && !submitBtn.disabled) {
+            submitBtn.disabled = true;
+            if (submitOriginalText != null) {
+              submitBtn.textContent = 'Sending…';
+            }
+            form.classList.add('contact-form-submitting');
+          }
+
+          if (!hasSentSubmitEvent) {
+            hasSentSubmitEvent = true;
+            sendContactSubmitEvent();
+          }
+        });
+
+        fields.forEach(function(field) {
+          var input = document.getElementById(field.id);
+          if (!input) return;
+
+          input.addEventListener('blur', function() {
+            validateField(field);
+          });
+
+          input.addEventListener('input', function() {
+            clearError(input);
+          });
+        });
+      })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      (function() {
+        if (!window.mermaid) return;
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
       })();
     </script><script>
   (function () {
