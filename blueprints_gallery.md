@@ -6,207 +6,154 @@ permalink: /blueprints/gallery/
 
 # Architecture Blueprints
 
-Explore our gallery of deployment patterns, infrastructure stacks, and application architectures.
+Explore our library of deployment patterns, organized by business growth stage.
 
-<div class="blueprint-filters">
-  <input type="text" id="blueprintSearch" placeholder="Search blueprints (e.g., 'python', 'aws', 'kubernetes')..." class="search-box">
-</div>
+{% assign segments = "startup,smb,business,enterprise" | split: "," %}
 
-<div class="blueprint-grid">
-{% for blueprint in site.data.blueprints %}
-  <div class="blueprint-card" data-tags="{{ blueprint.tags | join: ' ' | downcase }}" data-name="{{ blueprint.name | downcase }}" data-id="{{ blueprint.id }}">
-    <div class="card-header">
-      <h3>{{ blueprint.name }}</h3>
-      <span class="blueprint-id">v{{ blueprint.version }}</span>
+{% for segment in segments %}
+<section class="segment-section">
+  <div class="segment-header">
+    <h2 class="segment-title">{{ segment | capitalize }}</h2>
+    <p class="segment-desc">
+      {% case segment %}
+        {% when 'startup' %}
+          Rapid iteration, low operational overhead. "Monolith on a Box".
+        {% when 'smb' %}
+          Scalable foundations, decoupled frontends, managed databases.
+        {% when 'business' %}
+          Microservices, API gateways, container orchestration.
+        {% when 'enterprise' %}
+          Compliance, platform engineering, GitOps, service mesh.
+      {% endcase %}
+    </p>
+  </div>
+
+  <div class="blueprint-grid">
+  {% assign segment_blueprints = site.data.blueprints | where: "segment", segment %}
+  
+  {% if segment_blueprints.size == 0 %}
+    <div class="empty-state">
+      <p>No blueprints available for this segment yet.</p>
     </div>
-    
-    <div class="card-body">
-      <p class="summary">{{ blueprint.summary }}</p>
-      
-      <div class="stack-details">
-        <h4>Stack</h4>
-        <ul>
-        {% for item in blueprint.stack %}
-          <li><strong>{{ item[0] | replace: '_', ' ' | capitalize }}:</strong> {{ item[1] }}</li>
-        {% endfor %}
-        </ul>
-      </div>
+  {% endif %}
 
-      <div class="components-preview">
-        <h4>Key Components</h4>
-        <div class="tags">
-        {% for component in blueprint.components limit:4 %}
-           <span class="component-tag">{{ component.name }}</span>
-        {% endfor %}
-        {% if blueprint.components.size > 4 %}
-           <span class="more-tag">+{{ blueprint.components.size | minus: 4 }} more</span>
-        {% endif %}
+  {% for blueprint in segment_blueprints %}
+    <a href="/blueprints/{{ blueprint.id }}.html" class="blueprint-card-link">
+      <div class="blueprint-card segment-border-{{ segment }}">
+        <div class="card-header">
+          <h3>{{ blueprint.name }}</h3>
+        </div>
+        
+        <div class="card-body">
+          <p class="summary">{{ blueprint.summary }}</p>
+          <div class="mini-stack">
+            {% for tag in blueprint.tags limit:4 %}
+              <span class="tech-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <span class="learn-more">View Architecture →</span>
         </div>
       </div>
-    </div>
-
-    <div class="card-footer">
-      <div class="tech-tags">
-        {% for tag in blueprint.tags %}
-          <span class="tech-tag">{{ tag }}</span>
-        {% endfor %}
-      </div>
-      <a href="/docs/blueprints/{{ blueprint.id }}.mmd" class="btn btn-sm">View Diagram</a>
-    </div>
+    </a>
+  {% endfor %}
   </div>
+</section>
 {% endfor %}
-</div>
 
 <style>
+  .segment-section {
+    margin-bottom: 4rem;
+  }
+
+  .segment-header {
+    border-bottom: 2px solid #eaecef;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .segment-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #24292e;
+  }
+
+  .segment-desc {
+    color: #586069;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
   .blueprint-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .blueprint-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
   }
 
   .blueprint-card {
     border: 1px solid #e1e4e8;
     border-radius: 8px;
     padding: 1.5rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
     background: #fff;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .blueprint-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    border-top: 4px solid #ccc; /* fallback */
   }
 
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #f6f8fa;
-    padding-bottom: 0.5rem;
+  .segment-border-startup { border-top-color: #28a745; }
+  .segment-border-smb { border-top-color: #0366d6; }
+  .segment-border-business { border-top-color: #6f42c1; }
+  .segment-border-enterprise { border-top-color: #d73a49; }
+
+  .blueprint-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
   }
 
   .card-header h3 {
-    margin: 0;
-    font-size: 1.25rem;
-    color: #24292e;
-  }
-
-  .blueprint-id {
-    font-size: 0.8rem;
-    color: #6a737d;
-    font-family: monospace;
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    color: #0366d6;
   }
 
   .summary {
-    color: #586069;
     font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-  }
-
-  .stack-details ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0.9rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-  
-  .stack-details li {
-    background: #f1f8ff;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-family: monospace;
-  }
-
-  .components-preview {
-    margin-top: 1rem;
-  }
-
-  .component-tag {
-    display: inline-block;
-    font-size: 0.8rem;
-    background: #fff;
-    border: 1px solid #d1d5da;
     color: #444;
-    padding: 2px 6px;
-    border-radius: 12px;
-    margin-right: 4px;
-    margin-bottom: 4px;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 1rem;
   }
 
-  .more-tag {
-    font-size: 0.8rem;
-    color: #6a737d;
-    font-style: italic;
-  }
-
-  .card-footer {
-    margin-top: auto;
-    padding-top: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .tech-tags {
+  .mini-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 6px;
+    margin-top: auto;
   }
 
   .tech-tag {
     font-size: 0.75rem;
-    background: #24292e;
-    color: #fff;
+    background: #f6f8fa;
+    color: #586069;
     padding: 2px 8px;
-    border-radius: 4px;
+    border-radius: 12px;
+    border: 1px solid #e1e4e8;
   }
 
-  .search-box {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-    border: 2px solid #e1e4e8;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-  }
-  
-  .btn-sm {
-      background-color: #0366d6;
-      color: white;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 0.9rem;
-  }
-  .btn-sm:hover {
-      background-color: #0256b4;
-      text-decoration: none;
+  .card-footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #0366d6;
+    font-weight: 600;
   }
 </style>
-
-<script>
-  document.getElementById('blueprintSearch').addEventListener('keyup', function(e) {
-    const term = e.target.value.toLowerCase();
-    const cards = document.querySelectorAll('.blueprint-card');
-    
-    cards.forEach(card => {
-      const tags = card.getAttribute('data-tags');
-      const name = card.getAttribute('data-name');
-      const id = card.getAttribute('data-id');
-      
-      if (tags.includes(term) || name.includes(term) || id.includes(term)) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-</script>
