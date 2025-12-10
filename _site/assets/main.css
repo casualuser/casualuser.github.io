@@ -234,11 +234,11 @@ html, body { height: 100%; }
 
 body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; background-color: #020617; /* fallback while images load */ }
 
-/* Fade page content into header/footer edges with overlay gradients */
-.page-content { position: relative; flex: 1 0 auto; padding: 0 !important; min-height: 100vh; /* Top fade: content becomes fully covered right at the header edge */ /* Bottom fade: mirrored effect up to the footer edge */ }
-.page-content::before, .page-content::after { content: ""; position: absolute; left: 0; right: 0; height: 54px; pointer-events: none; z-index: 1; }
-.page-content::before { top: 0; background: linear-gradient(to bottom, #020617 0%, rgba(2, 6, 23, 0) 100%); }
-.page-content::after { bottom: 0; background: linear-gradient(to top, #020617 0%, rgba(2, 6, 23, 0) 100%); }
+/* Fade page content into header/footer edges with overlay gradients. Fades are fixed to the viewport band between header and footer, so content scrolls underneath them while the gradients stay in place. */
+.page-content { position: relative; flex: 1 0 auto; padding: 0 !important; min-height: 100vh; /* Top fade: anchored just under the header band */ /* Bottom fade: anchored just above the footer band */ }
+.page-content::before, .page-content::after { content: ""; position: fixed; left: 0; right: 0; pointer-events: none; z-index: 2; }
+.page-content::before { top: var(--header-band-height, 54px); height: 54px; background: linear-gradient(to bottom, #020617 0%, rgba(2, 6, 23, 0) 100%); }
+.page-content::after { bottom: var(--footer-band-height, 91px); height: 54px; background: linear-gradient(to top, #020617 0%, rgba(2, 6, 23, 0) 100%); }
 
 @media (max-width: 768px) { .page-content::before, .page-content::after { height: 67.5px; }
   .scroll-to-top { top: 3.25rem; font-size: 0.75rem; padding: 0.2rem 0.5rem; } }
