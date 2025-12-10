@@ -132,10 +132,7 @@ body {
   background-color: $background-color; /* fallback while images load */
 }
 
-/* Fade page content into header/footer edges with overlay gradients.
- * Fades are fixed to the viewport band between header and footer, so
- * content scrolls underneath them while the gradients stay in place.
- */
+/* Fade page content into header/footer edges with overlay gradients */
 .page-content {
   position: relative;
   flex: 1 0 auto;
@@ -145,28 +142,27 @@ body {
   &::before,
   &::after {
     content: "";
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
+    height: $page-edge-fade-height;
     pointer-events: none;
-    z-index: 2; // above text, below header/footer
+    z-index: 1; // above content but below header/footer
   }
 
-  /* Top fade: anchored just under the header band */
+  /* Top fade: content becomes fully covered right at the header edge */
   &::before {
-    top: var(--header-band-height, #{$page-edge-fade-height});
-    height: $page-edge-fade-height;
+    top: 0;
     background: linear-gradient(
       to bottom,
-      $background-color 0%,
-      rgba($background-color, 0.0) 100%
+      $background-color 0%,                 // fully cover content at edge
+      rgba($background-color, 0.0) 100%     // fade to transparent
     );
   }
 
-  /* Bottom fade: anchored just above the footer band */
+  /* Bottom fade: mirrored effect up to the footer edge */
   &::after {
-    bottom: var(--footer-band-height, #{$footer-edge-fade-height});
-    height: $page-edge-fade-height;
+    bottom: 0;
     background: linear-gradient(
       to top,
       $background-color 0%,
