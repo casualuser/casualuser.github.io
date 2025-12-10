@@ -61,82 +61,15 @@ See also:
 
 - [Developer & DevOps Certifications & Training](/services/#developer--devops-certifications--training)
 
-## Stack Blueprints
+## Architecture & Stack Blueprints
 
-Many teams arrive with familiar named stacks. We focus on **production** Linux deployments, not local dev bundles like WAMP/XAMPP/MAMP.
+We maintain a living library of production-grade infrastructure patterns, ranging from simple startup monoliths to complex enterprise platforms.
 
-### [LAMP (Linux, Apache, MySQL/MariaDB, PHP)](/blueprints/lamp-ec2-do/)
-
-- **Techs:** Classic PHP apps and CMSes (WordPress, Drupal, custom PHP) backed by MySQL or MariaDB on Linux.
-- **Typical deployment:**
-  - **AWS EC2:** One or more EC2 instances running Apache + PHP-FPM, RDS MySQL for the database, S3/CloudFront for assets, and backup/monitoring wired in.
-  - **DigitalOcean Droplet:** A Droplet running Apache + PHP, managed MySQL or a separate DB Droplet, with backups, UFW/Firewall rules, and DO load balancer if needed.
-  ➡️ [Discuss your LAMP stack](/contact/){:data-analytics-cta="stack_lamp_cta"}
-
-### [LEMP (Linux, Nginx, MySQL/MariaDB, PHP)](/blueprints/lemp-ec2-do/)
-
-- **Techs:** PHP apps behind Nginx with PHP-FPM, often tuned for higher concurrency than Apache setups.
-- **Typical deployment:**
-  - **AWS EC2:** Nginx + PHP-FPM on EC2, RDS MySQL, ALB in front, CloudWatch metrics/alarms for slow queries and error rates.
-  - **DigitalOcean Droplet:** Nginx + PHP-FPM on a Droplet, managed MySQL, DO Load Balancer in front, Uptime and metrics via DO/third-party monitors.
-  ➡️ [Discuss your LEMP stack](/contact/){:data-analytics-cta="stack_lemp_cta"}
-
-### [MERN (MongoDB, Express, React, Node.js)](/blueprints/mern-ec2-do/)
-
-- **Techs:** React SPA or Next.js frontend talking to an Express/Node API, MongoDB for document storage.
-- **Typical deployment:**
-  - **AWS EC2:** Node API on EC2 (or ECS/Fargate), MongoDB Atlas or self-managed on EC2, CloudFront or S3 for static React assets, with logs centralised in CloudWatch.
-  - **DigitalOcean Droplet:** Node API on a Droplet (optionally PM2), MongoDB Atlas or DO Managed MongoDB, static assets via DO Spaces + CDN.
-  ➡️ [Discuss your MERN stack](/contact/){:data-analytics-cta="stack_mern_cta"}
-
-### [MEAN (MongoDB, Express, Angular, Node.js)](/blueprints/mean-ec2-do/)
-
-- **Techs:** Angular SPA served by an Express/Node backend, MongoDB for data.
-- **Typical deployment:**
-  - **AWS EC2:** Angular built to static assets on S3/CloudFront, Node/Express API on EC2 or ECS, MongoDB Atlas, with IAM-locked access and VPC peering.
-  - **DigitalOcean Droplet:** Node/Express serving Angular assets and API from a Droplet, MongoDB Atlas or managed Mongo, Nginx reverse proxy, and DO firewall.
-  ➡️ [Discuss your MEAN stack](/contact/){:data-analytics-cta="stack_mean_cta"}
-
-### [MEVN (MongoDB, Express, Vue, Node.js)](/blueprints/mevn-ec2-do/)
-
-- **Techs:** Vue (Nuxt or SPA) frontend with an Express/Node API and MongoDB.
-- **Typical deployment:**
-  - **AWS EC2:** Nuxt/Vue static build to S3/CloudFront, Node/Express API on EC2/ECS, MongoDB Atlas, with central logging and simple blue/green rollouts.
-  - **DigitalOcean Droplet:** Node/Express + Vue app on a Droplet behind Nginx, MongoDB Atlas or managed Mongo, DO Spaces/ CDN for heavier assets.
-  ➡️ [Discuss your MEVN stack](/contact/){:data-analytics-cta="stack_mevn_cta"}
-
-### [PERN (Postgres, Express, React, Node.js)](/blueprints/pern-ec2-do/)
-
-- **Techs:** React SPA or Next.js frontend with an Express/Node API and PostgreSQL.
-- **Typical deployment:**
-  - **AWS EC2:** Node/Express API on EC2/ECS, RDS Postgres, S3/CloudFront for React assets, with migrations handled via CI/CD and IAM-scoped DB access.
-  - **DigitalOcean Droplet:** Node/Express API on a Droplet, DO Managed Postgres or DB Droplet, static assets via DO Spaces/CDN, with firewall and backup policies.
-  ➡️ [Discuss your PERN stack](/contact/){:data-analytics-cta="stack_pern_cta"}
-
-## Architecture & Infra Blueprints
-
-These are deeper infrastructure blueprints that sit under or alongside the **Stack Blueprints** above – used when we need to design or explain the platform itself, not just the application stack.
-
-- Reusable infrastructure patterns for typical SaaS and platform workloads.
-- Living diagrams and codemaps we keep alongside code and tests.
-- Used both for initial design and for explaining architecture to non-engineering stakeholders.
-
-Example blueprints we work with:
-
-- **Python API on Kubernetes (AWS EKS)** – FastAPI-style API + workers + Postgres + Redis, with observability baked in.  
-  Diagram: [View diagram](/blueprints/python-api-k8s/)  
-  ➡️ [Discuss this Python/Kubernetes blueprint](/contact/){:data-analytics-cta="blueprint_python_k8s_cta"}
-- **Node.js / Next.js with Supabase** – Vercel-hosted frontend and API routes backed by Supabase Postgres, Auth, Storage, and Edge Functions.  
-  Diagram: [View diagram](/blueprints/node-next-supabase/)  
-  ➡️ [Discuss this Next.js/Supabase blueprint](/contact/){:data-analytics-cta="blueprint_node_next_supabase_cta"}
-- **Go microservices behind an API gateway** – public and internal Go services exposed via ingress/gateway, with Postgres, Redis, and full observability.  
-  Diagram: [View diagram](/blueprints/go-microservices-gateway/)  
-  ➡️ [Discuss this Go microservices blueprint](/contact/){:data-analytics-cta="blueprint_go_microservices_cta"}
-- **Rust API with Postgres and Redis** – containerised Rust service behind Nginx or an ingress controller, focused on performance-sensitive workloads.  
-  Diagram: [View diagram](/blueprints/rust-api-postgres/)  
-  ➡️ [Discuss this Rust/Postgres blueprint](/contact/){:data-analytics-cta="blueprint_rust_api_postgres_cta"}
-
-Behind the scenes we maintain codemaps and Mermaid diagrams for these patterns in our internal API/infra repo, so every engagement starts with a concrete, versioned architecture sketch rather than ad-hoc drawings.
+<div class="cta-box">
+  <h3>Explore the Blueprint Gallery</h3>
+  <p>View detailed diagrams, stack components, and use cases for our validiated architectures.</p>
+  <a href="/blueprints/gallery/" class="btn btn-primary">Browse Blueprints →</a>
+</div>
 
 See also:
 
