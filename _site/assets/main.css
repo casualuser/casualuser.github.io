@@ -327,3 +327,91 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; back
 .mermaid { background-color: #020617; /* near-black slate */ border-radius: 0.75rem; padding: 1rem 1.25rem; margin: 1.5rem 0; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.5); overflow-x: auto; }
 
 .mermaid svg { background-color: transparent; }
+
+.blueprint-gallery-container, .blueprint-detail-container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; color: #e0e0e0; }
+
+.blueprint-title, .segment-title { color: #e0e0e0; }
+
+.blueprint-desc { color: #a0a0a0; line-height: 1.6; }
+
+.blueprint-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+
+.blueprint-card { background: #1e1e1e; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; height: 100%; }
+.blueprint-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); border-color: #a0a0a0; }
+
+.segment-section { margin-bottom: 4rem; }
+.segment-section .segment-header { border-bottom: 1px solid #333; margin-bottom: 1.5rem; padding-bottom: 0.5rem; }
+
+.blueprint-header { margin-bottom: 3rem; border-bottom: 1px solid #333; padding-bottom: 2rem; }
+
+.segment-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; color: #fff; }
+.segment-badge.segment-startup { background-color: #2ea043; }
+.segment-badge.segment-smb { background-color: #3b82f6; }
+.segment-badge.segment-business { background-color: #a371f7; }
+.segment-badge.segment-enterprise { background-color: #f85149; }
+
+.segment-border-startup { border-top: 3px solid #2ea043; }
+
+.segment-border-smb { border-top: 3px solid #3b82f6; }
+
+.segment-border-business { border-top: 3px solid #a371f7; }
+
+.segment-border-enterprise { border-top: 3px solid #f85149; }
+
+.blueprint-content table { width: 100%; border-collapse: collapse; margin: 2rem 0; color: #e0e0e0; }
+.blueprint-content table th, .blueprint-content table td { padding: 12px; border: 1px solid #333; text-align: left; }
+.blueprint-content table th { background-color: #1f1f1f; }
+.blueprint-content table td { background-color: #1e1e1e; }
+
+.mermaid { background: #fff; padding: 2rem; border-radius: 8px; margin: 2rem 0; overflow-x: auto; text-align: center; border: 1px solid #333; }
+
+.blueprint-cta { background: #1f1f1f; padding: 2rem; border-radius: 8px; text-align: center; margin-top: 4rem; border: 1px solid #333; color: #e0e0e0; }
+
+.btn-primary { background-color: #3b82f6; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1rem; }
+.btn-primary:hover { background-color: #0b63f3; text-decoration: none; }
+
+.segment-border-stack { border-top: 3px solid #607d8b; }
+
+.blueprint-gallery-container, .blueprint-detail-container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; color: #e0e0e0; }
+
+.blueprint-title, .segment-title { color: #e0e0e0; }
+
+.blueprint-desc { color: #a0a0a0; line-height: 1.6; }
+
+.blueprint-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+
+.blueprint-card { background: #1e1e1e; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; height: 100%; }
+.blueprint-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); border-color: #a0a0a0; }
+
+.segment-section { margin-bottom: 4rem; }
+.segment-section .segment-header { border-bottom: 1px solid #333; margin-bottom: 1.5rem; padding-bottom: 0.5rem; }
+
+.blueprint-header { margin-bottom: 3rem; border-bottom: 1px solid #333; padding-bottom: 2rem; }
+
+.segment-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; color: #fff; }
+.segment-badge.segment-startup { background-color: #2ea043; }
+.segment-badge.segment-smb { background-color: #3b82f6; }
+.segment-badge.segment-business { background-color: #a371f7; }
+.segment-badge.segment-enterprise { background-color: #f85149; }
+
+.segment-border-startup { border-top: 3px solid #2ea043; }
+
+.segment-border-smb { border-top: 3px solid #3b82f6; }
+
+.segment-border-business { border-top: 3px solid #a371f7; }
+
+.segment-border-enterprise { border-top: 3px solid #f85149; }
+
+.blueprint-content table { width: 100%; border-collapse: collapse; margin: 2rem 0; color: #e0e0e0; }
+.blueprint-content table th, .blueprint-content table td { padding: 12px; border: 1px solid #333; text-align: left; }
+.blueprint-content table th { background-color: #1f1f1f; }
+.blueprint-content table td { background-color: #1e1e1e; }
+
+.mermaid { background: #fff; padding: 2rem; border-radius: 8px; margin: 2rem 0; overflow-x: auto; text-align: center; border: 1px solid #333; }
+
+.blueprint-cta { background: #1f1f1f; padding: 2rem; border-radius: 8px; text-align: center; margin-top: 4rem; border: 1px solid #333; color: #e0e0e0; }
+
+.btn-primary { background-color: #3b82f6; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1rem; }
+.btn-primary:hover { background-color: #0b63f3; text-decoration: none; }
+
+.segment-border-stack { border-top: 3px solid #607d8b; }

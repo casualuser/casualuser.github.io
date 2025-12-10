@@ -110,6 +110,93 @@
   },
   {
     "version": 1,
+    "id": "data-analytics-modern",
+    "name": "Modern Data Analytics Pipeline",
+    "segment": "enterprise",
+    "summary": "A robust ELT (Extract, Load, Transform) pipeline designed for scalability and modularity.\nLeverages the \"Modern Data Stack\" ecosystem.\n",
+    "description": "This architecture separates the concerns of data ingestion, transformation, and storage,\nallowing data teams to iterate quickly.\n\n**Core Components:**\n*   **Orchestration (Airflow/Prefect)**: Manages the schedule and dependencies of data workflows.\n*   **Transformation (dbt)**: \"Data Build Tool\" runs SQL transformations inside the warehouse, applying engineering practices (testing, version control) to data/analytics code.\n*   **Cloud Data Warehouse (Snowflake/BigQuery)**: Serverless, infinite-scale storage that separates compute from storage.\n*   **BI Layer (Looker/Superset)**: Visual exploration and dashboarding for business stakeholders.\n\n**Why this stack?**\nThe \"ELT\" pattern (loading raw data first, then transforming it) is more resilient than traditional ETL and preserves the raw source of truth.\n",
+    "stack": {
+      "segment": "enterprise",
+      "orchestration": "airflow",
+      "transformation": "dbt",
+      "warehouse": "snowflake",
+      "bi": "looker"
+    },
+    "components": [
+      {
+        "id": "sources",
+        "name": "Data Sources",
+        "type": "external",
+        "notes": "APIs, DBs, Events"
+      },
+      {
+        "id": "airflow",
+        "name": "Airflow (Orchestrator)",
+        "type": "orchestrator",
+        "depends_on": [
+          "sources"
+        ]
+      },
+      {
+        "id": "warehouse",
+        "name": "Snowflake (Warehouse)",
+        "type": "database",
+        "depends_on": [
+          "airflow"
+        ],
+        "notes": "Raw & Bronze Layers"
+      },
+      {
+        "id": "dbt",
+        "name": "dbt (Transformation)",
+        "type": "service",
+        "depends_on": [
+          "warehouse"
+        ],
+        "notes": "SQL Modeling"
+      },
+      {
+        "id": "bi",
+        "name": "Looker / Superset",
+        "type": "dashboard",
+        "depends_on": [
+          "warehouse"
+        ],
+        "notes": "Business Intelligence"
+      }
+    ],
+    "groups": [
+      {
+        "id": "ingestion",
+        "members": [
+          "sources",
+          "airflow"
+        ]
+      },
+      {
+        "id": "processing",
+        "members": [
+          "warehouse",
+          "dbt"
+        ]
+      },
+      {
+        "id": "consumption",
+        "members": [
+          "bi"
+        ]
+      }
+    ],
+    "tags": [
+      "data-engineering",
+      "elt",
+      "dbt",
+      "snowflake",
+      "airflow"
+    ]
+  },
+  {
+    "version": 1,
     "id": "enterprise-platform",
     "name": "Enterprise: Cloud Native Platform",
     "segment": "enterprise",
@@ -208,6 +295,421 @@
       "gitops",
       "istio",
       "platform-engineering"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "frontend-jamstack-pro",
+    "name": "Professional Jamstack Frontend",
+    "segment": "startup",
+    "summary": "A high-performance, edge-delivered frontend stack optimizing for\nCore Web Vitals and developer experience.\n",
+    "description": "The \"Jamstack\" (JavaScript, APIs, Markup) philosophy has evolved into dynamic, edge-cached applications.\nThis stack provides the fastest possible \"Time to First Byte\" globally.\n\n**Core Components:**\n*   **Next.js (Framework)**: React framework handling hybrid rendering (SSR/SSG) and routing.\n*   **Vercel/Cloudflare (Edge)**: Global CDN that caches not just assets but also dynamic serverless functional responses.\n*   **Headless CMS (Sanity/Contentful)**: Decoupled content management allowing marketers to edit content without touching code.\n*   **Headless Commerce/API**: Backend logic connected via typed APIs.\n\n**Why this stack?**\nDecoupling the frontend from the backend (Headless) allows each layer to scale independently and lets frontend teams ship daily without backend bottlenecks.\n",
+    "stack": {
+      "segment": "startup",
+      "framework": "nextjs",
+      "platform": "vercel",
+      "cms": "headless",
+      "rendering": "hybrid"
+    },
+    "components": [
+      {
+        "id": "user",
+        "name": "User Device",
+        "type": "actor"
+      },
+      {
+        "id": "edge",
+        "name": "Edge Network (CDN)",
+        "type": "gateway",
+        "depends_on": [
+          "nextjs"
+        ],
+        "notes": "Cache & Routing"
+      },
+      {
+        "id": "nextjs",
+        "name": "Next.js App",
+        "type": "application",
+        "depends_on": [
+          "cms",
+          "api"
+        ],
+        "notes": "ISR / SSR / SSG"
+      },
+      {
+        "id": "cms",
+        "name": "Headless CMS",
+        "type": "saas",
+        "notes": "Content API"
+      },
+      {
+        "id": "api",
+        "name": "Backend API",
+        "type": "service",
+        "notes": "Business Logic"
+      }
+    ],
+    "groups": [
+      {
+        "id": "frontend",
+        "members": [
+          "edge",
+          "nextjs"
+        ]
+      },
+      {
+        "id": "backend",
+        "members": [
+          "cms",
+          "api"
+        ]
+      }
+    ],
+    "tags": [
+      "jamstack",
+      "nextjs",
+      "react",
+      "headless",
+      "performance"
+    ]
+  },
+  {
+    "id": "lamp-stack",
+    "name": "LAMP Stack (Classic)",
+    "segment": "stack",
+    "summary": "Linux, Apache, MySQL, PHP. The original web stack.",
+    "description": "The LAMP stack is a classic, battle-tested architecture for hosting dynamic websites and content management systems like WordPress, Drupal, or custom PHP applications.\n\nIt relies on Linux as the OS, Apache as the web server, MySQL (or MariaDB) for relational data, and PHP as the scripting language.\n",
+    "tags": [
+      "lamp",
+      "php",
+      "apache",
+      "mysql",
+      "linux"
+    ],
+    "stack": {
+      "app": "PHP / WordPress",
+      "web": "Apache",
+      "db": "MySQL / MariaDB",
+      "os": "Linux"
+    },
+    "components": [
+      {
+        "id": "users",
+        "type": "actor",
+        "name": "Web Visitors",
+        "notes": "Public Traffic"
+      },
+      {
+        "id": "vm",
+        "type": "compute",
+        "name": "Virtual Machine",
+        "notes": "Linux (Ubuntu/Debian)"
+      },
+      {
+        "id": "apache",
+        "type": "network",
+        "name": "Apache HTTPD",
+        "notes": "Web Server + ModPHP"
+      },
+      {
+        "id": "app",
+        "type": "container",
+        "name": "PHP Application",
+        "notes": "WordPress / Custom"
+      },
+      {
+        "id": "db",
+        "type": "database",
+        "name": "MySQL / MariaDB",
+        "notes": "Relational Database"
+      },
+      {
+        "id": "fs",
+        "type": "storage",
+        "name": "Local Filesystem",
+        "notes": "/var/www/html"
+      },
+      {
+        "id": "users",
+        "depends_on": "apache"
+      },
+      {
+        "id": "apache",
+        "depends_on": "app"
+      },
+      {
+        "id": "app",
+        "depends_on": [
+          "db",
+          "fs"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "server",
+        "name": "Web Server (Single Node)",
+        "members": [
+          "vm",
+          "apache",
+          "app",
+          "db",
+          "fs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lemp-stack",
+    "name": "LEMP Stack (High Performance)",
+    "segment": "stack",
+    "summary": "Linux, Nginx, MySQL, PHP. High concurrency alternative to LAMP.",
+    "description": "The LEMP stack swaps Apache for Nginx, providing better performance under high concurrency and lower memory usage for static asset serving.\n\nPHP is executed via PHP-FPM (FastCGI Process Manager), which allows for better process management and separation of concerns compared to Apache's mod_php.\n",
+    "tags": [
+      "lemp",
+      "php",
+      "nginx",
+      "mysql",
+      "linux"
+    ],
+    "stack": {
+      "app": "PHP-FPM",
+      "web": "Nginx",
+      "db": "MySQL / MariaDB",
+      "os": "Linux"
+    },
+    "components": [
+      {
+        "id": "users",
+        "type": "actor",
+        "name": "Web Visitors",
+        "notes": "Public Traffic"
+      },
+      {
+        "id": "vm",
+        "type": "compute",
+        "name": "Virtual Machine",
+        "notes": "Linux (Ubuntu/Debian)"
+      },
+      {
+        "id": "nginx",
+        "type": "network",
+        "name": "Nginx",
+        "notes": "Reverse Proxy & Static"
+      },
+      {
+        "id": "fpm",
+        "type": "container",
+        "name": "PHP-FPM",
+        "notes": "FastCGI Process Manager"
+      },
+      {
+        "id": "app",
+        "type": "container",
+        "name": "Application Code",
+        "notes": "Laravel / Symfony"
+      },
+      {
+        "id": "db",
+        "type": "database",
+        "name": "MySQL / MariaDB",
+        "notes": "Relational Database"
+      },
+      {
+        "id": "redis",
+        "type": "database",
+        "name": "Redis",
+        "notes": "Object Cache (Optional)"
+      },
+      {
+        "id": "users",
+        "depends_on": "nginx"
+      },
+      {
+        "id": "nginx",
+        "depends_on": "fpm"
+      },
+      {
+        "id": "fpm",
+        "depends_on": "app"
+      },
+      {
+        "id": "app",
+        "depends_on": [
+          "db",
+          "redis"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "server",
+        "name": "Web Server (Single Node)",
+        "members": [
+          "vm",
+          "nginx",
+          "fpm",
+          "app",
+          "db",
+          "redis"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mern-stack",
+    "name": "MERN Stack (Fullstack JS)",
+    "segment": "stack",
+    "summary": "MongoDB, Express, React, Node.js. The JavaScript monolith.",
+    "description": "The MERN stack is a pure JavaScript stack for building modern single-page applications (SPAs).\n\nIt features React for the frontend, Node.js/Express for the backend API, and MongoDB for JSON-native document storage.\n",
+    "tags": [
+      "mern",
+      "javascript",
+      "react",
+      "nodejs",
+      "mongodb"
+    ],
+    "stack": {
+      "frontend": "React",
+      "backend": "Node.js (Express)",
+      "db": "MongoDB",
+      "host": "VM / PaaS"
+    },
+    "components": [
+      {
+        "id": "users",
+        "type": "actor",
+        "name": "Users",
+        "notes": "Browser / Mobile"
+      },
+      {
+        "id": "cdn",
+        "type": "network",
+        "name": "CDN / Storage",
+        "notes": "Serves React Bundle"
+      },
+      {
+        "id": "spa",
+        "type": "container",
+        "name": "React SPA",
+        "notes": "Client-Side App"
+      },
+      {
+        "id": "api",
+        "type": "compute",
+        "name": "Express API",
+        "notes": "Node.js Backend"
+      },
+      {
+        "id": "db",
+        "type": "database",
+        "name": "MongoDB",
+        "notes": "Document Store"
+      },
+      {
+        "id": "users",
+        "depends_on": [
+          "cdn",
+          "spa"
+        ]
+      },
+      {
+        "id": "spa",
+        "depends_on": "api"
+      },
+      {
+        "id": "api",
+        "depends_on": "db"
+      }
+    ],
+    "groups": [
+      {
+        "id": "cloud",
+        "name": "Deployment Infrastructure",
+        "members": [
+          "cdn",
+          "api",
+          "db"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pern-stack",
+    "name": "PERN Stack (Postgres)",
+    "segment": "stack",
+    "summary": "Postgres, Express, React, Node.js. SQL-backed JS stack.",
+    "description": "The PERN stack is similar to MERN but chooses PostgreSQL for data integrity and relational mapping.\n\nIt is ideal for applications that require complex queries, transactions, and structured data schemas.\n",
+    "tags": [
+      "pern",
+      "javascript",
+      "react",
+      "nodejs",
+      "postgres"
+    ],
+    "stack": {
+      "frontend": "React",
+      "backend": "Node.js (Express)",
+      "db": "PostgreSQL",
+      "host": "VM / PaaS"
+    },
+    "components": [
+      {
+        "id": "users",
+        "type": "actor",
+        "name": "Users",
+        "notes": "Browser / Mobile"
+      },
+      {
+        "id": "cdn",
+        "type": "network",
+        "name": "CDN / Storage",
+        "notes": "Serves React Bundle"
+      },
+      {
+        "id": "spa",
+        "type": "container",
+        "name": "React SPA",
+        "notes": "Client-Side App"
+      },
+      {
+        "id": "api",
+        "type": "compute",
+        "name": "Express API",
+        "notes": "Node.js Backend"
+      },
+      {
+        "id": "db",
+        "type": "database",
+        "name": "PostgreSQL",
+        "notes": "Relational Database"
+      },
+      {
+        "id": "users",
+        "depends_on": [
+          "cdn",
+          "spa"
+        ]
+      },
+      {
+        "id": "spa",
+        "depends_on": "api"
+      },
+      {
+        "id": "api",
+        "depends_on": "db"
+      }
+    ],
+    "groups": [
+      {
+        "id": "cloud",
+        "name": "Deployment Infrastructure",
+        "members": [
+          "cdn",
+          "api",
+          "db"
+        ]
+      }
     ]
   },
   {

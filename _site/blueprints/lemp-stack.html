@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>LEMP Stack (High Performance) | Webomage</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="LEMP Stack (High Performance)" />
+<meta name="author" content="Aleksei Tcelishchev" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
+<meta property="og:description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
+<link rel="canonical" href="http://localhost:4000/blueprints/lemp-stack.html" />
+<meta property="og:url" content="http://localhost:4000/blueprints/lemp-stack.html" />
+<meta property="og:site_name" content="Webomage" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="LEMP Stack (High Performance)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"LEMP Stack (High Performance)","url":"http://localhost:4000/blueprints/lemp-stack.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
+<body>
+
+    <a href="#" class="scroll-to-top" aria-label="Scroll to top">▲ Top</a><header class="site-header" role="banner">
+
+  <div class="wrapper"><!-- <a class="site-title" rel="author" href="/">Webomage</a> -->
+    <div class="site-header-inner">
+      <div class="site-branding">
+        <a class="site-logo" rel="author" href="/" aria-label="Webomage home">
+          <img src="/assets/logo.svg" alt="Webomage logo">
+        </a>
+      </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/news/">News</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
+      </nav></div>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="site-bg-slideshow" aria-hidden="true">
+        <div class="site-bg-slide site-bg-slide-1"></div>
+        <div class="site-bg-slide site-bg-slide-2"></div>
+        <div class="site-bg-slide site-bg-slide-3"></div>
+        <div class="site-bg-slide site-bg-slide-4"></div>
+        <div class="site-bg-slide site-bg-slide-5"></div>
+      </div>
+      <div class="wrapper">
+        <div class="blueprint-detail-container">
+  <div class="breadcrumb">
+    <a href="/blueprints/">← Back to Gallery</a>
+  </div>
+
+  <header class="blueprint-header">
+    <div class="header-content">
+      <span class="segment-badge segment-stack">Stack</span>
+      <h1 class="blueprint-title">LEMP Stack (High Performance)</h1>
+      <p class="blueprint-intro"><h1 id="lemp-stack-high-performance">LEMP Stack (High Performance)</h1><p>Linux, Nginx, MySQL, PHP. High concurrency alternative to LAMP.</p><h2 id="architecture-diagram">Architecture Diagram</h2><...</p>
+    </div>
+  </header>
+
+  <div class="blueprint-content">
+    <h1 id="lemp-stack-high-performance">LEMP Stack (High Performance)</h1>
+
+<p>Linux, Nginx, MySQL, PHP. High concurrency alternative to LAMP.</p>
+
+<h2 id="architecture-diagram">Architecture Diagram</h2>
+
+<div class="mermaid">
+%% Autogenerated lemp-stack
+graph TD
+  classDef default fill:#fff,stroke:#333,stroke-width:1px;
+  classDef actor fill:#fff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5;
+  classDef compute fill:#ff9900,stroke:#232f3e,stroke-width:1px,color:#232f3e;
+  classDef database fill:#3f8624,stroke:#232f3e,stroke-width:1px,color:#fff;
+  classDef network fill:#8c4fff,stroke:#232f3e,stroke-width:1px,color:#fff;
+  classDef storage fill:#e05243,stroke:#232f3e,stroke-width:1px,color:#fff;
+  classDef security fill:#d93025,stroke:#232f3e,stroke-width:1px,color:#fff;
+  classDef gateway fill:#8c4fff,stroke:#232f3e,stroke-width:1px,color:#fff;
+  classDef container fill:#d9a741,stroke:#232f3e,stroke-width:1px,color:#fff;
+
+  subgraph server ["Web Server (Single Node)"]
+    direction TB
+    vm("<b>Virtual Machine</b><br /><i>compute</i><br /><span style="font-size:0.8em">Linux (Ubuntu/Debian)</span>")
+    class vm compute
+    nginx("<b>nginx</b><br /><i>default</i>")
+    class nginx default
+    fpm("<b>fpm</b><br /><i>default</i>")
+    class fpm default
+    app("<b>app</b><br /><i>default</i>")
+    class app default
+    db[("<b>MySQL / MariaDB</b><br /><i>database</i><br /><span style="font-size:0.8em">Relational Database</span>")]
+    class db database
+    redis[("<b>Redis</b><br /><i>database</i><br /><span style="font-size:0.8em">Object Cache (Optional)</span>")]
+    class redis database
+  end
+
+  %% Orphans
+  users(("<b>Web Visitors</b><br /><i>actor</i><br /><span style="font-size:0.8em">Public Traffic</span>"))
+  class users actor
+  users("<b>users</b><br /><i>default</i>")
+  class users default
+
+  %% Edges
+  users -.-&gt; nginx
+  nginx -.-&gt; fpm
+  fpm -.-&gt; app
+  app -.-&gt; db
+  app -.-&gt; redis
+</div>
+
+<h2 id="description">Description</h2>
+
+<p>The LEMP stack swaps Apache for Nginx, providing better performance under high concurrency and lower memory usage for static asset serving.</p>
+
+<p>PHP is executed via PHP-FPM (FastCGI Process Manager), which allows for better process management and separation of concerns compared to Apache’s mod_php.</p>
+
+<h2 id="tech-stack">Tech Stack</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Component</th>
+      <th style="text-align: left">Technology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>App</strong></td>
+      <td style="text-align: left">PHP-FPM</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Web</strong></td>
+      <td style="text-align: left">Nginx</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Db</strong></td>
+      <td style="text-align: left">MySQL / MariaDB</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Os</strong></td>
+      <td style="text-align: left">Linux</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  </div>
+
+  <div class="blueprint-cta">
+    <h3>Interested in this architecture?</h3>
+    <p>Let's discuss how to adapt the <strong>LEMP Stack (High Performance)</strong> stack for your specific needs.</p>
+    <a href="/contact/" class="btn btn-primary">Contact Us</a>
+  </div>
+</div>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="footer-content">
+      <div class="footer-primary">
+        <div class="footer-branding">
+          <img class="footer-logo" src="/assets/logo.svg" alt="Webomage logo">
+          <h2 class="footer-heading">Webomage</h2>
+          <div class="footer-social"><ul class="social-media-list"><li><a href="https://github.com/casualuser"><svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#github"></use></svg> <span class="username">casualuser</span></a></li><li><a href="https://www.linkedin.com/in/casualuser"><svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#linkedin"></use></svg> <span class="username">casualuser</span></a></li><li>
+      <a href="https://upwork.com/freelancers/casualuser">
+        <svg class="svg-icon svg-icon-upwork"><use xlink:href="/assets/custom-social-icons.svg#upwork"></use></svg>
+        <span class="username">Upwork</span>
+      </a>
+    </li><li>
+      <a href="https://t.me/casualuser">
+        <svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#telegram"></use></svg>
+        <span class="username">Telegram</span>
+      </a>
+    </li></ul>
+
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-description">DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev</div>
+  </div>
+
+</footer><script>
+      (function() {
+        var btn = document.querySelector('.scroll-to-top');
+        if (!btn) return;
+
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 150) {
+            btn.classList.add('is-visible');
+          } else {
+            btn.classList.remove('is-visible');
+          }
+        });
+
+        btn.addEventListener('click', function(event) {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+    </script>
+
+    <script>
+      (function() {
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.site-bg-slide'));
+        if (!slides.length) return;
+
+        // Base delays (seconds) from CSS: 0, 8, 16, 24, 32
+        var delays = [0, 8, 16, 24, 32].slice(0, slides.length);
+
+        // Fisher-Yates shuffle
+        for (var i = delays.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = delays[i];
+          delays[i] = delays[j];
+          delays[j] = tmp;
+        }
+
+        slides.forEach(function(slide, idx) {
+          slide.style.animationDelay = delays[idx] + 's';
+        });
+      })();
+    </script>
+
+    <script>
+      (function() {
+        var header = document.querySelector('header.site-header');
+        var footer = document.querySelector('footer.site-footer');
+        if (!header || !footer) return;
+
+        function measureBand(element) {
+          // Prefer the inner .wrapper so we exclude outer borders/shadows.
+          var target = element.querySelector('.wrapper') || element;
+          var rect = target.getBoundingClientRect();
+          return rect.height || target.offsetHeight || 0;
+        }
+
+        function updateBands() {
+          var measuredHeader = measureBand(header);
+          var measuredFooter = measureBand(footer);
+
+          // Clamp to minima derived from the more generous (Firefox) layout
+          // so that engines which under-estimate (e.g. some Chrome builds)
+          // still get a band that is at least this tall.
+          var headerMin = 58;  // px, inner header content band
+          var footerMin = 112; // px, inner footer content band
+
+          var headerH = Math.max(measuredHeader, headerMin);
+          var footerH = Math.max(measuredFooter, footerMin);
+
+          // Small fixed padding so we always have a solid dark band
+          // directly under the header and above the footer, even if
+          // fonts or layout shift slightly after load.
+          var headerPad = 4;
+          var footerPad = 4;
+
+          var root = document.documentElement;
+          root.style.setProperty('--header-band-height', (headerH + headerPad) + 'px');
+          root.style.setProperty('--footer-band-height', (footerH + footerPad) + 'px');
+        }
+
+        function scheduleUpdates() {
+          updateBands();
+          // Re-run after small delays to catch late font/layout changes
+          // that some engines (e.g. Chrome) apply after window load.
+          setTimeout(updateBands, 250);
+          setTimeout(updateBands, 1000);
+        }
+
+        if (document.readyState === 'complete') {
+          scheduleUpdates();
+        } else {
+          window.addEventListener('load', scheduleUpdates);
+        }
+
+        window.addEventListener('resize', updateBands);
+      })();
+    </script>
+
+    <script>
+      (function() {
+        var form = document.getElementById('contact-form');
+        if (!form) return;
+
+        var fields = [
+          { id: 'name', required: true, minLength: 2 },
+          { id: 'email', required: true, type: 'email' },
+          { id: 'message', required: true, minLength: 10 }
+        ];
+
+        var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+        var submitOriginalText = submitBtn ? submitBtn.textContent : null;
+        var hasSentSubmitEvent = false;
+
+        function findFieldWrapper(el) {
+          while (el && el !== form) {
+            if (el.classList && el.classList.contains('contact-form-field')) {
+              return el;
+            }
+            el = el.parentNode;
+          }
+          return null;
+        }
+
+        function showError(input, message) {
+          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+          if (!fieldWrapper) return;
+
+          var errorEl = fieldWrapper.querySelector('.contact-error');
+          if (!errorEl) {
+            errorEl = document.createElement('div');
+            errorEl.className = 'contact-error';
+            fieldWrapper.appendChild(errorEl);
+          }
+
+          errorEl.textContent = message;
+          fieldWrapper.classList.add('contact-field-invalid');
+        }
+
+        function clearError(input) {
+          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+          if (!fieldWrapper) return;
+
+          fieldWrapper.classList.remove('contact-field-invalid');
+          var errorEl = fieldWrapper.querySelector('.contact-error');
+          if (errorEl) {
+            errorEl.textContent = '';
+          }
+        }
+
+        function validateField(field) {
+          var input = document.getElementById(field.id);
+          if (!input) return true;
+
+          clearError(input);
+
+          var value = (input.value || '').trim();
+
+          if (field.required && !value) {
+            showError(input, 'This field is required.');
+            return false;
+          }
+
+          if (field.minLength && value.length < field.minLength) {
+            showError(input, 'Please enter at least ' + field.minLength + ' characters.');
+            return false;
+          }
+
+          if (field.type === 'email') {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (value && !emailPattern.test(value)) {
+              showError(input, 'Please enter a valid email address.');
+              return false;
+            }
+          }
+
+          return true;
+        }
+
+        function sendContactSubmitEvent() {
+          try {
+            if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+            var payload = {
+              path: window.location.pathname,
+              referrer: document.referrer || null,
+              eventType: "cta_click",
+              label: "contact_form_submit",
+              href: "/contact/"
+            };
+
+            var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+            if (navigator.sendBeacon) {
+              var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+              navigator.sendBeacon(url, blob);
+            } else {
+              fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                keepalive: true,
+                body: JSON.stringify(payload)
+              }).catch(function () {});
+            }
+          } catch (e) {}
+        }
+
+        form.addEventListener('submit', function(event) {
+          var isValid = true;
+
+          for (var i = 0; i < fields.length; i++) {
+            if (!validateField(fields[i])) {
+              isValid = false;
+            }
+          }
+
+          if (!isValid) {
+            event.preventDefault();
+
+            var firstInvalid = form.querySelector('.contact-field-invalid input, .contact-field-invalid textarea');
+            if (firstInvalid && typeof firstInvalid.focus === 'function') {
+              firstInvalid.focus();
+            }
+            return;
+          }
+
+          if (submitBtn && !submitBtn.disabled) {
+            submitBtn.disabled = true;
+            if (submitOriginalText != null) {
+              submitBtn.textContent = 'Sending…';
+            }
+            form.classList.add('contact-form-submitting');
+          }
+
+          if (!hasSentSubmitEvent) {
+            hasSentSubmitEvent = true;
+            sendContactSubmitEvent();
+          }
+        });
+
+        fields.forEach(function(field) {
+          var input = document.getElementById(field.id);
+          if (!input) return;
+
+          input.addEventListener('blur', function() {
+            validateField(field);
+          });
+
+          input.addEventListener('input', function() {
+            clearError(input);
+          });
+        });
+      })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      (function() {
+        if (!window.mermaid) return;
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+      })();
+    </script><script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    try {
+      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        keepalive: true,
+        body: JSON.stringify({
+          path: window.location.pathname,
+          referrer: document.referrer || null,
+          eventType: "pageview",
+        }),
+      }).catch(function () {});
+    } catch (e) {}
+  })();
+</script>
+<script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    function sendCtaEvent(label, href) {
+      try {
+        var payload = {
+          path: window.location.pathname,
+          referrer: document.referrer || null,
+          eventType: "cta_click",
+          label: label,
+          href: href || null,
+        };
+
+        var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+        if (navigator.sendBeacon) {
+          var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+          navigator.sendBeacon(url, blob);
+        } else {
+          fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            keepalive: true,
+            body: JSON.stringify(payload),
+          }).catch(function () {});
+        }
+      } catch (e) {}
+    }
+
+    try {
+      document.addEventListener("DOMContentLoaded", function () {
+        var ctas = document.querySelectorAll("[data-analytics-cta]");
+        if (!ctas.length) return;
+
+        ctas.forEach(function (el) {
+          var label = el.getAttribute("data-analytics-cta") || "cta";
+          el.addEventListener("click", function () {
+            sendCtaEvent(label, el.getAttribute("href"));
+          });
+        });
+      });
+    } catch (e) {}
+  })();
+</script>
+<script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    try {
+      var params = new URLSearchParams(window.location.search || "");
+      if (!params.has("heatmap")) return;
+
+      var sessionId = Math.random().toString(36).slice(2) + Date.now().toString(36);
+
+      var script = document.createElement("script");
+      script.src = "https://unpkg.com/heatmap.js@2.0.5/build/heatmap.min.js";
+      script.async = true;
+      script.onload = function () {
+        try {
+          var container = document.createElement("div");
+          container.id = "wm-heatmap-overlay";
+          container.style.position = "fixed";
+          container.style.left = "0";
+          container.style.top = "0";
+          container.style.width = "100%";
+          container.style.height = "100%";
+          container.style.pointerEvents = "none";
+          container.style.zIndex = "9999";
+          document.body.appendChild(container);
+
+          var heatmap = window.h337 && window.h337.create({
+            container: container,
+            radius: 30,
+            maxOpacity: 0.6,
+            blur: 0.85,
+          });
+          if (!heatmap) return;
+
+          document.addEventListener("click", function (event) {
+            heatmap.addData({
+              x: event.clientX,
+              y: event.clientY,
+              value: 1,
+            });
+
+            try {
+              var payload = {
+                path: window.location.pathname,
+                sessionId: sessionId,
+                x: event.clientX,
+                y: event.clientY,
+                viewportWidth: window.innerWidth || null,
+                viewportHeight: window.innerHeight || null,
+              };
+
+              var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/heatmap-event";
+
+              if (navigator.sendBeacon) {
+                var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+                navigator.sendBeacon(url, blob);
+              } else {
+                fetch(url, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  keepalive: true,
+                  body: JSON.stringify(payload),
+                }).catch(function () {});
+              }
+            } catch (e) {}
+          });
+        } catch (e) {}
+      };
+      document.head.appendChild(script);
+    } catch (e) {}
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+// _sass/_blueprints.scss
+
+// Variables - Dark Theme Palette
+$bp-bg-dark: #121212;
+$bp-card-bg: #1e1e1e;
+$bp-card-border: #333;
+$bp-text-primary: #e0e0e0;
+$bp-text-secondary: #a0a0a0;
+$bp-accent: #3b82f6; // A nice blue for links/highlights
+$bp-badge-bg: #2d2d2d;
+$bp-badge-text: #ccc;
+
+// Segment Colors (Darker/Muted for dark mode)
+$segment-startup: #2ea043;
+$segment-smb: #3b82f6;
+$segment-business: #a371f7;
+$segment-enterprise: #f85149;
+
+.blueprint-gallery-container,
+.blueprint-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    color: $bp-text-primary;
+}
+
+// Typography
+.blueprint-title,
+.segment-title {
+    color: $bp-text-primary;
+}
+
+.blueprint-desc {
+    color: $bp-text-secondary;
+    line-height: 1.6;
+}
+
+// Cards
+.blueprint-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.blueprint-card {
+    background: $bp-card-bg;
+    border: 1px solid $bp-card-border;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        border-color: $bp-text-secondary;
+    }
+}
+
+// Layout Specific
+.segment-section {
+    margin-bottom: 4rem;
+
+    .segment-header {
+        border-bottom: 1px solid $bp-card-border;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+// Detail Page
+.blueprint-header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid $bp-card-border;
+    padding-bottom: 2rem;
+}
+
+.segment-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #fff;
+
+    &.segment-startup {
+        background-color: $segment-startup;
+    }
+
+    &.segment-smb {
+        background-color: $segment-smb;
+    }
+
+    &.segment-business {
+        background-color: $segment-business;
+    }
+
+    &.segment-enterprise {
+        background-color: $segment-enterprise;
+    }
+}
+
+// Borders for cards
+.segment-border-startup {
+    border-top: 3px solid $segment-startup;
+}
+
+.segment-border-smb {
+    border-top: 3px solid $segment-smb;
+}
+
+.segment-border-business {
+    border-top: 3px solid $segment-business;
+}
+
+.segment-border-enterprise {
+    border-top: 3px solid $segment-enterprise;
+}
+
+// Tables (Tech Stack)
+.blueprint-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    color: $bp-text-primary;
+
+    th,
+    td {
+        padding: 12px;
+        border: 1px solid $bp-card-border;
+        text-align: left;
+    }
+
+    th {
+        background-color: lighten($bp-bg-dark, 5%);
+    }
+
+    td {
+        background-color: $bp-card-bg;
+    }
+}
+
+// Mermaid Diagram Container
+.mermaid {
+    background: #fff; // Keep diagrams light for contrast unless we invert them
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    overflow-x: auto;
+    text-align: center;
+    border: 1px solid $bp-card-border;
+}
+
+// CTA
+.blueprint-cta {
+    background: lighten($bp-bg-dark, 5%);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 4rem;
+    border: 1px solid $bp-card-border;
+    color: $bp-text-primary;
+}
+
+.btn-primary {
+    background-color: $bp-accent;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 1rem;
+
+    &:hover {
+        background-color: darken($bp-accent, 10%);
+        text-decoration: none;
+    }
+}.segment-border-stack { border-top: 3px solid #607d8b; }

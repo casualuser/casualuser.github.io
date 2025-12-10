@@ -68,7 +68,7 @@ We maintain a living library of production-grade infrastructure patterns, rangin
 <div class="cta-box">
   <h3>Explore the Blueprint Gallery</h3>
   <p>View detailed diagrams, stack components, and use cases for our validiated architectures.</p>
-  <a href="/blueprints/gallery/" class="btn btn-primary">Browse Blueprints →</a>
+  <a href="/blueprints/" class="btn btn-primary">Browse Blueprints →</a>
 </div>
 
 See also:
