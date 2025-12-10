@@ -1,0 +1,2269 @@
+[
+  {
+    "version": 1,
+    "id": "ai-rag-llm",
+    "name": "AI RAG Application (LangChain/Vector DB)",
+    "summary": "A reference architecture for a Retrieval-Augmented Generation (RAG) application\nusing LLMs, a vector database for embedding storage, and an orchestration framework.\n",
+    "stack": {
+      "llm": "openai-gpt4",
+      "orchestrator": "langchain",
+      "vector_db": "pinecone",
+      "app": "python-fastapi",
+      "data": "unstructured-docs"
+    },
+    "components": [
+      {
+        "id": "user",
+        "name": "User Query",
+        "type": "actor"
+      },
+      {
+        "id": "app",
+        "name": "RAG API Service",
+        "type": "service",
+        "depends_on": [
+          "llm",
+          "vector_db"
+        ],
+        "notes": "Context assembly & Prompt Engineering"
+      },
+      {
+        "id": "ingestion",
+        "name": "Ingestion Worker",
+        "type": "worker",
+        "depends_on": [
+          "vector_db",
+          "sources"
+        ],
+        "notes": "Embeds documents into Vector DB"
+      },
+      {
+        "id": "sources",
+        "name": "Document Sources",
+        "type": "external",
+        "notes": "PDFs, Notion, Wikis"
+      },
+      {
+        "id": "llm",
+        "name": "LLM Provider (OpenAI)",
+        "type": "ai-model",
+        "ports": [
+          "Inference API"
+        ]
+      },
+      {
+        "id": "vector_db",
+        "name": "Vector DB (Pinecone/Weaviate)",
+        "type": "database",
+        "notes": "Semantic Search Index"
+      }
+    ],
+    "groups": [
+      {
+        "id": "application",
+        "members": [
+          "app",
+          "ingestion"
+        ]
+      },
+      {
+        "id": "external-services",
+        "members": [
+          "llm",
+          "vector_db"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/solutions/ai-apps/"
+      }
+    ],
+    "tags": [
+      "ai",
+      "llm",
+      "rag",
+      "python",
+      "langchain"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "data-analytics-modern",
+    "name": "Modern Data Stack (ELT)",
+    "summary": "A modern, scalable data pipeline focusing on the ELT (Extract, Load, Transform) pattern\nusing industry standard tools for warehousing and transformation.\n",
+    "stack": {
+      "ingestion": "airbyte",
+      "warehouse": "snowflake",
+      "transform": "dbt",
+      "orchestration": "airflow",
+      "bi": "superset"
+    },
+    "components": [
+      {
+        "id": "sources",
+        "name": "Data Sources",
+        "type": "external",
+        "notes": "APIs, Production DBs, SaaS"
+      },
+      {
+        "id": "ingestion",
+        "name": "Airbyte / Fivetran",
+        "type": "ingestion-service",
+        "depends_on": [
+          "sources"
+        ],
+        "ports": [
+          "CDC / API"
+        ]
+      },
+      {
+        "id": "warehouse",
+        "name": "Data Warehouse (Snowflake)",
+        "type": "warehouse",
+        "depends_on": [
+          "ingestion"
+        ],
+        "notes": "Raw & Modeled Data Storage"
+      },
+      {
+        "id": "transform",
+        "name": "Transformation (dbt)",
+        "type": "transformation-runner",
+        "depends_on": [
+          "warehouse"
+        ],
+        "notes": "Runs SQL models in warehouse"
+      },
+      {
+        "id": "airflow",
+        "name": "Orchestration (Airflow)",
+        "type": "scheduler",
+        "depends_on": [
+          "ingestion",
+          "transform"
+        ],
+        "ports": [
+          "Trigger DAGs"
+        ]
+      },
+      {
+        "id": "bi",
+        "name": "BI Tool (Superset)",
+        "type": "visualization",
+        "depends_on": [
+          "warehouse"
+        ],
+        "notes": "Dashboards & Reporting"
+      }
+    ],
+    "groups": [
+      {
+        "id": "pipeline",
+        "members": [
+          "ingestion",
+          "transform",
+          "airflow"
+        ]
+      },
+      {
+        "id": "storage",
+        "members": [
+          "warehouse"
+        ]
+      },
+      {
+        "id": "consumers",
+        "members": [
+          "bi"
+        ]
+      }
+    ],
+    "tags": [
+      "data",
+      "analytics",
+      "snowflake",
+      "dbt",
+      "airflow"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "event-driven-kafka",
+    "name": "Event-Driven Microservices (Kafka)",
+    "summary": "A decoupled microservices architecture utilizing Apache Kafka for asynchronous\ncommunication and event streaming between domains.\n",
+    "stack": {
+      "broker": "kafka",
+      "services": "go-java-node",
+      "registry": "schema-registry",
+      "coordination": "zookeeper-kraft"
+    },
+    "components": [
+      {
+        "id": "producer",
+        "name": "Order Service",
+        "type": "service",
+        "depends_on": [
+          "kafka"
+        ],
+        "notes": "Produces 'OrderCreated'"
+      },
+      {
+        "id": "kafka",
+        "name": "Kafka Cluster",
+        "type": "message-broker",
+        "notes": "Topics & Partitions"
+      },
+      {
+        "id": "schema",
+        "name": "Schema Registry",
+        "type": "registry",
+        "depends_on": [
+          "kafka"
+        ],
+        "notes": "Avro/Protobuf definitions"
+      },
+      {
+        "id": "consumer-a",
+        "name": "Inventory Service",
+        "type": "service",
+        "depends_on": [
+          "kafka"
+        ],
+        "notes": "Consumes Order events"
+      },
+      {
+        "id": "consumer-b",
+        "name": "Notification Service",
+        "type": "service",
+        "depends_on": [
+          "kafka"
+        ],
+        "notes": "Consumes Order events"
+      },
+      {
+        "id": "dlq",
+        "name": "Dead Letter Queue",
+        "type": "storage",
+        "depends_on": [
+          "consumer-a",
+          "consumer-b"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "core-infra",
+        "members": [
+          "kafka",
+          "schema"
+        ]
+      },
+      {
+        "id": "services",
+        "members": [
+          "producer",
+          "consumer-a",
+          "consumer-b"
+        ]
+      }
+    ],
+    "tags": [
+      "kafka",
+      "microservices",
+      "event-driven",
+      "distributed-systems"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "frontend-jamstack-pro",
+    "name": "Enterprise Jamstack (Next.js + Vercel)",
+    "summary": "High-performance frontend architecture utilizing Edge rendering, headless CMS,\nand serverless functions.\n",
+    "stack": {
+      "framework": "nextjs",
+      "platform": "vercel",
+      "cms": "sanity",
+      "auth": "clerk",
+      "db": "neon"
+    },
+    "components": [
+      {
+        "id": "cdn",
+        "name": "Edge Network (CDN)",
+        "type": "network",
+        "notes": "Global caching & routing"
+      },
+      {
+        "id": "frontend",
+        "name": "Next.js Application",
+        "type": "service",
+        "depends_on": [
+          "cdn"
+        ],
+        "notes": "SSR / ISR / Static"
+      },
+      {
+        "id": "cms",
+        "name": "Headless CMS (Sanity)",
+        "type": "api-service",
+        "ports": [
+          "GraphQL/REST"
+        ]
+      },
+      {
+        "id": "auth",
+        "name": "Auth Provider (Clerk)",
+        "type": "auth-service"
+      },
+      {
+        "id": "db",
+        "name": "Serverless Postgres (Neon)",
+        "type": "database"
+      },
+      {
+        "id": "functions",
+        "name": "Edge Functions",
+        "type": "compute",
+        "depends_on": [
+          "auth",
+          "db",
+          "cms"
+        ],
+        "notes": "Backend logic running at edge"
+      },
+      {
+        "id": "user",
+        "name": "End User",
+        "type": "actor",
+        "depends_on": [
+          "cdn"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "edge-layer",
+        "members": [
+          "cdn",
+          "functions"
+        ]
+      },
+      {
+        "id": "app-layer",
+        "members": [
+          "frontend"
+        ]
+      },
+      {
+        "id": "data-api-layer",
+        "members": [
+          "cms",
+          "auth",
+          "db"
+        ]
+      }
+    ],
+    "tags": [
+      "frontend",
+      "jamstack",
+      "nextjs",
+      "vercel",
+      "headless"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "go-microservices-gateway",
+    "name": "Go microservices behind API Gateway",
+    "summary": "Blueprint for a set of Go microservices exposed via an API gateway, backed by\nPostgres and Redis, running on Kubernetes with an ingress controller and\nGitOps-driven deployments.\n",
+    "stack": {
+      "language": "go",
+      "framework": "net-http-or-chi",
+      "data_store": "postgres",
+      "cache": "redis",
+      "deploy_target": "kubernetes",
+      "gateway": "api-gateway-or-ingress"
+    },
+    "components": [
+      {
+        "id": "gateway",
+        "name": "API gateway / ingress controller",
+        "type": "gateway",
+        "notes": "Nginx Ingress / Envoy / API Gateway entrypoint",
+        "depends_on": [
+          "svc_public",
+          "svc_admin"
+        ],
+        "ports": [
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "svc_public",
+        "name": "Public HTTP API service",
+        "type": "service",
+        "language": "go",
+        "framework": "chi",
+        "depends_on": [
+          "db",
+          "cache"
+        ],
+        "ports": [
+          "80 HTTP"
+        ]
+      },
+      {
+        "id": "svc_admin",
+        "name": "Admin / internal service",
+        "type": "service",
+        "language": "go",
+        "framework": "chi",
+        "depends_on": [
+          "db"
+        ],
+        "ports": [
+          "8080 HTTP"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "Postgres database",
+        "type": "postgres",
+        "ports": [
+          "5432"
+        ]
+      },
+      {
+        "id": "cache",
+        "name": "Redis cache / queue",
+        "type": "redis",
+        "ports": [
+          "6379"
+        ]
+      },
+      {
+        "id": "observability",
+        "name": "Metrics, logs, tracing",
+        "type": "observability",
+        "notes": "Prometheus, Grafana, Loki/ELK, OpenTelemetry."
+      }
+    ],
+    "kubernetes": {
+      "cluster_type": "managed-or-self-hosted",
+      "namespaces": [
+        {
+          "name": "api",
+          "components": [
+            "gateway",
+            "svc_public",
+            "svc_admin",
+            "db",
+            "cache",
+            "observability"
+          ]
+        }
+      ]
+    },
+    "ci_cd": {
+      "tools": [
+        "github-actions",
+        "argo-cd-or-flux"
+      ],
+      "stages": [
+        "build-and-test",
+        "container-image-publish",
+        "deploy-staging",
+        "deploy-production"
+      ]
+    },
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/devops-stack/"
+      }
+    ],
+    "tags": [
+      "go",
+      "microservices",
+      "kubernetes",
+      "api-gateway",
+      "postgres",
+      "redis"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "infra-k8s-gitops",
+    "name": "Kubernetes GitOps Platform (ArgoCD)",
+    "summary": "A robust platform engineering stack for Kubernetes, utilizing GitOps principles\nwith ArgoCD, Service Mesh (Istio), and comprehensive observability.\n",
+    "stack": {
+      "orchestration": "kubernetes",
+      "gitops": "argocd",
+      "network": "istio",
+      "observability": "prometheus-grafana",
+      "cloud": "cloud-agnostic"
+    },
+    "components": [
+      {
+        "id": "gitrc",
+        "name": "Git Repo (Config)",
+        "type": "source-control",
+        "notes": "Source of Truth for Infra State"
+      },
+      {
+        "id": "argocd",
+        "name": "ArgoCD Controller",
+        "type": "gitops-operator",
+        "depends_on": [
+          "gitrc"
+        ],
+        "ports": [
+          "Sync"
+        ]
+      },
+      {
+        "id": "istio",
+        "name": "Istio Service Mesh",
+        "type": "network",
+        "notes": "mTLS, Traffic Management"
+      },
+      {
+        "id": "prometheus",
+        "name": "Prometheus",
+        "type": "metrics",
+        "depends_on": [
+          "istio"
+        ],
+        "notes": "Scrapes metrics from mesh and apps"
+      },
+      {
+        "id": "app",
+        "name": "Tenant Application",
+        "type": "workload",
+        "depends_on": [
+          "istio"
+        ]
+      },
+      {
+        "id": "externaldns",
+        "name": "ExternalDNS",
+        "type": "infra-tool",
+        "notes": "Syncs Ingress references to Cloud DNS"
+      },
+      {
+        "id": "certmanager",
+        "name": "cert-manager",
+        "type": "infra-tool",
+        "notes": "Automates LetsEncrypt certificates"
+      }
+    ],
+    "groups": [
+      {
+        "id": "control-plane",
+        "members": [
+          "argocd",
+          "externaldns",
+          "certmanager"
+        ]
+      },
+      {
+        "id": "mesh-layer",
+        "members": [
+          "istio",
+          "prometheus"
+        ]
+      },
+      {
+        "id": "tenant-workloads",
+        "members": [
+          "app"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/devops-stack/"
+      }
+    ],
+    "tags": [
+      "kubernetes",
+      "gitops",
+      "argocd",
+      "istio",
+      "prometheus"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "java-spring-boot-k8s",
+    "name": "Enterprise Java (Spring Boot on K8s)",
+    "summary": "A standard enterprise-grade stack for Java applications using Spring Boot,\ndeployed on Kubernetes with centralized configuration and discovery.\n",
+    "stack": {
+      "language": "java",
+      "framework": "spring-boot",
+      "runtime": "jvm",
+      "data": "postgres",
+      "messaging": "activemq"
+    },
+    "components": [
+      {
+        "id": "ingress",
+        "name": "Ingress Controller",
+        "type": "network"
+      },
+      {
+        "id": "api",
+        "name": "Spring Boot API",
+        "type": "service",
+        "depends_on": [
+          "config",
+          "db",
+          "mq"
+        ],
+        "notes": "Tomcat / Jetty embedded"
+      },
+      {
+        "id": "config",
+        "name": "Spring Cloud Config / K8s ConfigMap",
+        "type": "configuration"
+      },
+      {
+        "id": "db",
+        "name": "PostgreSQL",
+        "type": "database",
+        "ports": [
+          "5432"
+        ]
+      },
+      {
+        "id": "mq",
+        "name": "Message Broker (ActiveMQ/Rabbit)",
+        "type": "message-broker"
+      },
+      {
+        "id": "worker",
+        "name": "Background Worker",
+        "type": "service",
+        "depends_on": [
+          "mq",
+          "db"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "application-layer",
+        "members": [
+          "api",
+          "worker"
+        ]
+      },
+      {
+        "id": "infra-layer",
+        "members": [
+          "db",
+          "mq",
+          "config"
+        ]
+      }
+    ],
+    "tags": [
+      "java",
+      "spring-boot",
+      "enterprise",
+      "kubernetes"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "lamp-docker-compose",
+    "name": "Containerized LAMP (Docker Compose)",
+    "summary": "Modernized LAMP stack running as containerized services orchestrated by\nDocker Compose. Portable across any cloud that supports Docker.\n",
+    "stack": {
+      "kind": "lamp",
+      "language": "php",
+      "container": "docker",
+      "orchestrator": "docker-compose",
+      "data_store": "mysql"
+    },
+    "components": [
+      {
+        "id": "proxy",
+        "name": "Reverse Proxy (Traefik/Nginx)",
+        "type": "gateway",
+        "depends_on": [
+          "web"
+        ]
+      },
+      {
+        "id": "web",
+        "name": "PHP-FPM Container",
+        "type": "service",
+        "depends_on": [
+          "db"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "MySQL Container",
+        "type": "database"
+      },
+      {
+        "id": "compose",
+        "name": "Docker Compose",
+        "type": "orchestrator",
+        "notes": "Defines services & networks"
+      }
+    ],
+    "groups": [
+      {
+        "id": "host-vm",
+        "members": [
+          "compose",
+          "proxy",
+          "web",
+          "db"
+        ]
+      }
+    ],
+    "tags": [
+      "lamp",
+      "docker",
+      "container",
+      "php",
+      "mysql"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "lamp-ecs",
+    "name": "LAMP on AWS ECS (Fargate)",
+    "summary": "LAMP stack packaged into containers and run on AWS ECS (Fargate),\nfronted by an Application Load Balancer with RDS MySQL.\n",
+    "stack": {
+      "kind": "lamp",
+      "language": "php",
+      "web_server": "apache",
+      "data_store": "mysql",
+      "deploy_target": "ecs",
+      "clouds": [
+        "aws"
+      ]
+    },
+    "components": [
+      {
+        "id": "lb",
+        "name": "Application Load Balancer",
+        "type": "load_balancer",
+        "depends_on": [
+          "service"
+        ],
+        "ports": [
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "service",
+        "name": "ECS service (Fargate)",
+        "type": "service",
+        "depends_on": [
+          "task"
+        ]
+      },
+      {
+        "id": "task",
+        "name": "LAMP task (Apache + PHP)",
+        "type": "container",
+        "depends_on": [
+          "db"
+        ],
+        "ports": [
+          "80 HTTP"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "RDS MySQL/MariaDB",
+        "type": "mysql",
+        "ports": [
+          "3306 MySQL"
+        ]
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitoring & logs",
+        "type": "observability",
+        "depends_on": [
+          "service",
+          "db"
+        ]
+      }
+    ],
+    "deploy": {
+      "aws": {
+        "target": "ecs",
+        "notes": "LAMP containers on ECS Fargate behind an ALB, with RDS MySQL and CloudWatch metrics."
+      }
+    },
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/solutions/#stack-blueprints"
+      }
+    ],
+    "tags": [
+      "lamp",
+      "php",
+      "mysql",
+      "aws",
+      "ecs"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "lamp-vm-generic",
+    "name": "Classic LAMP Stack (VM/Cloud)",
+    "summary": "The classic Linux, Apache, MySQL/MariaDB, and PHP stack, suitable for\ndeployment on AWS EC2, DigitalOcean Droplets, or any standard Linux VM.\n",
+    "stack": {
+      "kind": "lamp",
+      "language": "php",
+      "web_server": "apache",
+      "data_store": "mysql",
+      "deploy_target": "vm",
+      "clouds": [
+        "aws",
+        "digitalocean",
+        "oci"
+      ]
+    },
+    "components": [
+      {
+        "id": "lb",
+        "name": "Load Balancer",
+        "type": "network",
+        "depends_on": [
+          "vm"
+        ],
+        "ports": [
+          "HTTP/HTTPS"
+        ]
+      },
+      {
+        "id": "vm",
+        "name": "Virtual Machine (Linux)",
+        "type": "vm",
+        "depends_on": [
+          "web"
+        ],
+        "notes": "Ubuntu / Amazon Linux"
+      },
+      {
+        "id": "web",
+        "name": "Apache + PHP",
+        "type": "service",
+        "depends_on": [
+          "db"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "MySQL / MariaDB",
+        "type": "database",
+        "notes": "Managed Service or Local"
+      }
+    ],
+    "groups": [
+      {
+        "id": "compute",
+        "members": [
+          "vm",
+          "web"
+        ]
+      }
+    ],
+    "tags": [
+      "lamp",
+      "php",
+      "mysql",
+      "legacy",
+      "vm"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "lemp-ec2-do",
+    "name": "LEMP on EC2 / DigitalOcean Droplet",
+    "summary": "Linux + Nginx + MySQL/MariaDB + PHP stack tuned for higher concurrency\nthan classic LAMP, deployable on EC2 or a DigitalOcean Droplet.\n",
+    "stack": {
+      "kind": "lemp",
+      "language": "php",
+      "web_server": "nginx",
+      "data_store": "mysql",
+      "deploy_target": "vm",
+      "clouds": [
+        "aws",
+        "digitalocean"
+      ]
+    },
+    "components": [
+      {
+        "id": "vm",
+        "name": "EC2 / Droplet VM",
+        "type": "vm",
+        "depends_on": [
+          "web",
+          "db"
+        ],
+        "ports": [
+          "22 SSH",
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "web",
+        "name": "Nginx + PHP-FPM app",
+        "type": "web",
+        "depends_on": [
+          "db"
+        ],
+        "ports": [
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "MySQL/MariaDB",
+        "type": "mysql",
+        "ports": [
+          "3306 MySQL"
+        ]
+      },
+      {
+        "id": "cache",
+        "name": "Optional cache",
+        "type": "cache"
+      },
+      {
+        "id": "lb",
+        "name": "Load balancer",
+        "type": "load_balancer",
+        "depends_on": [
+          "web"
+        ],
+        "ports": [
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitoring & logs",
+        "type": "observability",
+        "depends_on": [
+          "web",
+          "db"
+        ]
+      }
+    ],
+    "deploy": {
+      "aws": {
+        "target": "ec2",
+        "notes": "EC2 with Nginx + PHP-FPM, RDS MySQL, ALB in front, CloudWatch alarms."
+      },
+      "digitalocean": {
+        "target": "droplet",
+        "notes": "Droplet with Nginx + PHP-FPM, DO Managed MySQL, DO Load Balancer."
+      }
+    },
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/solutions/#stack-blueprints"
+      }
+    ],
+    "tags": [
+      "lemp",
+      "php",
+      "mysql",
+      "nginx",
+      "aws",
+      "digitalocean"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "mean-ec2-do",
+    "name": "MEAN on EC2 / DigitalOcean Droplet",
+    "summary": "MongoDB + Express + Angular + Node.js stack, with an Angular SPA served\nby a Node/Express backend and MongoDB.\n",
+    "stack": {
+      "kind": "mean",
+      "language": "javascript",
+      "frontend": "angular",
+      "backend": "node",
+      "data_store": "mongodb",
+      "deploy_target": "vm",
+      "clouds": [
+        "aws",
+        "digitalocean"
+      ]
+    },
+    "components": [
+      {
+        "id": "vm",
+        "name": "EC2 / Droplet VM",
+        "type": "vm",
+        "depends_on": [
+          "compose"
+        ],
+        "ports": [
+          "22 SSH",
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "compose",
+        "name": "docker-compose / container runtime",
+        "type": "orchestrator",
+        "depends_on": [
+          "api",
+          "db",
+          "frontend"
+        ]
+      },
+      {
+        "id": "api",
+        "name": "Node/Express API",
+        "type": "service",
+        "depends_on": [
+          "db"
+        ],
+        "ports": [
+          "3000 HTTP"
+        ]
+      },
+      {
+        "id": "frontend",
+        "name": "Angular SPA",
+        "type": "frontend",
+        "depends_on": [
+          "api"
+        ],
+        "ports": [
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "MongoDB",
+        "type": "mongodb",
+        "ports": [
+          "27017 MongoDB"
+        ]
+      },
+      {
+        "id": "cdn",
+        "name": "Static asset hosting / CDN",
+        "type": "cdn",
+        "depends_on": [
+          "frontend"
+        ]
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitoring & logs",
+        "type": "observability",
+        "depends_on": [
+          "api",
+          "db"
+        ]
+      }
+    ],
+    "deploy": {
+      "aws": {
+        "target": "ec2",
+        "notes": "Angular built to static assets on S3/CloudFront, Node/Express API on EC2/ECS, MongoDB Atlas."
+      },
+      "digitalocean": {
+        "target": "droplet",
+        "notes": "Node/Express serving Angular assets on a Droplet, MongoDB Atlas/managed Mongo, Nginx reverse proxy."
+      }
+    },
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/solutions/#stack-blueprints"
+      }
+    ],
+    "tags": [
+      "mean",
+      "node",
+      "angular",
+      "mongodb",
+      "aws",
+      "digitalocean"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "mern-ec2-do",
+    "name": "MERN on EC2 / DigitalOcean Droplet",
+    "summary": "MongoDB + Express + React + Node.js stack, with a Node/Express API and\nReact or Next.js frontend, deployable on EC2 or a DigitalOcean Droplet.\n",
+    "stack": {
+      "kind": "mern",
+      "language": "javascript",
+      "frontend": "react",
+      "backend": "node",
+      "data_store": "mongodb",
+      "deploy_target": "vm",
+      "clouds": [
+        "aws",
+        "digitalocean"
+      ]
+    },
+    "components": [
+      {
+        "id": "vm",
+        "name": "EC2 / Droplet VM",
+        "type": "vm",
+        "depends_on": [
+          "compose"
+        ],
+        "ports": [
+          "22 SSH",
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "compose",
+        "name": "docker-compose / container runtime",
+        "type": "orchestrator",
+        "depends_on": [
+          "api",
+          "db",
+          "frontend"
+        ]
+      },
+      {
+        "id": "api",
+        "name": "Node/Express API",
+        "type": "service",
+        "depends_on": [
+          "db"
+        ],
+        "ports": [
+          "3000 HTTP"
+        ]
+      },
+      {
+        "id": "frontend",
+        "name": "React / Next.js frontend",
+        "type": "frontend",
+        "depends_on": [
+          "api"
+        ],
+        "ports": [
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "MongoDB",
+        "type": "mongodb",
+        "ports": [
+          "27017 MongoDB"
+        ]
+      },
+      {
+        "id": "cdn",
+        "name": "Static asset hosting / CDN",
+        "type": "cdn",
+        "depends_on": [
+          "frontend"
+        ]
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitoring & logs",
+        "type": "observability",
+        "depends_on": [
+          "api",
+          "db"
+        ]
+      }
+    ],
+    "deploy": {
+      "aws": {
+        "target": "ec2",
+        "notes": "Node API on EC2/ECS, MongoDB Atlas or self-managed, React assets on S3/CloudFront."
+      },
+      "digitalocean": {
+        "target": "droplet",
+        "notes": "Node API on a Droplet (optionally PM2), MongoDB Atlas/DO Managed Mongo, static assets via Spaces + CDN."
+      }
+    },
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/solutions/#stack-blueprints"
+      }
+    ],
+    "tags": [
+      "mern",
+      "node",
+      "react",
+      "mongodb",
+      "aws",
+      "digitalocean"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "mevn-ec2-do",
+    "name": "MEVN on EC2 / DigitalOcean Droplet",
+    "summary": "MongoDB + Express + Vue (or Nuxt) + Node.js stack, with a Vue frontend\nand Node/Express API.\n",
+    "stack": {
+      "kind": "mevn",
+      "language": "javascript",
+      "frontend": "vue",
+      "backend": "node",
+      "data_store": "mongodb",
+      "deploy_target": "vm",
+      "clouds": [
+        "aws",
+        "digitalocean"
+      ]
+    },
+    "components": [
+      {
+        "id": "vm",
+        "name": "EC2 / Droplet VM",
+        "type": "vm",
+        "depends_on": [
+          "compose"
+        ],
+        "ports": [
+          "22 SSH",
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "compose",
+        "name": "docker-compose / container runtime",
+        "type": "orchestrator",
+        "depends_on": [
+          "api",
+          "db",
+          "frontend"
+        ]
+      },
+      {
+        "id": "api",
+        "name": "Node/Express API",
+        "type": "service",
+        "depends_on": [
+          "db"
+        ],
+        "ports": [
+          "3000 HTTP"
+        ]
+      },
+      {
+        "id": "frontend",
+        "name": "Vue / Nuxt frontend",
+        "type": "frontend",
+        "depends_on": [
+          "api"
+        ],
+        "ports": [
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "MongoDB",
+        "type": "mongodb",
+        "ports": [
+          "27017 MongoDB"
+        ]
+      },
+      {
+        "id": "cdn",
+        "name": "Static asset hosting / CDN",
+        "type": "cdn",
+        "depends_on": [
+          "frontend"
+        ]
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitoring & logs",
+        "type": "observability",
+        "depends_on": [
+          "api",
+          "db"
+        ]
+      }
+    ],
+    "deploy": {
+      "aws": {
+        "target": "ec2",
+        "notes": "Nuxt/Vue static build to S3/CloudFront, Node/Express API on EC2/ECS, MongoDB Atlas."
+      },
+      "digitalocean": {
+        "target": "droplet",
+        "notes": "Node/Express + Vue app on a Droplet behind Nginx, MongoDB Atlas/managed Mongo, Spaces/CDN for assets."
+      }
+    },
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/solutions/#stack-blueprints"
+      }
+    ],
+    "tags": [
+      "mevn",
+      "node",
+      "vue",
+      "mongodb",
+      "aws",
+      "digitalocean"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "node-graphql-apollo",
+    "name": "Node.js GraphQL API (Apollo)",
+    "summary": "A robust GraphQL API using Apollo Server, Express, and TypeScript, \nconnecting to a Postgres database with Prisma ORM.\n",
+    "stack": {
+      "language": "typescript",
+      "server": "apollo-server",
+      "framework": "express",
+      "orm": "prisma",
+      "database": "postgres"
+    },
+    "components": [
+      {
+        "id": "client",
+        "name": "Client (React/Mobile)",
+        "type": "web-mobile"
+      },
+      {
+        "id": "api",
+        "name": "Apollo Server",
+        "type": "service",
+        "depends_on": [
+          "db",
+          "redis"
+        ],
+        "ports": [
+          "GraphQL"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "Postgres DB",
+        "type": "database",
+        "notes": "Relational Data"
+      },
+      {
+        "id": "redis",
+        "name": "Redis Cache",
+        "type": "cache",
+        "notes": "Response Caching / PubSub"
+      },
+      {
+        "id": "prisma",
+        "name": "Prisma Client",
+        "type": "lib",
+        "depends_on": [
+          "db"
+        ],
+        "notes": "Type-safe ORM (runs in API)"
+      }
+    ],
+    "groups": [
+      {
+        "id": "backend",
+        "members": [
+          "api",
+          "prisma",
+          "db",
+          "redis"
+        ]
+      }
+    ],
+    "tags": [
+      "nodejs",
+      "graphql",
+      "apollo",
+      "typescript",
+      "prisma"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "node-nestjs-microservices",
+    "name": "NestJS Microservices (RabbitMQ)",
+    "summary": "An enterprise-grade microservices architecture using NestJS, communicating\nasynchronously via RabbitMQ and using Redis for caching.\n",
+    "stack": {
+      "language": "typescript",
+      "framework": "nestjs",
+      "broker": "rabbitmq",
+      "database": "postgres",
+      "cache": "redis"
+    },
+    "components": [
+      {
+        "id": "gateway",
+        "name": "API Gateway (NestJS)",
+        "type": "service",
+        "depends_on": [
+          "broker"
+        ],
+        "ports": [
+          "HTTP/REST",
+          "GraphQL"
+        ]
+      },
+      {
+        "id": "auth",
+        "name": "Auth Service",
+        "type": "service",
+        "depends_on": [
+          "broker",
+          "auth-db"
+        ],
+        "notes": "JWT Issuance"
+      },
+      {
+        "id": "broker",
+        "name": "RabbitMQ Broker",
+        "type": "message-broker",
+        "notes": "AMQP Exchange"
+      },
+      {
+        "id": "billing",
+        "name": "Billing Service",
+        "type": "service",
+        "depends_on": [
+          "broker",
+          "billing-db"
+        ]
+      },
+      {
+        "id": "notif",
+        "name": "Notification Service",
+        "type": "service",
+        "depends_on": [
+          "broker",
+          "mailer"
+        ]
+      },
+      {
+        "id": "auth-db",
+        "name": "Auth DB (Postgres)",
+        "type": "database"
+      },
+      {
+        "id": "billing-db",
+        "name": "Billing DB (Postgres)",
+        "type": "database"
+      },
+      {
+        "id": "mailer",
+        "name": "Email Provider (SendGrid)",
+        "type": "external"
+      }
+    ],
+    "groups": [
+      {
+        "id": "services",
+        "members": [
+          "gateway",
+          "auth",
+          "billing",
+          "notif"
+        ]
+      },
+      {
+        "id": "infra",
+        "members": [
+          "broker",
+          "auth-db",
+          "billing-db"
+        ]
+      }
+    ],
+    "tags": [
+      "nodejs",
+      "nestjs",
+      "typescript",
+      "microservices",
+      "rabbitmq"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "node-next-supabase",
+    "name": "Node.js / Next.js with Supabase",
+    "summary": "Reference blueprint for a modern Next.js frontend and API layer backed by\nSupabase (Postgres, Auth, Storage, and Edge Functions), deployed on Vercel\nwith GitHub-based CI/CD.\n",
+    "stack": {
+      "language": "nodejs",
+      "framework": "nextjs",
+      "data_store": "supabase-postgres",
+      "cache": "redis-optional",
+      "deploy_target": "vercel",
+      "auth": "supabase-auth"
+    },
+    "components": [
+      {
+        "id": "web",
+        "name": "Next.js web app",
+        "type": "frontend",
+        "language": "typescript",
+        "framework": "nextjs",
+        "depends_on": [
+          "api",
+          "supabase"
+        ],
+        "ports": [
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "api",
+        "name": "Next.js API routes / app router handlers",
+        "type": "service",
+        "language": "typescript",
+        "framework": "nextjs-api",
+        "depends_on": [
+          "supabase"
+        ],
+        "ports": [
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "supabase",
+        "name": "Supabase project (Postgres, Auth, Storage)",
+        "type": "backend-as-a-service",
+        "ports": [
+          "5432 Postgres"
+        ]
+      },
+      {
+        "id": "edge_functions",
+        "name": "Supabase Edge Functions",
+        "type": "function",
+        "notes": "Server-side logic and webhooks (e.g. log-event, contact-submit).",
+        "depends_on": [
+          "supabase"
+        ]
+      },
+      {
+        "id": "storage",
+        "name": "Supabase Storage buckets",
+        "type": "storage",
+        "depends_on": [
+          "supabase"
+        ]
+      },
+      {
+        "id": "observability",
+        "name": "Monitoring and logs",
+        "type": "observability",
+        "notes": "Vercel + Supabase logs, optional external APM/log sinks."
+      }
+    ],
+    "vercel": {
+      "project_type": "nextjs",
+      "env_sources": [
+        "vercel-project-settings",
+        "supabase-project-settings"
+      ]
+    },
+    "ci_cd": {
+      "tools": [
+        "github-actions",
+        "vercel-deploy-hooks"
+      ],
+      "stages": [
+        "lint-and-test",
+        "build-preview",
+        "deploy-production"
+      ]
+    },
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/services/"
+      },
+      {
+        "rel": "infra",
+        "href": "/devops-stack/"
+      }
+    ],
+    "tags": [
+      "nodejs",
+      "nextjs",
+      "supabase",
+      "postgres",
+      "edge-functions",
+      "vercel"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "pern-ec2-do",
+    "name": "PERN on EC2 / DigitalOcean Droplet",
+    "summary": "Postgres + Express + React + Node.js stack, with an Express/Node API\nand React or Next.js frontend backed by PostgreSQL.\n",
+    "stack": {
+      "kind": "pern",
+      "language": "javascript",
+      "frontend": "react",
+      "backend": "node",
+      "data_store": "postgres",
+      "deploy_target": "vm",
+      "clouds": [
+        "aws",
+        "digitalocean"
+      ]
+    },
+    "components": [
+      {
+        "id": "vm",
+        "name": "EC2 / Droplet VM",
+        "type": "vm",
+        "depends_on": [
+          "compose"
+        ],
+        "ports": [
+          "22 SSH",
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "compose",
+        "name": "docker-compose / container runtime",
+        "type": "orchestrator",
+        "depends_on": [
+          "api",
+          "db",
+          "frontend"
+        ]
+      },
+      {
+        "id": "api",
+        "name": "Node/Express API",
+        "type": "service",
+        "depends_on": [
+          "db"
+        ],
+        "ports": [
+          "3000 HTTP"
+        ]
+      },
+      {
+        "id": "frontend",
+        "name": "React / Next.js frontend",
+        "type": "frontend",
+        "depends_on": [
+          "api"
+        ],
+        "ports": [
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "PostgreSQL",
+        "type": "postgres",
+        "ports": [
+          "5432 Postgres"
+        ]
+      },
+      {
+        "id": "cdn",
+        "name": "Static asset hosting / CDN",
+        "type": "cdn",
+        "depends_on": [
+          "frontend"
+        ]
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitoring & logs",
+        "type": "observability",
+        "depends_on": [
+          "api",
+          "db"
+        ]
+      }
+    ],
+    "deploy": {
+      "aws": {
+        "target": "ec2",
+        "notes": "Node/Express API on EC2/ECS, RDS Postgres, React assets on S3/CloudFront, migrations via CI/CD."
+      },
+      "digitalocean": {
+        "target": "droplet",
+        "notes": "Node/Express API on a Droplet, DO Managed Postgres or DB Droplet, static assets via Spaces/CDN."
+      }
+    },
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/solutions/#stack-blueprints"
+      }
+    ],
+    "tags": [
+      "pern",
+      "node",
+      "react",
+      "postgres",
+      "aws",
+      "digitalocean"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "python-api-k8s",
+    "name": "Python API on Kubernetes (AWS EKS)",
+    "summary": "Reference blueprint for a Python (FastAPI-style) HTTP API running on\nKubernetes (EKS), backed by Postgres and Redis, with CI/CD and observability\nin place.\n",
+    "stack": {
+      "language": "python",
+      "framework": "fastapi-like",
+      "data_store": "postgres",
+      "cache": "redis",
+      "deploy_target": "kubernetes",
+      "cloud": "aws"
+    },
+    "components": [
+      {
+        "id": "api",
+        "name": "API service",
+        "type": "service",
+        "language": "python",
+        "framework": "fastapi-like",
+        "depends_on": [
+          "db",
+          "cache"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "Primary database (Postgres)",
+        "type": "postgres",
+        "ports": [
+          "5432"
+        ]
+      },
+      {
+        "id": "cache",
+        "name": "Cache / queue (Redis)",
+        "type": "redis",
+        "ports": [
+          "6379"
+        ]
+      },
+      {
+        "id": "ingress",
+        "name": "Ingress / load balancer",
+        "type": "ingress",
+        "depends_on": [
+          "api"
+        ],
+        "ports": [
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "observability",
+        "name": "Metrics & logging stack",
+        "type": "observability",
+        "notes": "Prometheus/Grafana + log aggregation"
+      }
+    ],
+    "kubernetes": {
+      "cluster_type": "eks",
+      "namespaces": [
+        {
+          "name": "app",
+          "components": [
+            "api",
+            "db",
+            "cache"
+          ]
+        }
+      ]
+    },
+    "ci_cd": {
+      "tools": [
+        "github-actions",
+        "terraform"
+      ],
+      "stages": [
+        "build-and-test",
+        "container-image-publish",
+        "deploy-to-staging",
+        "deploy-to-production"
+      ]
+    },
+    "links": [
+      {
+        "rel": "case-study",
+        "href": "/cases/k8s-platform-migration/"
+      },
+      {
+        "rel": "docs",
+        "href": "/devops-stack/"
+      }
+    ],
+    "tags": [
+      "python",
+      "fastapi",
+      "kubernetes",
+      "eks",
+      "postgres",
+      "redis",
+      "aws"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "python-django-celery",
+    "name": "Python Django + Celery",
+    "summary": "The classic \"batteries-included\" Python stack using Django for the web layer\nand Celery with Redis for robust background task processing.\n",
+    "stack": {
+      "language": "python",
+      "framework": "django",
+      "workers": "celery",
+      "broker": "redis",
+      "database": "postgres"
+    },
+    "components": [
+      {
+        "id": "nginx",
+        "name": "Nginx / Load Balancer",
+        "type": "network"
+      },
+      {
+        "id": "web",
+        "name": "Django (Gunicorn)",
+        "type": "service",
+        "depends_on": [
+          "db",
+          "redis"
+        ],
+        "ports": [
+          "WSGI"
+        ]
+      },
+      {
+        "id": "celery",
+        "name": "Celery Workers",
+        "type": "worker",
+        "depends_on": [
+          "redis",
+          "db"
+        ],
+        "notes": "Async Task Processing"
+      },
+      {
+        "id": "beat",
+        "name": "Celery Beat",
+        "type": "scheduler",
+        "depends_on": [
+          "redis"
+        ],
+        "notes": "Scheduled Tasks"
+      },
+      {
+        "id": "redis",
+        "name": "Redis Broker",
+        "type": "message-broker",
+        "notes": "Task Queue / Cache"
+      },
+      {
+        "id": "db",
+        "name": "PostgreSQL",
+        "type": "database"
+      }
+    ],
+    "groups": [
+      {
+        "id": "app-tier",
+        "members": [
+          "web",
+          "celery",
+          "beat"
+        ]
+      },
+      {
+        "id": "data-tier",
+        "members": [
+          "db",
+          "redis"
+        ]
+      }
+    ],
+    "tags": [
+      "python",
+      "django",
+      "celery",
+      "redis"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "python-ml-serving",
+    "name": "ML Model Serving (FastAPI)",
+    "summary": "A high-performance pattern for serving Machine Learning models using Python,\nFastAPI and containerized model artifacts.\n",
+    "stack": {
+      "language": "python",
+      "framework": "fastapi",
+      "format": "onnx / joblib",
+      "container": "docker"
+    },
+    "components": [
+      {
+        "id": "api",
+        "name": "Inference API (FastAPI)",
+        "type": "service",
+        "depends_on": [
+          "model_store",
+          "registry"
+        ],
+        "ports": [
+          "Prediction Endpoint"
+        ]
+      },
+      {
+        "id": "model_store",
+        "name": "Model Artifacts (S3)",
+        "type": "storage",
+        "notes": ".pkl / .onnx files"
+      },
+      {
+        "id": "registry",
+        "name": "MLFlow / Registry",
+        "type": "registry",
+        "notes": "Model Versioning"
+      },
+      {
+        "id": "worker",
+        "name": "Batch Processor",
+        "type": "worker",
+        "depends_on": [
+          "model_store",
+          "input_queue"
+        ]
+      },
+      {
+        "id": "input_queue",
+        "name": "Job Queue",
+        "type": "queue"
+      }
+    ],
+    "groups": [
+      {
+        "id": "serving",
+        "members": [
+          "api"
+        ]
+      },
+      {
+        "id": "batch",
+        "members": [
+          "worker",
+          "input_queue"
+        ]
+      },
+      {
+        "id": "management",
+        "members": [
+          "registry",
+          "model_store"
+        ]
+      }
+    ],
+    "tags": [
+      "python",
+      "machine-learning",
+      "fastapi",
+      "mlops"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "rails-sidekiq-redis",
+    "name": "Ruby on Rails Production Stack",
+    "summary": "The classic, battle-tested \"majestic monolith\" architecture for Rails,\nfeaturing background job processing with Sidekiq and Redis.\n",
+    "stack": {
+      "language": "ruby",
+      "framework": "rails",
+      "jobs": "sidekiq",
+      "cache": "redis",
+      "db": "postgres"
+    },
+    "components": [
+      {
+        "id": "lb",
+        "name": "Load Balancer",
+        "type": "network"
+      },
+      {
+        "id": "web",
+        "name": "Web Process (Puma)",
+        "type": "service",
+        "depends_on": [
+          "db",
+          "redis"
+        ],
+        "notes": "Serves HTTP requests"
+      },
+      {
+        "id": "worker",
+        "name": "Job Process (Sidekiq)",
+        "type": "worker",
+        "depends_on": [
+          "redis",
+          "db"
+        ],
+        "notes": "Processes async jobs"
+      },
+      {
+        "id": "redis",
+        "name": "Redis",
+        "type": "cache/queue",
+        "notes": "Sidekiq queues & caching"
+      },
+      {
+        "id": "db",
+        "name": "PostgreSQL",
+        "type": "database"
+      },
+      {
+        "id": "assets",
+        "name": "Asset Host / CDN",
+        "type": "storage",
+        "notes": "S3 / CloudFront"
+      }
+    ],
+    "groups": [
+      {
+        "id": "compute",
+        "members": [
+          "web",
+          "worker"
+        ]
+      },
+      {
+        "id": "data",
+        "members": [
+          "db",
+          "redis"
+        ]
+      }
+    ],
+    "tags": [
+      "ruby",
+      "rails",
+      "sidekiq",
+      "monolithic"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "rust-api-postgres",
+    "name": "Rust API with Postgres and Redis",
+    "summary": "Blueprint for a Rust HTTP API (Axum/Actix-style) backed by Postgres and\nRedis, packaged as containers and deployed either to Kubernetes or a small\nVM cluster with Nginx as an ingress/proxy.\n",
+    "stack": {
+      "language": "rust",
+      "framework": "axum-or-actix",
+      "data_store": "postgres",
+      "cache": "redis",
+      "deploy_target": "containers"
+    },
+    "components": [
+      {
+        "id": "api",
+        "name": "Rust API service",
+        "type": "service",
+        "language": "rust",
+        "framework": "axum",
+        "depends_on": [
+          "db",
+          "cache"
+        ],
+        "ports": [
+          "80 HTTP"
+        ]
+      },
+      {
+        "id": "db",
+        "name": "Postgres database",
+        "type": "postgres",
+        "ports": [
+          "5432"
+        ]
+      },
+      {
+        "id": "cache",
+        "name": "Redis cache",
+        "type": "redis",
+        "ports": [
+          "6379"
+        ]
+      },
+      {
+        "id": "proxy",
+        "name": "Nginx / reverse proxy",
+        "type": "proxy",
+        "depends_on": [
+          "api"
+        ],
+        "ports": [
+          "80 HTTP",
+          "443 HTTPS"
+        ]
+      },
+      {
+        "id": "observability",
+        "name": "Metrics and logs",
+        "type": "observability",
+        "notes": "Prometheus metrics exporter, structured logs to ELK or Loki."
+      }
+    ],
+    "containers": {
+      "orchestrator": "docker-compose-or-k8s",
+      "images": [
+        "api",
+        "db",
+        "cache",
+        "proxy"
+      ]
+    },
+    "ci_cd": {
+      "tools": [
+        "github-actions"
+      ],
+      "stages": [
+        "build",
+        "test",
+        "docker-image-publish",
+        "deploy"
+      ]
+    },
+    "links": [
+      {
+        "rel": "docs",
+        "href": "/ai-infra/"
+      }
+    ],
+    "tags": [
+      "rust",
+      "axum",
+      "postgres",
+      "redis",
+      "containers"
+    ]
+  },
+  {
+    "version": 1,
+    "id": "serverless-aws-api",
+    "name": "Serverless REST API (AWS Lambda)",
+    "summary": "A fully serverless backend architecture using AWS managed services for \nmaximum scalability and zero infrastructure management.\n",
+    "stack": {
+      "compute": "lambda",
+      "gateway": "api-gateway",
+      "database": "dynamodb",
+      "auth": "cognito",
+      "iac": "serverless-framework"
+    },
+    "components": [
+      {
+        "id": "client",
+        "name": "Client App",
+        "type": "web-mobile"
+      },
+      {
+        "id": "apigw",
+        "name": "API Gateway",
+        "type": "gateway",
+        "depends_on": [
+          "auth",
+          "lambda"
+        ],
+        "ports": [
+          "REST/HTTP"
+        ]
+      },
+      {
+        "id": "auth",
+        "name": "Cognito User Pool",
+        "type": "auth-service",
+        "notes": "JWT Vending"
+      },
+      {
+        "id": "lambda",
+        "name": "Lambda Functions",
+        "type": "compute",
+        "depends_on": [
+          "dynamo"
+        ],
+        "notes": "Node.js / Python handlers"
+      },
+      {
+        "id": "dynamo",
+        "name": "DynamoDB",
+        "type": "database",
+        "notes": "NoSQL Single Table Design"
+      },
+      {
+        "id": "events",
+        "name": "EventBridge",
+        "type": "bus",
+        "depends_on": [
+          "lambda"
+        ],
+        "notes": "Async event routing"
+      }
+    ],
+    "groups": [
+      {
+        "id": "aws-managed",
+        "members": [
+          "apigw",
+          "auth",
+          "dynamo",
+          "events"
+        ]
+      },
+      {
+        "id": "compute-layer",
+        "members": [
+          "lambda"
+        ]
+      }
+    ],
+    "tags": [
+      "aws",
+      "serverless",
+      "lambda",
+      "dynamodb",
+      "api-gateway"
+    ]
+  }
+]

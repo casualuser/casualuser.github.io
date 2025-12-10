@@ -103,7 +103,7 @@ We are not an "official" training partner for vendors; instead, we help you get 
 
 Where algorithmic and problem‑solving skills matter, we can also:
 
-- use **CodeChef, Codeforces, Topcoder, and similar platforms** to benchmark and grow skills;
+- use **LeetCode, HackerRank, Codeforces, CodeChef, Topcoder, and similar platforms** to benchmark and grow skills;
 - run lightweight internal contests, katas, and review sessions based on real constraints from your stack and hiring process.
 
 ## Engagement Models

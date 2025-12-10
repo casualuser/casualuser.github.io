@@ -1,0 +1,2255 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Architecture Blueprints | Webomage</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Architecture Blueprints" />
+<meta name="author" content="Aleksei Tcelishchev" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
+<meta property="og:description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
+<link rel="canonical" href="http://localhost:4000/blueprints/gallery/" />
+<meta property="og:url" content="http://localhost:4000/blueprints/gallery/" />
+<meta property="og:site_name" content="Webomage" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Architecture Blueprints" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Architecture Blueprints","url":"http://localhost:4000/blueprints/gallery/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /></head>
+<body>
+
+    <a href="#" class="scroll-to-top" aria-label="Scroll to top">▲ Top</a><header class="site-header" role="banner">
+
+  <div class="wrapper"><!-- <a class="site-title" rel="author" href="/">Webomage</a> -->
+    <div class="site-header-inner">
+      <div class="site-branding">
+        <a class="site-logo" rel="author" href="/" aria-label="Webomage home">
+          <img src="/assets/logo.svg" alt="Webomage logo">
+        </a>
+      </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/news/">News</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
+      </nav></div>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="site-bg-slideshow" aria-hidden="true">
+        <div class="site-bg-slide site-bg-slide-1"></div>
+        <div class="site-bg-slide site-bg-slide-2"></div>
+        <div class="site-bg-slide site-bg-slide-3"></div>
+        <div class="site-bg-slide site-bg-slide-4"></div>
+        <div class="site-bg-slide site-bg-slide-5"></div>
+      </div>
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Architecture Blueprints</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="architecture-blueprints">Architecture Blueprints</h1>
+
+<p>Explore our gallery of deployment patterns, infrastructure stacks, and application architectures.</p>
+
+<div class="blueprint-filters">
+  <input type="text" id="blueprintSearch" placeholder="Search blueprints (e.g., 'python', 'aws', 'kubernetes')..." class="search-box" />
+</div>
+
+<div class="blueprint-grid">
+
+  <div class="blueprint-card" data-tags="ai llm rag python langchain" data-name="ai rag application (langchain/vector db)" data-id="ai-rag-llm">
+    <div class="card-header">
+      <h3>AI RAG Application (LangChain/Vector DB)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">A reference architecture for a Retrieval-Augmented Generation (RAG) application
+using LLMs, a vector database for embedding storage, and an orchestration framework.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Llm:</strong> openai-gpt4</li>
+        
+          <li><strong>Orchestrator:</strong> langchain</li>
+        
+          <li><strong>Vector db:</strong> pinecone</li>
+        
+          <li><strong>App:</strong> python-fastapi</li>
+        
+          <li><strong>Data:</strong> unstructured-docs</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">User Query</span>
+        
+           <span class="component-tag">RAG API Service</span>
+        
+           <span class="component-tag">Ingestion Worker</span>
+        
+           <span class="component-tag">Document Sources</span>
+        
+        
+           <span class="more-tag">+2 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">ai</span>
+        
+          <span class="tech-tag">llm</span>
+        
+          <span class="tech-tag">rag</span>
+        
+          <span class="tech-tag">python</span>
+        
+          <span class="tech-tag">langchain</span>
+        
+      </div>
+      <a href="/docs/blueprints/ai-rag-llm.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="data analytics snowflake dbt airflow" data-name="modern data stack (elt)" data-id="data-analytics-modern">
+    <div class="card-header">
+      <h3>Modern Data Stack (ELT)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">A modern, scalable data pipeline focusing on the ELT (Extract, Load, Transform) pattern
+using industry standard tools for warehousing and transformation.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Ingestion:</strong> airbyte</li>
+        
+          <li><strong>Warehouse:</strong> snowflake</li>
+        
+          <li><strong>Transform:</strong> dbt</li>
+        
+          <li><strong>Orchestration:</strong> airflow</li>
+        
+          <li><strong>Bi:</strong> superset</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Data Sources</span>
+        
+           <span class="component-tag">Airbyte / Fivetran</span>
+        
+           <span class="component-tag">Data Warehouse (Snowflake)</span>
+        
+           <span class="component-tag">Transformation (dbt)</span>
+        
+        
+           <span class="more-tag">+2 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">data</span>
+        
+          <span class="tech-tag">analytics</span>
+        
+          <span class="tech-tag">snowflake</span>
+        
+          <span class="tech-tag">dbt</span>
+        
+          <span class="tech-tag">airflow</span>
+        
+      </div>
+      <a href="/docs/blueprints/data-analytics-modern.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="kafka microservices event-driven distributed-systems" data-name="event-driven microservices (kafka)" data-id="event-driven-kafka">
+    <div class="card-header">
+      <h3>Event-Driven Microservices (Kafka)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">A decoupled microservices architecture utilizing Apache Kafka for asynchronous
+communication and event streaming between domains.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Broker:</strong> kafka</li>
+        
+          <li><strong>Services:</strong> go-java-node</li>
+        
+          <li><strong>Registry:</strong> schema-registry</li>
+        
+          <li><strong>Coordination:</strong> zookeeper-kraft</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Order Service</span>
+        
+           <span class="component-tag">Kafka Cluster</span>
+        
+           <span class="component-tag">Schema Registry</span>
+        
+           <span class="component-tag">Inventory Service</span>
+        
+        
+           <span class="more-tag">+2 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">kafka</span>
+        
+          <span class="tech-tag">microservices</span>
+        
+          <span class="tech-tag">event-driven</span>
+        
+          <span class="tech-tag">distributed-systems</span>
+        
+      </div>
+      <a href="/docs/blueprints/event-driven-kafka.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="frontend jamstack nextjs vercel headless" data-name="enterprise jamstack (next.js + vercel)" data-id="frontend-jamstack-pro">
+    <div class="card-header">
+      <h3>Enterprise Jamstack (Next.js + Vercel)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">High-performance frontend architecture utilizing Edge rendering, headless CMS,
+and serverless functions.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Framework:</strong> nextjs</li>
+        
+          <li><strong>Platform:</strong> vercel</li>
+        
+          <li><strong>Cms:</strong> sanity</li>
+        
+          <li><strong>Auth:</strong> clerk</li>
+        
+          <li><strong>Db:</strong> neon</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Edge Network (CDN)</span>
+        
+           <span class="component-tag">Next.js Application</span>
+        
+           <span class="component-tag">Headless CMS (Sanity)</span>
+        
+           <span class="component-tag">Auth Provider (Clerk)</span>
+        
+        
+           <span class="more-tag">+3 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">frontend</span>
+        
+          <span class="tech-tag">jamstack</span>
+        
+          <span class="tech-tag">nextjs</span>
+        
+          <span class="tech-tag">vercel</span>
+        
+          <span class="tech-tag">headless</span>
+        
+      </div>
+      <a href="/docs/blueprints/frontend-jamstack-pro.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="go microservices kubernetes api-gateway postgres redis" data-name="go microservices behind api gateway" data-id="go-microservices-gateway">
+    <div class="card-header">
+      <h3>Go microservices behind API Gateway</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">Blueprint for a set of Go microservices exposed via an API gateway, backed by
+Postgres and Redis, running on Kubernetes with an ingress controller and
+GitOps-driven deployments.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Language:</strong> go</li>
+        
+          <li><strong>Framework:</strong> net-http-or-chi</li>
+        
+          <li><strong>Data store:</strong> postgres</li>
+        
+          <li><strong>Cache:</strong> redis</li>
+        
+          <li><strong>Deploy target:</strong> kubernetes</li>
+        
+          <li><strong>Gateway:</strong> api-gateway-or-ingress</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">API gateway / ingress controller</span>
+        
+           <span class="component-tag">Public HTTP API service</span>
+        
+           <span class="component-tag">Admin / internal service</span>
+        
+           <span class="component-tag">Postgres database</span>
+        
+        
+           <span class="more-tag">+2 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">go</span>
+        
+          <span class="tech-tag">microservices</span>
+        
+          <span class="tech-tag">kubernetes</span>
+        
+          <span class="tech-tag">api-gateway</span>
+        
+          <span class="tech-tag">postgres</span>
+        
+          <span class="tech-tag">redis</span>
+        
+      </div>
+      <a href="/docs/blueprints/go-microservices-gateway.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="kubernetes gitops argocd istio prometheus" data-name="kubernetes gitops platform (argocd)" data-id="infra-k8s-gitops">
+    <div class="card-header">
+      <h3>Kubernetes GitOps Platform (ArgoCD)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">A robust platform engineering stack for Kubernetes, utilizing GitOps principles
+with ArgoCD, Service Mesh (Istio), and comprehensive observability.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Orchestration:</strong> kubernetes</li>
+        
+          <li><strong>Gitops:</strong> argocd</li>
+        
+          <li><strong>Network:</strong> istio</li>
+        
+          <li><strong>Observability:</strong> prometheus-grafana</li>
+        
+          <li><strong>Cloud:</strong> cloud-agnostic</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Git Repo (Config)</span>
+        
+           <span class="component-tag">ArgoCD Controller</span>
+        
+           <span class="component-tag">Istio Service Mesh</span>
+        
+           <span class="component-tag">Prometheus</span>
+        
+        
+           <span class="more-tag">+3 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">kubernetes</span>
+        
+          <span class="tech-tag">gitops</span>
+        
+          <span class="tech-tag">argocd</span>
+        
+          <span class="tech-tag">istio</span>
+        
+          <span class="tech-tag">prometheus</span>
+        
+      </div>
+      <a href="/docs/blueprints/infra-k8s-gitops.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="java spring-boot enterprise kubernetes" data-name="enterprise java (spring boot on k8s)" data-id="java-spring-boot-k8s">
+    <div class="card-header">
+      <h3>Enterprise Java (Spring Boot on K8s)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">A standard enterprise-grade stack for Java applications using Spring Boot,
+deployed on Kubernetes with centralized configuration and discovery.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Language:</strong> java</li>
+        
+          <li><strong>Framework:</strong> spring-boot</li>
+        
+          <li><strong>Runtime:</strong> jvm</li>
+        
+          <li><strong>Data:</strong> postgres</li>
+        
+          <li><strong>Messaging:</strong> activemq</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Ingress Controller</span>
+        
+           <span class="component-tag">Spring Boot API</span>
+        
+           <span class="component-tag">Spring Cloud Config / K8s ConfigMap</span>
+        
+           <span class="component-tag">PostgreSQL</span>
+        
+        
+           <span class="more-tag">+2 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">java</span>
+        
+          <span class="tech-tag">spring-boot</span>
+        
+          <span class="tech-tag">enterprise</span>
+        
+          <span class="tech-tag">kubernetes</span>
+        
+      </div>
+      <a href="/docs/blueprints/java-spring-boot-k8s.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="lamp docker container php mysql" data-name="containerized lamp (docker compose)" data-id="lamp-docker-compose">
+    <div class="card-header">
+      <h3>Containerized LAMP (Docker Compose)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">Modernized LAMP stack running as containerized services orchestrated by
+Docker Compose. Portable across any cloud that supports Docker.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Kind:</strong> lamp</li>
+        
+          <li><strong>Language:</strong> php</li>
+        
+          <li><strong>Container:</strong> docker</li>
+        
+          <li><strong>Orchestrator:</strong> docker-compose</li>
+        
+          <li><strong>Data store:</strong> mysql</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Reverse Proxy (Traefik/Nginx)</span>
+        
+           <span class="component-tag">PHP-FPM Container</span>
+        
+           <span class="component-tag">MySQL Container</span>
+        
+           <span class="component-tag">Docker Compose</span>
+        
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">lamp</span>
+        
+          <span class="tech-tag">docker</span>
+        
+          <span class="tech-tag">container</span>
+        
+          <span class="tech-tag">php</span>
+        
+          <span class="tech-tag">mysql</span>
+        
+      </div>
+      <a href="/docs/blueprints/lamp-docker-compose.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="lamp php mysql aws ecs" data-name="lamp on aws ecs (fargate)" data-id="lamp-ecs">
+    <div class="card-header">
+      <h3>LAMP on AWS ECS (Fargate)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">LAMP stack packaged into containers and run on AWS ECS (Fargate),
+fronted by an Application Load Balancer with RDS MySQL.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Kind:</strong> lamp</li>
+        
+          <li><strong>Language:</strong> php</li>
+        
+          <li><strong>Web server:</strong> apache</li>
+        
+          <li><strong>Data store:</strong> mysql</li>
+        
+          <li><strong>Deploy target:</strong> ecs</li>
+        
+          <li><strong>Clouds:</strong> aws</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Application Load Balancer</span>
+        
+           <span class="component-tag">ECS service (Fargate)</span>
+        
+           <span class="component-tag">LAMP task (Apache + PHP)</span>
+        
+           <span class="component-tag">RDS MySQL/MariaDB</span>
+        
+        
+           <span class="more-tag">+1 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">lamp</span>
+        
+          <span class="tech-tag">php</span>
+        
+          <span class="tech-tag">mysql</span>
+        
+          <span class="tech-tag">aws</span>
+        
+          <span class="tech-tag">ecs</span>
+        
+      </div>
+      <a href="/docs/blueprints/lamp-ecs.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="lamp php mysql legacy vm" data-name="classic lamp stack (vm/cloud)" data-id="lamp-vm-generic">
+    <div class="card-header">
+      <h3>Classic LAMP Stack (VM/Cloud)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">The classic Linux, Apache, MySQL/MariaDB, and PHP stack, suitable for
+deployment on AWS EC2, DigitalOcean Droplets, or any standard Linux VM.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Kind:</strong> lamp</li>
+        
+          <li><strong>Language:</strong> php</li>
+        
+          <li><strong>Web server:</strong> apache</li>
+        
+          <li><strong>Data store:</strong> mysql</li>
+        
+          <li><strong>Deploy target:</strong> vm</li>
+        
+          <li><strong>Clouds:</strong> awsdigitaloceanoci</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Load Balancer</span>
+        
+           <span class="component-tag">Virtual Machine (Linux)</span>
+        
+           <span class="component-tag">Apache + PHP</span>
+        
+           <span class="component-tag">MySQL / MariaDB</span>
+        
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">lamp</span>
+        
+          <span class="tech-tag">php</span>
+        
+          <span class="tech-tag">mysql</span>
+        
+          <span class="tech-tag">legacy</span>
+        
+          <span class="tech-tag">vm</span>
+        
+      </div>
+      <a href="/docs/blueprints/lamp-vm-generic.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="lemp php mysql nginx aws digitalocean" data-name="lemp on ec2 / digitalocean droplet" data-id="lemp-ec2-do">
+    <div class="card-header">
+      <h3>LEMP on EC2 / DigitalOcean Droplet</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">Linux + Nginx + MySQL/MariaDB + PHP stack tuned for higher concurrency
+than classic LAMP, deployable on EC2 or a DigitalOcean Droplet.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Kind:</strong> lemp</li>
+        
+          <li><strong>Language:</strong> php</li>
+        
+          <li><strong>Web server:</strong> nginx</li>
+        
+          <li><strong>Data store:</strong> mysql</li>
+        
+          <li><strong>Deploy target:</strong> vm</li>
+        
+          <li><strong>Clouds:</strong> awsdigitalocean</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">EC2 / Droplet VM</span>
+        
+           <span class="component-tag">Nginx + PHP-FPM app</span>
+        
+           <span class="component-tag">MySQL/MariaDB</span>
+        
+           <span class="component-tag">Optional cache</span>
+        
+        
+           <span class="more-tag">+2 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">lemp</span>
+        
+          <span class="tech-tag">php</span>
+        
+          <span class="tech-tag">mysql</span>
+        
+          <span class="tech-tag">nginx</span>
+        
+          <span class="tech-tag">aws</span>
+        
+          <span class="tech-tag">digitalocean</span>
+        
+      </div>
+      <a href="/docs/blueprints/lemp-ec2-do.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="mean node angular mongodb aws digitalocean" data-name="mean on ec2 / digitalocean droplet" data-id="mean-ec2-do">
+    <div class="card-header">
+      <h3>MEAN on EC2 / DigitalOcean Droplet</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">MongoDB + Express + Angular + Node.js stack, with an Angular SPA served
+by a Node/Express backend and MongoDB.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Kind:</strong> mean</li>
+        
+          <li><strong>Language:</strong> javascript</li>
+        
+          <li><strong>Frontend:</strong> angular</li>
+        
+          <li><strong>Backend:</strong> node</li>
+        
+          <li><strong>Data store:</strong> mongodb</li>
+        
+          <li><strong>Deploy target:</strong> vm</li>
+        
+          <li><strong>Clouds:</strong> awsdigitalocean</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">EC2 / Droplet VM</span>
+        
+           <span class="component-tag">docker-compose / container runtime</span>
+        
+           <span class="component-tag">Node/Express API</span>
+        
+           <span class="component-tag">Angular SPA</span>
+        
+        
+           <span class="more-tag">+3 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">mean</span>
+        
+          <span class="tech-tag">node</span>
+        
+          <span class="tech-tag">angular</span>
+        
+          <span class="tech-tag">mongodb</span>
+        
+          <span class="tech-tag">aws</span>
+        
+          <span class="tech-tag">digitalocean</span>
+        
+      </div>
+      <a href="/docs/blueprints/mean-ec2-do.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="mern node react mongodb aws digitalocean" data-name="mern on ec2 / digitalocean droplet" data-id="mern-ec2-do">
+    <div class="card-header">
+      <h3>MERN on EC2 / DigitalOcean Droplet</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">MongoDB + Express + React + Node.js stack, with a Node/Express API and
+React or Next.js frontend, deployable on EC2 or a DigitalOcean Droplet.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Kind:</strong> mern</li>
+        
+          <li><strong>Language:</strong> javascript</li>
+        
+          <li><strong>Frontend:</strong> react</li>
+        
+          <li><strong>Backend:</strong> node</li>
+        
+          <li><strong>Data store:</strong> mongodb</li>
+        
+          <li><strong>Deploy target:</strong> vm</li>
+        
+          <li><strong>Clouds:</strong> awsdigitalocean</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">EC2 / Droplet VM</span>
+        
+           <span class="component-tag">docker-compose / container runtime</span>
+        
+           <span class="component-tag">Node/Express API</span>
+        
+           <span class="component-tag">React / Next.js frontend</span>
+        
+        
+           <span class="more-tag">+3 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">mern</span>
+        
+          <span class="tech-tag">node</span>
+        
+          <span class="tech-tag">react</span>
+        
+          <span class="tech-tag">mongodb</span>
+        
+          <span class="tech-tag">aws</span>
+        
+          <span class="tech-tag">digitalocean</span>
+        
+      </div>
+      <a href="/docs/blueprints/mern-ec2-do.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="mevn node vue mongodb aws digitalocean" data-name="mevn on ec2 / digitalocean droplet" data-id="mevn-ec2-do">
+    <div class="card-header">
+      <h3>MEVN on EC2 / DigitalOcean Droplet</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">MongoDB + Express + Vue (or Nuxt) + Node.js stack, with a Vue frontend
+and Node/Express API.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Kind:</strong> mevn</li>
+        
+          <li><strong>Language:</strong> javascript</li>
+        
+          <li><strong>Frontend:</strong> vue</li>
+        
+          <li><strong>Backend:</strong> node</li>
+        
+          <li><strong>Data store:</strong> mongodb</li>
+        
+          <li><strong>Deploy target:</strong> vm</li>
+        
+          <li><strong>Clouds:</strong> awsdigitalocean</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">EC2 / Droplet VM</span>
+        
+           <span class="component-tag">docker-compose / container runtime</span>
+        
+           <span class="component-tag">Node/Express API</span>
+        
+           <span class="component-tag">Vue / Nuxt frontend</span>
+        
+        
+           <span class="more-tag">+3 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">mevn</span>
+        
+          <span class="tech-tag">node</span>
+        
+          <span class="tech-tag">vue</span>
+        
+          <span class="tech-tag">mongodb</span>
+        
+          <span class="tech-tag">aws</span>
+        
+          <span class="tech-tag">digitalocean</span>
+        
+      </div>
+      <a href="/docs/blueprints/mevn-ec2-do.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="nodejs graphql apollo typescript prisma" data-name="node.js graphql api (apollo)" data-id="node-graphql-apollo">
+    <div class="card-header">
+      <h3>Node.js GraphQL API (Apollo)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">A robust GraphQL API using Apollo Server, Express, and TypeScript, 
+connecting to a Postgres database with Prisma ORM.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Language:</strong> typescript</li>
+        
+          <li><strong>Server:</strong> apollo-server</li>
+        
+          <li><strong>Framework:</strong> express</li>
+        
+          <li><strong>Orm:</strong> prisma</li>
+        
+          <li><strong>Database:</strong> postgres</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Client (React/Mobile)</span>
+        
+           <span class="component-tag">Apollo Server</span>
+        
+           <span class="component-tag">Postgres DB</span>
+        
+           <span class="component-tag">Redis Cache</span>
+        
+        
+           <span class="more-tag">+1 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">nodejs</span>
+        
+          <span class="tech-tag">graphql</span>
+        
+          <span class="tech-tag">apollo</span>
+        
+          <span class="tech-tag">typescript</span>
+        
+          <span class="tech-tag">prisma</span>
+        
+      </div>
+      <a href="/docs/blueprints/node-graphql-apollo.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="nodejs nestjs typescript microservices rabbitmq" data-name="nestjs microservices (rabbitmq)" data-id="node-nestjs-microservices">
+    <div class="card-header">
+      <h3>NestJS Microservices (RabbitMQ)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">An enterprise-grade microservices architecture using NestJS, communicating
+asynchronously via RabbitMQ and using Redis for caching.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Language:</strong> typescript</li>
+        
+          <li><strong>Framework:</strong> nestjs</li>
+        
+          <li><strong>Broker:</strong> rabbitmq</li>
+        
+          <li><strong>Database:</strong> postgres</li>
+        
+          <li><strong>Cache:</strong> redis</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">API Gateway (NestJS)</span>
+        
+           <span class="component-tag">Auth Service</span>
+        
+           <span class="component-tag">RabbitMQ Broker</span>
+        
+           <span class="component-tag">Billing Service</span>
+        
+        
+           <span class="more-tag">+4 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">nodejs</span>
+        
+          <span class="tech-tag">nestjs</span>
+        
+          <span class="tech-tag">typescript</span>
+        
+          <span class="tech-tag">microservices</span>
+        
+          <span class="tech-tag">rabbitmq</span>
+        
+      </div>
+      <a href="/docs/blueprints/node-nestjs-microservices.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="nodejs nextjs supabase postgres edge-functions vercel" data-name="node.js / next.js with supabase" data-id="node-next-supabase">
+    <div class="card-header">
+      <h3>Node.js / Next.js with Supabase</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">Reference blueprint for a modern Next.js frontend and API layer backed by
+Supabase (Postgres, Auth, Storage, and Edge Functions), deployed on Vercel
+with GitHub-based CI/CD.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Language:</strong> nodejs</li>
+        
+          <li><strong>Framework:</strong> nextjs</li>
+        
+          <li><strong>Data store:</strong> supabase-postgres</li>
+        
+          <li><strong>Cache:</strong> redis-optional</li>
+        
+          <li><strong>Deploy target:</strong> vercel</li>
+        
+          <li><strong>Auth:</strong> supabase-auth</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Next.js web app</span>
+        
+           <span class="component-tag">Next.js API routes / app router handlers</span>
+        
+           <span class="component-tag">Supabase project (Postgres, Auth, Storage)</span>
+        
+           <span class="component-tag">Supabase Edge Functions</span>
+        
+        
+           <span class="more-tag">+2 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">nodejs</span>
+        
+          <span class="tech-tag">nextjs</span>
+        
+          <span class="tech-tag">supabase</span>
+        
+          <span class="tech-tag">postgres</span>
+        
+          <span class="tech-tag">edge-functions</span>
+        
+          <span class="tech-tag">vercel</span>
+        
+      </div>
+      <a href="/docs/blueprints/node-next-supabase.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="pern node react postgres aws digitalocean" data-name="pern on ec2 / digitalocean droplet" data-id="pern-ec2-do">
+    <div class="card-header">
+      <h3>PERN on EC2 / DigitalOcean Droplet</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">Postgres + Express + React + Node.js stack, with an Express/Node API
+and React or Next.js frontend backed by PostgreSQL.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Kind:</strong> pern</li>
+        
+          <li><strong>Language:</strong> javascript</li>
+        
+          <li><strong>Frontend:</strong> react</li>
+        
+          <li><strong>Backend:</strong> node</li>
+        
+          <li><strong>Data store:</strong> postgres</li>
+        
+          <li><strong>Deploy target:</strong> vm</li>
+        
+          <li><strong>Clouds:</strong> awsdigitalocean</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">EC2 / Droplet VM</span>
+        
+           <span class="component-tag">docker-compose / container runtime</span>
+        
+           <span class="component-tag">Node/Express API</span>
+        
+           <span class="component-tag">React / Next.js frontend</span>
+        
+        
+           <span class="more-tag">+3 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">pern</span>
+        
+          <span class="tech-tag">node</span>
+        
+          <span class="tech-tag">react</span>
+        
+          <span class="tech-tag">postgres</span>
+        
+          <span class="tech-tag">aws</span>
+        
+          <span class="tech-tag">digitalocean</span>
+        
+      </div>
+      <a href="/docs/blueprints/pern-ec2-do.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="python fastapi kubernetes eks postgres redis aws" data-name="python api on kubernetes (aws eks)" data-id="python-api-k8s">
+    <div class="card-header">
+      <h3>Python API on Kubernetes (AWS EKS)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">Reference blueprint for a Python (FastAPI-style) HTTP API running on
+Kubernetes (EKS), backed by Postgres and Redis, with CI/CD and observability
+in place.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Language:</strong> python</li>
+        
+          <li><strong>Framework:</strong> fastapi-like</li>
+        
+          <li><strong>Data store:</strong> postgres</li>
+        
+          <li><strong>Cache:</strong> redis</li>
+        
+          <li><strong>Deploy target:</strong> kubernetes</li>
+        
+          <li><strong>Cloud:</strong> aws</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">API service</span>
+        
+           <span class="component-tag">Primary database (Postgres)</span>
+        
+           <span class="component-tag">Cache / queue (Redis)</span>
+        
+           <span class="component-tag">Ingress / load balancer</span>
+        
+        
+           <span class="more-tag">+1 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">python</span>
+        
+          <span class="tech-tag">fastapi</span>
+        
+          <span class="tech-tag">kubernetes</span>
+        
+          <span class="tech-tag">eks</span>
+        
+          <span class="tech-tag">postgres</span>
+        
+          <span class="tech-tag">redis</span>
+        
+          <span class="tech-tag">aws</span>
+        
+      </div>
+      <a href="/docs/blueprints/python-api-k8s.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="python django celery redis" data-name="python django + celery" data-id="python-django-celery">
+    <div class="card-header">
+      <h3>Python Django + Celery</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">The classic "batteries-included" Python stack using Django for the web layer
+and Celery with Redis for robust background task processing.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Language:</strong> python</li>
+        
+          <li><strong>Framework:</strong> django</li>
+        
+          <li><strong>Workers:</strong> celery</li>
+        
+          <li><strong>Broker:</strong> redis</li>
+        
+          <li><strong>Database:</strong> postgres</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Nginx / Load Balancer</span>
+        
+           <span class="component-tag">Django (Gunicorn)</span>
+        
+           <span class="component-tag">Celery Workers</span>
+        
+           <span class="component-tag">Celery Beat</span>
+        
+        
+           <span class="more-tag">+2 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">python</span>
+        
+          <span class="tech-tag">django</span>
+        
+          <span class="tech-tag">celery</span>
+        
+          <span class="tech-tag">redis</span>
+        
+      </div>
+      <a href="/docs/blueprints/python-django-celery.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="python machine-learning fastapi mlops" data-name="ml model serving (fastapi)" data-id="python-ml-serving">
+    <div class="card-header">
+      <h3>ML Model Serving (FastAPI)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">A high-performance pattern for serving Machine Learning models using Python,
+FastAPI and containerized model artifacts.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Language:</strong> python</li>
+        
+          <li><strong>Framework:</strong> fastapi</li>
+        
+          <li><strong>Format:</strong> onnx / joblib</li>
+        
+          <li><strong>Container:</strong> docker</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Inference API (FastAPI)</span>
+        
+           <span class="component-tag">Model Artifacts (S3)</span>
+        
+           <span class="component-tag">MLFlow / Registry</span>
+        
+           <span class="component-tag">Batch Processor</span>
+        
+        
+           <span class="more-tag">+1 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">python</span>
+        
+          <span class="tech-tag">machine-learning</span>
+        
+          <span class="tech-tag">fastapi</span>
+        
+          <span class="tech-tag">mlops</span>
+        
+      </div>
+      <a href="/docs/blueprints/python-ml-serving.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="ruby rails sidekiq monolithic" data-name="ruby on rails production stack" data-id="rails-sidekiq-redis">
+    <div class="card-header">
+      <h3>Ruby on Rails Production Stack</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">The classic, battle-tested "majestic monolith" architecture for Rails,
+featuring background job processing with Sidekiq and Redis.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Language:</strong> ruby</li>
+        
+          <li><strong>Framework:</strong> rails</li>
+        
+          <li><strong>Jobs:</strong> sidekiq</li>
+        
+          <li><strong>Cache:</strong> redis</li>
+        
+          <li><strong>Db:</strong> postgres</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Load Balancer</span>
+        
+           <span class="component-tag">Web Process (Puma)</span>
+        
+           <span class="component-tag">Job Process (Sidekiq)</span>
+        
+           <span class="component-tag">Redis</span>
+        
+        
+           <span class="more-tag">+2 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">ruby</span>
+        
+          <span class="tech-tag">rails</span>
+        
+          <span class="tech-tag">sidekiq</span>
+        
+          <span class="tech-tag">monolithic</span>
+        
+      </div>
+      <a href="/docs/blueprints/rails-sidekiq-redis.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="rust axum postgres redis containers" data-name="rust api with postgres and redis" data-id="rust-api-postgres">
+    <div class="card-header">
+      <h3>Rust API with Postgres and Redis</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">Blueprint for a Rust HTTP API (Axum/Actix-style) backed by Postgres and
+Redis, packaged as containers and deployed either to Kubernetes or a small
+VM cluster with Nginx as an ingress/proxy.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Language:</strong> rust</li>
+        
+          <li><strong>Framework:</strong> axum-or-actix</li>
+        
+          <li><strong>Data store:</strong> postgres</li>
+        
+          <li><strong>Cache:</strong> redis</li>
+        
+          <li><strong>Deploy target:</strong> containers</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Rust API service</span>
+        
+           <span class="component-tag">Postgres database</span>
+        
+           <span class="component-tag">Redis cache</span>
+        
+           <span class="component-tag">Nginx / reverse proxy</span>
+        
+        
+           <span class="more-tag">+1 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">rust</span>
+        
+          <span class="tech-tag">axum</span>
+        
+          <span class="tech-tag">postgres</span>
+        
+          <span class="tech-tag">redis</span>
+        
+          <span class="tech-tag">containers</span>
+        
+      </div>
+      <a href="/docs/blueprints/rust-api-postgres.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+  <div class="blueprint-card" data-tags="aws serverless lambda dynamodb api-gateway" data-name="serverless rest api (aws lambda)" data-id="serverless-aws-api">
+    <div class="card-header">
+      <h3>Serverless REST API (AWS Lambda)</h3>
+      <span class="blueprint-id">v1</span>
+    </div>
+    
+    <div class="card-body">
+      <p class="summary">A fully serverless backend architecture using AWS managed services for 
+maximum scalability and zero infrastructure management.
+</p>
+      
+      <div class="stack-details">
+        <h4>Stack</h4>
+        <ul>
+        
+          <li><strong>Compute:</strong> lambda</li>
+        
+          <li><strong>Gateway:</strong> api-gateway</li>
+        
+          <li><strong>Database:</strong> dynamodb</li>
+        
+          <li><strong>Auth:</strong> cognito</li>
+        
+          <li><strong>Iac:</strong> serverless-framework</li>
+        
+        </ul>
+      </div>
+
+      <div class="components-preview">
+        <h4>Key Components</h4>
+        <div class="tags">
+        
+           <span class="component-tag">Client App</span>
+        
+           <span class="component-tag">API Gateway</span>
+        
+           <span class="component-tag">Cognito User Pool</span>
+        
+           <span class="component-tag">Lambda Functions</span>
+        
+        
+           <span class="more-tag">+2 more</span>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="tech-tags">
+        
+          <span class="tech-tag">aws</span>
+        
+          <span class="tech-tag">serverless</span>
+        
+          <span class="tech-tag">lambda</span>
+        
+          <span class="tech-tag">dynamodb</span>
+        
+          <span class="tech-tag">api-gateway</span>
+        
+      </div>
+      <a href="/docs/blueprints/serverless-aws-api.mmd" class="btn btn-sm">View Diagram</a>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .blueprint-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .blueprint-card {
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .blueprint-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f6f8fa;
+    padding-bottom: 0.5rem;
+  }
+
+  .card-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #24292e;
+  }
+
+  .blueprint-id {
+    font-size: 0.8rem;
+    color: #6a737d;
+    font-family: monospace;
+  }
+
+  .summary {
+    color: #586069;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .stack-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  
+  .stack-details li {
+    background: #f1f8ff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+
+  .components-preview {
+    margin-top: 1rem;
+  }
+
+  .component-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    background: #fff;
+    border: 1px solid #d1d5da;
+    color: #444;
+    padding: 2px 6px;
+    border-radius: 12px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+
+  .more-tag {
+    font-size: 0.8rem;
+    color: #6a737d;
+    font-style: italic;
+  }
+
+  .card-footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    background: #24292e;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .search-box {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #e1e4e8;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-sm {
+      background-color: #0366d6;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+  }
+  .btn-sm:hover {
+      background-color: #0256b4;
+      text-decoration: none;
+  }
+</style>
+
+<script>
+  document.getElementById('blueprintSearch').addEventListener('keyup', function(e) {
+    const term = e.target.value.toLowerCase();
+    const cards = document.querySelectorAll('.blueprint-card');
+    
+    cards.forEach(card => {
+      const tags = card.getAttribute('data-tags');
+      const name = card.getAttribute('data-name');
+      const id = card.getAttribute('data-id');
+      
+      if (tags.includes(term) || name.includes(term) || id.includes(term)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+    <div class="footer-content">
+      <div class="footer-primary">
+        <div class="footer-branding">
+          <img class="footer-logo" src="/assets/logo.svg" alt="Webomage logo">
+          <h2 class="footer-heading">Webomage</h2>
+          <div class="footer-social"><ul class="social-media-list"><li><a href="https://github.com/casualuser"><svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#github"></use></svg> <span class="username">casualuser</span></a></li><li><a href="https://www.linkedin.com/in/casualuser"><svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#linkedin"></use></svg> <span class="username">casualuser</span></a></li><li>
+      <a href="https://upwork.com/freelancers/casualuser">
+        <svg class="svg-icon svg-icon-upwork"><use xlink:href="/assets/custom-social-icons.svg#upwork"></use></svg>
+        <span class="username">Upwork</span>
+      </a>
+    </li><li>
+      <a href="https://t.me/casualuser">
+        <svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#telegram"></use></svg>
+        <span class="username">Telegram</span>
+      </a>
+    </li></ul>
+
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-description">DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev</div>
+  </div>
+
+</footer><script>
+      (function() {
+        var btn = document.querySelector('.scroll-to-top');
+        if (!btn) return;
+
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 150) {
+            btn.classList.add('is-visible');
+          } else {
+            btn.classList.remove('is-visible');
+          }
+        });
+
+        btn.addEventListener('click', function(event) {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+    </script>
+
+    <script>
+      (function() {
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.site-bg-slide'));
+        if (!slides.length) return;
+
+        // Base delays (seconds) from CSS: 0, 8, 16, 24, 32
+        var delays = [0, 8, 16, 24, 32].slice(0, slides.length);
+
+        // Fisher-Yates shuffle
+        for (var i = delays.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = delays[i];
+          delays[i] = delays[j];
+          delays[j] = tmp;
+        }
+
+        slides.forEach(function(slide, idx) {
+          slide.style.animationDelay = delays[idx] + 's';
+        });
+      })();
+    </script>
+
+    <script>
+      (function() {
+        var header = document.querySelector('header.site-header');
+        var footer = document.querySelector('footer.site-footer');
+        if (!header || !footer) return;
+
+        function measureBand(element) {
+          // Prefer the inner .wrapper so we exclude outer borders/shadows.
+          var target = element.querySelector('.wrapper') || element;
+          var rect = target.getBoundingClientRect();
+          return rect.height || target.offsetHeight || 0;
+        }
+
+        function updateBands() {
+          var measuredHeader = measureBand(header);
+          var measuredFooter = measureBand(footer);
+
+          // Clamp to minima derived from the more generous (Firefox) layout
+          // so that engines which under-estimate (e.g. some Chrome builds)
+          // still get a band that is at least this tall.
+          var headerMin = 58;  // px, inner header content band
+          var footerMin = 112; // px, inner footer content band
+
+          var headerH = Math.max(measuredHeader, headerMin);
+          var footerH = Math.max(measuredFooter, footerMin);
+
+          // Small fixed padding so we always have a solid dark band
+          // directly under the header and above the footer, even if
+          // fonts or layout shift slightly after load.
+          var headerPad = 4;
+          var footerPad = 4;
+
+          var root = document.documentElement;
+          root.style.setProperty('--header-band-height', (headerH + headerPad) + 'px');
+          root.style.setProperty('--footer-band-height', (footerH + footerPad) + 'px');
+        }
+
+        function scheduleUpdates() {
+          updateBands();
+          // Re-run after small delays to catch late font/layout changes
+          // that some engines (e.g. Chrome) apply after window load.
+          setTimeout(updateBands, 250);
+          setTimeout(updateBands, 1000);
+        }
+
+        if (document.readyState === 'complete') {
+          scheduleUpdates();
+        } else {
+          window.addEventListener('load', scheduleUpdates);
+        }
+
+        window.addEventListener('resize', updateBands);
+      })();
+    </script>
+
+    <script>
+      (function() {
+        var form = document.getElementById('contact-form');
+        if (!form) return;
+
+        var fields = [
+          { id: 'name', required: true, minLength: 2 },
+          { id: 'email', required: true, type: 'email' },
+          { id: 'message', required: true, minLength: 10 }
+        ];
+
+        var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+        var submitOriginalText = submitBtn ? submitBtn.textContent : null;
+        var hasSentSubmitEvent = false;
+
+        function findFieldWrapper(el) {
+          while (el && el !== form) {
+            if (el.classList && el.classList.contains('contact-form-field')) {
+              return el;
+            }
+            el = el.parentNode;
+          }
+          return null;
+        }
+
+        function showError(input, message) {
+          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+          if (!fieldWrapper) return;
+
+          var errorEl = fieldWrapper.querySelector('.contact-error');
+          if (!errorEl) {
+            errorEl = document.createElement('div');
+            errorEl.className = 'contact-error';
+            fieldWrapper.appendChild(errorEl);
+          }
+
+          errorEl.textContent = message;
+          fieldWrapper.classList.add('contact-field-invalid');
+        }
+
+        function clearError(input) {
+          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+          if (!fieldWrapper) return;
+
+          fieldWrapper.classList.remove('contact-field-invalid');
+          var errorEl = fieldWrapper.querySelector('.contact-error');
+          if (errorEl) {
+            errorEl.textContent = '';
+          }
+        }
+
+        function validateField(field) {
+          var input = document.getElementById(field.id);
+          if (!input) return true;
+
+          clearError(input);
+
+          var value = (input.value || '').trim();
+
+          if (field.required && !value) {
+            showError(input, 'This field is required.');
+            return false;
+          }
+
+          if (field.minLength && value.length < field.minLength) {
+            showError(input, 'Please enter at least ' + field.minLength + ' characters.');
+            return false;
+          }
+
+          if (field.type === 'email') {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (value && !emailPattern.test(value)) {
+              showError(input, 'Please enter a valid email address.');
+              return false;
+            }
+          }
+
+          return true;
+        }
+
+        function sendContactSubmitEvent() {
+          try {
+            if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+            var payload = {
+              path: window.location.pathname,
+              referrer: document.referrer || null,
+              eventType: "cta_click",
+              label: "contact_form_submit",
+              href: "/contact/"
+            };
+
+            var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+            if (navigator.sendBeacon) {
+              var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+              navigator.sendBeacon(url, blob);
+            } else {
+              fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                keepalive: true,
+                body: JSON.stringify(payload)
+              }).catch(function () {});
+            }
+          } catch (e) {}
+        }
+
+        form.addEventListener('submit', function(event) {
+          var isValid = true;
+
+          for (var i = 0; i < fields.length; i++) {
+            if (!validateField(fields[i])) {
+              isValid = false;
+            }
+          }
+
+          if (!isValid) {
+            event.preventDefault();
+
+            var firstInvalid = form.querySelector('.contact-field-invalid input, .contact-field-invalid textarea');
+            if (firstInvalid && typeof firstInvalid.focus === 'function') {
+              firstInvalid.focus();
+            }
+            return;
+          }
+
+          if (submitBtn && !submitBtn.disabled) {
+            submitBtn.disabled = true;
+            if (submitOriginalText != null) {
+              submitBtn.textContent = 'Sending…';
+            }
+            form.classList.add('contact-form-submitting');
+          }
+
+          if (!hasSentSubmitEvent) {
+            hasSentSubmitEvent = true;
+            sendContactSubmitEvent();
+          }
+        });
+
+        fields.forEach(function(field) {
+          var input = document.getElementById(field.id);
+          if (!input) return;
+
+          input.addEventListener('blur', function() {
+            validateField(field);
+          });
+
+          input.addEventListener('input', function() {
+            clearError(input);
+          });
+        });
+      })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      (function() {
+        if (!window.mermaid) return;
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+      })();
+    </script><script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    try {
+      fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        keepalive: true,
+        body: JSON.stringify({
+          path: window.location.pathname,
+          referrer: document.referrer || null,
+          eventType: "pageview",
+        }),
+      }).catch(function () {});
+    } catch (e) {}
+  })();
+</script>
+<script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    function sendCtaEvent(label, href) {
+      try {
+        var payload = {
+          path: window.location.pathname,
+          referrer: document.referrer || null,
+          eventType: "cta_click",
+          label: label,
+          href: href || null,
+        };
+
+        var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+        if (navigator.sendBeacon) {
+          var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+          navigator.sendBeacon(url, blob);
+        } else {
+          fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            keepalive: true,
+            body: JSON.stringify(payload),
+          }).catch(function () {});
+        }
+      } catch (e) {}
+    }
+
+    try {
+      document.addEventListener("DOMContentLoaded", function () {
+        var ctas = document.querySelectorAll("[data-analytics-cta]");
+        if (!ctas.length) return;
+
+        ctas.forEach(function (el) {
+          var label = el.getAttribute("data-analytics-cta") || "cta";
+          el.addEventListener("click", function () {
+            sendCtaEvent(label, el.getAttribute("href"));
+          });
+        });
+      });
+    } catch (e) {}
+  })();
+</script>
+<script>
+  (function () {
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+    try {
+      var params = new URLSearchParams(window.location.search || "");
+      if (!params.has("heatmap")) return;
+
+      var sessionId = Math.random().toString(36).slice(2) + Date.now().toString(36);
+
+      var script = document.createElement("script");
+      script.src = "https://unpkg.com/heatmap.js@2.0.5/build/heatmap.min.js";
+      script.async = true;
+      script.onload = function () {
+        try {
+          var container = document.createElement("div");
+          container.id = "wm-heatmap-overlay";
+          container.style.position = "fixed";
+          container.style.left = "0";
+          container.style.top = "0";
+          container.style.width = "100%";
+          container.style.height = "100%";
+          container.style.pointerEvents = "none";
+          container.style.zIndex = "9999";
+          document.body.appendChild(container);
+
+          var heatmap = window.h337 && window.h337.create({
+            container: container,
+            radius: 30,
+            maxOpacity: 0.6,
+            blur: 0.85,
+          });
+          if (!heatmap) return;
+
+          document.addEventListener("click", function (event) {
+            heatmap.addData({
+              x: event.clientX,
+              y: event.clientY,
+              value: 1,
+            });
+
+            try {
+              var payload = {
+                path: window.location.pathname,
+                sessionId: sessionId,
+                x: event.clientX,
+                y: event.clientY,
+                viewportWidth: window.innerWidth || null,
+                viewportHeight: window.innerHeight || null,
+              };
+
+              var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/heatmap-event";
+
+              if (navigator.sendBeacon) {
+                var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+                navigator.sendBeacon(url, blob);
+              } else {
+                fetch(url, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  keepalive: true,
+                  body: JSON.stringify(payload),
+                }).catch(function () {});
+              }
+            } catch (e) {}
+          });
+        } catch (e) {}
+      };
+      document.head.appendChild(script);
+    } catch (e) {}
+  })();
+</script>
+</body>
+
+</html>
