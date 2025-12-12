@@ -2,7 +2,7 @@
 layout: page
 title: Architecture Solutions & Blueprints
 permalink: /solutions/
-description: "Explore our library of validated architecture blueprints, from startup monoliths to enterprise data pipelines and Kubernetes platforms."
+description: "Explore our gallery of production-ready architecture blueprints for Kubernetes, Serverless, AI, and Modern Web stacks."
 ---
 
 # Architecture Solutions & Blueprints

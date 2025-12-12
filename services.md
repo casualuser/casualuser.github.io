@@ -2,7 +2,7 @@
 layout: page
 title: Engineering Services & Consulting
 permalink: /services/
-description: "Expert services in DevOps, SRE, Platform Engineering, and AI/LLM Product Development. Flexible engagement models for high-impact results."
+description: "Expert services in Kubernetes adoption, Platform Engineering, AI Infrastructure, and Cloud Security."
 ---
 
 # Engineering Services & Consulting
