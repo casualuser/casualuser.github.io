@@ -1,0 +1,34 @@
+{
+  "updated_at": "2025-12-10 17:29:26 UTC",
+  "overall_status": "operational",
+  "systems": [
+    {
+      "id": "control-plane",
+      "name": "Control Plane API",
+      "status": "operational",
+      "details": "Terraform State Synced",
+      "provider": "github"
+    },
+    {
+      "id": "content-delivery",
+      "name": "Content Delivery",
+      "status": "operational",
+      "details": "Cloudflare Edge Active",
+      "provider": "cloudflare"
+    },
+    {
+      "id": "database",
+      "name": "Supabase Database",
+      "status": "operational",
+      "details": "PostgreSQL Online",
+      "provider": "supabase"
+    },
+    {
+      "id": "functions",
+      "name": "Edge Functions",
+      "status": "operational",
+      "details": "All Services Healthy",
+      "provider": "supabase"
+    }
+  ]
+}

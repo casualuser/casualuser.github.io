@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Services"
+title: Engineering Services & Consulting
 permalink: /services/
+description: "Expert services in DevOps, SRE, Platform Engineering, and AI/LLM Product Development. Flexible engagement models for high-impact results."
 ---
 
-Webomage is a small, senior engineering agency focused on DevOps, integrations, AI/LLM, fullstack backends, and compliance-aware infrastructure. If you're considering work in any of these areas, see [How We Work](/process/) for a quick overview of delivery phases.
+# Engineering Services & Consulting
+bomage is a small, senior engineering agency focused on DevOps, integrations, AI/LLM, fullstack backends, and compliance-aware infrastructure. If you're considering work in any of these areas, see [How We Work](/process/) for a quick overview of delivery phases.
 
 ### Core services & solutions
 

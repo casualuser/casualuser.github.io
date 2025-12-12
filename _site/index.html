@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Home | Webomage</title>
+<title>DevOps, AI &amp; Cloud Native Engineering | Webomage</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Home" />
+<meta property="og:title" content="DevOps, AI &amp; Cloud Native Engineering" />
 <meta name="author" content="Aleksei Tcelishchev" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
-<meta property="og:description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
+<meta name="description" content="Webomage is a senior engineering agency specializing in stable AWS infrastructure, Kubernetes platforms, and AI/LLM integration for growing SaaS companies." />
+<meta property="og:description" content="Webomage is a senior engineering agency specializing in stable AWS infrastructure, Kubernetes platforms, and AI/LLM integration for growing SaaS companies." />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Webomage" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Home" />
+<meta property="twitter:title" content="DevOps, AI &amp; Cloud Native Engineering" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Home","name":"Webomage","sameAs":["https://github.com/casualuser","https://linkedin.com/in/casualuser","https://upwork.com/freelancers/casualuser"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"Webomage is a senior engineering agency specializing in stable AWS infrastructure, Kubernetes platforms, and AI/LLM integration for growing SaaS companies.","headline":"DevOps, AI &amp; Cloud Native Engineering","name":"Webomage","sameAs":["https://github.com/casualuser","https://linkedin.com/in/casualuser","https://upwork.com/freelancers/casualuser"],"url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
@@ -44,7 +44,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/news/">News</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
+        <div class="trigger"><a class="page-link" href="/">DevOps, AI &amp; Cloud Native Engineering</a><a class="page-link" href="/services/">Engineering Services &amp; Consulting</a><a class="page-link" href="/solutions/">Architecture Solutions &amp; Blueprints</a><a class="page-link" href="/news/">News</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
       </nav></div>
   </div>
 </header>
@@ -58,9 +58,9 @@
       </div>
       <div class="wrapper">
         <div class="home">
-  <!--<h1 class="page-heading">Home</h1>-->
+  <!--<h1 class="page-heading">DevOps, AI & Cloud Native Engineering</h1>-->
 
-  <h1 id="webomage">Webomage</h1>
+  <h1 id="production-grade-cloud--ai-engineering">Production-Grade Cloud &amp; AI Engineering</h1>
 
 <p>Webomage is a small, senior engineering agency that fixes and builds production infrastructure, AI features, and platforms for SaaS and infra-heavy teams, led by <strong>Aleksei Tcelishchev</strong>.</p>
 
@@ -86,6 +86,7 @@
   <li><a href="/ai-infra/">AI &amp; LLM Infrastructure</a></li>
   <li><a href="/devops-stack/">DevOps &amp; Cloud Stack</a></li>
   <li><a href="/blockchain/">Blockchain &amp; Web3</a></li>
+  <li><a href="/status/">System Status</a></li>
   <li><a href="/contact/">Contact</a></li>
 </ul>
 <h2 class="post-list-heading">Posts</h2>
@@ -430,7 +431,29 @@
   (function () {
     if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
 
+    function getUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
     try {
+      // 1. Get/Set Anon ID (Persistent)
+      var anonId = localStorage.getItem('wm_anon_id');
+      if (!anonId) {
+        anonId = getUUID();
+        localStorage.setItem('wm_anon_id', anonId);
+      }
+
+      // 2. Get/Set Session ID (Expires on browser close ideally, or use sessionStorage)
+      // For stricter 30min timeout we'd need cookies/time checks, but sessionStorage is "tab session".
+      var sessionId = sessionStorage.getItem('wm_session_id');
+      if (!sessionId) {
+        sessionId = getUUID();
+        sessionStorage.setItem('wm_session_id', sessionId);
+      }
+
       fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -439,12 +462,13 @@
           path: window.location.pathname,
           referrer: document.referrer || null,
           eventType: "pageview",
+          anonId: anonId,
+          sessionId: sessionId
         }),
-      }).catch(function () {});
-    } catch (e) {}
+      }).catch(function () { });
+    } catch (e) { }
   })();
-</script>
-<script>
+</script><script>
   (function () {
     if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
 

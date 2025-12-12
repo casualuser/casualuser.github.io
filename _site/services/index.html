@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Services | Webomage</title>
+<title>Engineering Services &amp; Consulting | Webomage</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Services" />
+<meta property="og:title" content="Engineering Services &amp; Consulting" />
 <meta name="author" content="Aleksei Tcelishchev" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
-<meta property="og:description" content="DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev" />
+<meta name="description" content="Expert services in DevOps, SRE, Platform Engineering, and AI/LLM Product Development. Flexible engagement models for high-impact results." />
+<meta property="og:description" content="Expert services in DevOps, SRE, Platform Engineering, and AI/LLM Product Development. Flexible engagement models for high-impact results." />
 <link rel="canonical" href="http://localhost:4000/services/" />
 <meta property="og:url" content="http://localhost:4000/services/" />
 <meta property="og:site_name" content="Webomage" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Services" />
+<meta property="twitter:title" content="Engineering Services &amp; Consulting" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"DevOps, Integration, AI/LLM, Fullstack, Mobile &amp; Compliance Engineering led by Aleksei Tcelishchev","headline":"Services","url":"http://localhost:4000/services/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"Expert services in DevOps, SRE, Platform Engineering, and AI/LLM Product Development. Flexible engagement models for high-impact results.","headline":"Engineering Services &amp; Consulting","url":"http://localhost:4000/services/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
@@ -44,7 +44,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/news/">News</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
+        <div class="trigger"><a class="page-link" href="/">DevOps, AI &amp; Cloud Native Engineering</a><a class="page-link" href="/services/">Engineering Services &amp; Consulting</a><a class="page-link" href="/solutions/">Architecture Solutions &amp; Blueprints</a><a class="page-link" href="/news/">News</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
       </nav></div>
   </div>
 </header>
@@ -60,11 +60,12 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Services</h1>
+    <h1 class="post-title">Engineering Services &amp; Consulting</h1>
   </header>
 
   <div class="post-content">
-    <p>Webomage is a small, senior engineering agency focused on DevOps, integrations, AI/LLM, fullstack backends, and compliance-aware infrastructure. If you’re considering work in any of these areas, see <a href="/process/">How We Work</a> for a quick overview of delivery phases.</p>
+    <h1 id="engineering-services--consulting">Engineering Services &amp; Consulting</h1>
+<p>bomage is a small, senior engineering agency focused on DevOps, integrations, AI/LLM, fullstack backends, and compliance-aware infrastructure. If you’re considering work in any of these areas, see <a href="/process/">How We Work</a> for a quick overview of delivery phases.</p>
 
 <h3 id="core-services--solutions">Core services &amp; solutions</h3>
 
@@ -519,7 +520,29 @@ programs that move engineers from “interested” to “certified and effective
   (function () {
     if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
 
+    function getUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
     try {
+      // 1. Get/Set Anon ID (Persistent)
+      var anonId = localStorage.getItem('wm_anon_id');
+      if (!anonId) {
+        anonId = getUUID();
+        localStorage.setItem('wm_anon_id', anonId);
+      }
+
+      // 2. Get/Set Session ID (Expires on browser close ideally, or use sessionStorage)
+      // For stricter 30min timeout we'd need cookies/time checks, but sessionStorage is "tab session".
+      var sessionId = sessionStorage.getItem('wm_session_id');
+      if (!sessionId) {
+        sessionId = getUUID();
+        sessionStorage.setItem('wm_session_id', sessionId);
+      }
+
       fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -528,12 +551,13 @@ programs that move engineers from “interested” to “certified and effective
           path: window.location.pathname,
           referrer: document.referrer || null,
           eventType: "pageview",
+          anonId: anonId,
+          sessionId: sessionId
         }),
-      }).catch(function () {});
-    } catch (e) {}
+      }).catch(function () { });
+    } catch (e) { }
   })();
-</script>
-<script>
+</script><script>
   (function () {
     if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
 

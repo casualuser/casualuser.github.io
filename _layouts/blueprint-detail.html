@@ -19,6 +19,34 @@ layout: default
     {{ content }}
   </div>
 
+  {% assign blueprint = site.data.blueprints | where: "id", page.blueprint_id | first %}
+  {% if blueprint %}
+  <div class="blueprint-specs">
+    <h3>System Components</h3>
+    <p>The following distinct entities are defined in this architecture:</p>
+    <div class="table-wrapper">
+      <table class="component-table">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Type</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for comp in blueprint.components %}
+          <tr>
+            <td class="col-name"><strong>{{ comp.name }}</strong></td>
+            <td class="col-type"><span class="type-badge type-{{ comp.type }}">{{ comp.type }}</span></td>
+            <td class="col-notes">{{ comp.notes | default: "-" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endif %}
+
   <div class="blueprint-cta">
     <h3>Interested in this architecture?</h3>
     <p>Let's discuss how to adapt the <strong>{{ page.title }}</strong> stack for your specific needs.</p>

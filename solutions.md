@@ -1,8 +1,11 @@
 ---
 layout: page
-title: "Solutions"
+title: Architecture Solutions & Blueprints
 permalink: /solutions/
+description: "Explore our library of validated architecture blueprints, from startup monoliths to enterprise data pipelines and Kubernetes platforms."
 ---
+
+# Architecture Solutions & Blueprints
 Webomage helps SaaS and infra-heavy teams in a few recurring ways. This page collects the main solution shapes and points you to the deeper pages and case studies.
 
 ## Platform & Reliability

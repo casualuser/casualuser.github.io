@@ -1,9 +1,10 @@
 ---
 layout: home
-title: "Home"
+title: "DevOps, AI & Cloud Native Engineering"
+description: "Webomage is a senior engineering agency specializing in stable AWS infrastructure, Kubernetes platforms, and AI/LLM integration for growing SaaS companies."
 ---
 
-# Webomage
+# Production-Grade Cloud & AI Engineering
 
 Webomage is a small, senior engineering agency that fixes and builds production infrastructure, AI features, and platforms for SaaS and infra-heavy teams, led by **Aleksei Tcelishchev**.
 
@@ -26,4 +27,5 @@ We stabilise and modernise cloud-native systems on AWS and Kubernetes, plug AI/L
 - [AI & LLM Infrastructure](/ai-infra/)
 - [DevOps & Cloud Stack](/devops-stack/)
 - [Blockchain & Web3](/blockchain/)
+- [System Status](/status/)
 - [Contact](/contact/)

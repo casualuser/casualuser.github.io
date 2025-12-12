@@ -44,7 +44,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/services/">Services</a><a class="page-link" href="/solutions/">Solutions</a><a class="page-link" href="/news/">News</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
+        <div class="trigger"><a class="page-link" href="/">DevOps, AI &amp; Cloud Native Engineering</a><a class="page-link" href="/services/">Engineering Services &amp; Consulting</a><a class="page-link" href="/solutions/">Architecture Solutions &amp; Blueprints</a><a class="page-link" href="/news/">News</a><a class="page-link" href="/team/">Team</a><a class="page-link" href="/contact/" data-analytics-cta="nav_contact">Contact</a></div>
       </nav></div>
   </div>
 </header>
@@ -173,6 +173,58 @@ The “ELT” pattern (loading raw data first, then transforming it) is more res
 
 
   </div>
+
+  
+  
+  <div class="blueprint-specs">
+    <h3>System Components</h3>
+    <p>The following distinct entities are defined in this architecture:</p>
+    <div class="table-wrapper">
+      <table class="component-table">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Type</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td class="col-name"><strong>Data Sources</strong></td>
+            <td class="col-type"><span class="type-badge type-external">external</span></td>
+            <td class="col-notes">APIs, DBs, Events</td>
+          </tr>
+          
+          <tr>
+            <td class="col-name"><strong>Airflow (Orchestrator)</strong></td>
+            <td class="col-type"><span class="type-badge type-orchestrator">orchestrator</span></td>
+            <td class="col-notes">-</td>
+          </tr>
+          
+          <tr>
+            <td class="col-name"><strong>Snowflake (Warehouse)</strong></td>
+            <td class="col-type"><span class="type-badge type-database">database</span></td>
+            <td class="col-notes">Raw & Bronze Layers</td>
+          </tr>
+          
+          <tr>
+            <td class="col-name"><strong>dbt (Transformation)</strong></td>
+            <td class="col-type"><span class="type-badge type-service">service</span></td>
+            <td class="col-notes">SQL Modeling</td>
+          </tr>
+          
+          <tr>
+            <td class="col-name"><strong>Looker / Superset</strong></td>
+            <td class="col-type"><span class="type-badge type-dashboard">dashboard</span></td>
+            <td class="col-notes">Business Intelligence</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
 
   <div class="blueprint-cta">
     <h3>Interested in this architecture?</h3>
@@ -472,7 +524,29 @@ The “ELT” pattern (loading raw data first, then transforming it) is more res
   (function () {
     if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
 
+    function getUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
     try {
+      // 1. Get/Set Anon ID (Persistent)
+      var anonId = localStorage.getItem('wm_anon_id');
+      if (!anonId) {
+        anonId = getUUID();
+        localStorage.setItem('wm_anon_id', anonId);
+      }
+
+      // 2. Get/Set Session ID (Expires on browser close ideally, or use sessionStorage)
+      // For stricter 30min timeout we'd need cookies/time checks, but sessionStorage is "tab session".
+      var sessionId = sessionStorage.getItem('wm_session_id');
+      if (!sessionId) {
+        sessionId = getUUID();
+        sessionStorage.setItem('wm_session_id', sessionId);
+      }
+
       fetch("https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -481,12 +555,13 @@ The “ELT” pattern (loading raw data first, then transforming it) is more res
           path: window.location.pathname,
           referrer: document.referrer || null,
           eventType: "pageview",
+          anonId: anonId,
+          sessionId: sessionId
         }),
-      }).catch(function () {});
-    } catch (e) {}
+      }).catch(function () { });
+    } catch (e) { }
   })();
-</script>
-<script>
+</script><script>
   (function () {
     if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
 

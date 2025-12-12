@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Architecture Blueprints
+title: Cloud Architecture Patterns & Stacks
 permalink: /blueprints/
 ---
 

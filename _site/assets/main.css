@@ -372,6 +372,22 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; back
 
 .segment-border-stack { border-top: 3px solid #607d8b; }
 
+.blueprint-specs { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #333; }
+
+.component-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.component-table th, .component-table td { padding: 12px; text-align: left; border-bottom: 1px solid #333; }
+.component-table th { color: #a0a0a0; font-weight: 500; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.component-table td { vertical-align: middle; }
+.component-table .col-name { font-weight: 600; color: #e0e0e0; }
+.component-table .col-type { width: 15%; }
+.component-table .col-notes { color: #a0a0a0; font-size: 0.95rem; }
+
+.type-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; background-color: #2d2d2d; color: #ccc; text-transform: uppercase; }
+.type-badge.type-database { color: #86efac; background-color: rgba(34, 197, 94, 0.1); }
+.type-badge.type-service { color: #93c5fd; background-color: rgba(59, 130, 246, 0.1); }
+.type-badge.type-gateway { color: #c4b5fd; background-color: rgba(139, 92, 246, 0.1); }
+.type-badge.type-compute { color: #fdba74; background-color: rgba(249, 115, 22, 0.1); }
+
 .blueprint-gallery-container, .blueprint-detail-container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; color: #e0e0e0; }
 
 .blueprint-title, .segment-title { color: #e0e0e0; }
@@ -415,3 +431,19 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; back
 .btn-primary:hover { background-color: #0b63f3; text-decoration: none; }
 
 .segment-border-stack { border-top: 3px solid #607d8b; }
+
+.blueprint-specs { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #333; }
+
+.component-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.component-table th, .component-table td { padding: 12px; text-align: left; border-bottom: 1px solid #333; }
+.component-table th { color: #a0a0a0; font-weight: 500; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.component-table td { vertical-align: middle; }
+.component-table .col-name { font-weight: 600; color: #e0e0e0; }
+.component-table .col-type { width: 15%; }
+.component-table .col-notes { color: #a0a0a0; font-size: 0.95rem; }
+
+.type-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; background-color: #2d2d2d; color: #ccc; text-transform: uppercase; }
+.type-badge.type-database { color: #86efac; background-color: rgba(34, 197, 94, 0.1); }
+.type-badge.type-service { color: #93c5fd; background-color: rgba(59, 130, 246, 0.1); }
+.type-badge.type-gateway { color: #c4b5fd; background-color: rgba(139, 92, 246, 0.1); }
+.type-badge.type-compute { color: #fdba74; background-color: rgba(249, 115, 22, 0.1); }
