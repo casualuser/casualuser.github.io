@@ -6,8 +6,7 @@ permalink: /services/
 description: "Expert services in Kubernetes adoption, Platform Engineering, AI Infrastructure, and Cloud Security."
 ---
 
-# Engineering Services & Consulting
-bomage is a small, senior engineering agency focused on DevOps, integrations, AI/LLM, fullstack backends, and compliance-aware infrastructure. If you're considering work in any of these areas, see [How We Work](/process/) for a quick overview of delivery phases.
+Webomage is a small, senior engineering agency focused on DevOps, integrations, AI/LLM, fullstack backends, and compliance-aware infrastructure. If you're considering work in any of these areas, see [How We Work](/process/) for a quick overview of delivery phases.
 
 ### Core services & solutions
 
