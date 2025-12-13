@@ -352,11 +352,19 @@ body {
 /* Logo sizing and header layout */
 .site-header .wrapper {
   max-width: 1362px;
-  padding: 0 30px;
+  padding: 0 30px; /* Horizontal padding only */
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 0 auto;
+  height: 100%; /* Fill the sticky header container */
+  min-height: 48px; /* Reasonable minimum accessibility target */
+}
+
+/* Override Minima's default padding on the header element itself */
+header.site-header {
+  min-height: auto;
+  padding: 4px 0; /* Minimal vertical padding */
 }
 
 .site-header-inner {
@@ -376,12 +384,10 @@ body {
 
 .site-header-spacer {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-top: 20px;
-  height: 200px;
   flex-grow: 1;
   width: auto;
+  height: auto;
+  min-width: 20px;
 }
 
 .site-header-right {
@@ -431,7 +437,7 @@ body {
   display: flex;
   flex-direction: row;
   float: right;
-  line-height: 54px;
+  line-height: inherit;
   justify-content: flex-start;
   width: auto;
   flex-grow: 1;
