@@ -10,27 +10,26 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Webomage DevOps, AI Integration &amp; Cloud Native Engineering Agency" />
 <meta property="og:description" content="Webomage DevOps, AI Integration &amp; Cloud Native Engineering Agency" />
-<link rel="canonical" href="http://localhost:4000/contact/thanks/" />
-<meta property="og:url" content="http://localhost:4000/contact/thanks/" />
+<link rel="canonical" href="https://webomage.com/contact/thanks/" />
+<meta property="og:url" content="https://webomage.com/contact/thanks/" />
 <meta property="og:site_name" content="Webomage" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Message Sent" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"Webomage DevOps, AI Integration &amp; Cloud Native Engineering Agency","headline":"Message Sent","url":"http://localhost:4000/contact/thanks/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Aleksei Tcelishchev","url":"https://webomage.com"},"description":"Webomage DevOps, AI Integration &amp; Cloud Native Engineering Agency","headline":"Message Sent","url":"https://webomage.com/contact/thanks/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/%20/assets/main.css">
   <link rel="icon" href="/%20/assets/logo.svg" type="image/svg+xml">
   <link rel="icon" href="/%20/assets/favicon-16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/%20/assets/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/%20/assets/apple-touch-icon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Webomage" /><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="apple-touch-icon" href="/%20/assets/apple-touch-icon-180.png" sizes="180x180"><link type="application/atom+xml" rel="alternate" href="https://webomage.com/feed.xml" title="Webomage" /><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     // Initialize Supabase client
     const supabaseUrl = 'https://pqbbjgeapylcengbuvee.supabase.co'
-    const supabaseKey = 'SUPABASE_ANON_KEY_PLACEHOLDER' // We will replace this with env var or just keep it if it's anon
-    // Actually, anon key is safe to expose. I need to get it from api repo .env or user.
+    const supabaseKey = 'sb_publishable_Aqc0xmRqDDvAJ35oZ1FiXw_gmpaxcsx'
     // construct global client
-    window.supabase = window.supabase ? window.supabase : supabase.createClient(supabaseUrl, 'SUPABASE_ANON_KEY')
+    window.supabase = window.supabase ? window.supabase : supabase.createClient(supabaseUrl, supabaseKey)
   </script>
 </head><body>
 
@@ -58,9 +57,11 @@
           <a class="page-link" href="#" data-analytics-cta="nav_calendly"
             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/casualuser/meet'}); return false;">Schedule a
             Call</a>
-          <a class="page-link" href="/auth/google" data-analytics-cta="nav_google_auth">Sign in with Google</a>
+          <a class="page-link" href="#" data-analytics-cta="nav_google_auth"
+            onclick="supabase.auth.signInWithOAuth({ provider: 'google' }); return false;">Sign in with Google</a>
           <script async src="https://telegram.org/js/telegram-widget.js?15" data-telegram-login="TELEGRAM_BOT_USERNAME"
-            data-size="large" data-auth-url="/auth/telegram" data-request-access="write"></script>
+            data-size="large" data-auth-url="https://pqbbjgeapylcengbuvee.supabase.co/functions/v1/auth-telegram"
+            data-request-access="write"></script>
         </div>
       </nav></div>
   </div>
@@ -92,13 +93,13 @@
 
       </div>
     </main><footer class="site-footer h-card">
-  <data class="u-url" href="/%20/"></data>
+  <data class="u-url" href="/"></data>
 
   <div class="wrapper">
     <div class="footer-content">
       <div class="footer-primary">
         <div class="footer-branding">
-          <img class="footer-logo" src="/%20/assets/logo.svg" alt="Webomage logo">
+          <img class="footer-logo" src="/assets/logo.svg" alt="Webomage logo">
           <h2 class="footer-heading">Webomage</h2>
           <div class="footer-social"><ul class="social-media-list"><li><a href="https://github.com/casualuser"><svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#github"></use></svg> <span class="username">casualuser</span></a></li><li><a href="https://www.linkedin.com/in/casualuser"><svg class="svg-icon"><use xlink:href="/assets/custom-social-icons.svg#linkedin"></use></svg> <span class="username">casualuser</span></a></li><li>
       <a href="https://upwork.com/freelancers/casualuser">
