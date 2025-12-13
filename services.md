@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Engineering Services & Consulting
+navigation_title: "Services"
 permalink: /services/
 description: "Expert services in Kubernetes adoption, Platform Engineering, AI Infrastructure, and Cloud Security."
 ---

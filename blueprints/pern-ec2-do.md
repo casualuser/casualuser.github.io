@@ -7,7 +7,7 @@ permalink: /blueprints/pern-ec2-do/
 This blueprint shows a PERN (Postgres, Express, React, Node.js) stack on AWS EC2 or a DigitalOcean Droplet.
 
 <div class="mermaid">
-{% include_relative docs/blueprints/pern-ec2-do.mmd %}
+{% include_relative pern-ec2-do.mmd %}
 </div>
 
 See also:

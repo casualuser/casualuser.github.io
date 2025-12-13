@@ -1,6 +1,7 @@
 ---
 layout: home
 title: "DevOps, AI & Cloud Native Engineering"
+navigation_title: "Home"
 description: "Webomage is a senior engineering agency specializing in stable AWS infrastructure, Kubernetes platforms, and AI/LLM integration for growing SaaS companies."
 ---
 

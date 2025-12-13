@@ -11,7 +11,7 @@ This blueprint shows a classic LAMP (Linux, Apache, MySQL/MariaDB, PHP) stack ac
 Single EC2 instance running Apache/PHP with RDS MySQL and an Application Load Balancer in front.
 
 <div class="mermaid">
-{% include_relative docs/blueprints/lamp-ec2-vm.mmd %}
+{% include_relative lamp-ec2-vm.mmd %}
 </div>
 
 ### LAMP on AWS EC2 with docker-compose
@@ -19,7 +19,7 @@ Single EC2 instance running Apache/PHP with RDS MySQL and an Application Load Ba
 Apache/PHP and MySQL run as containers on one EC2 instance, orchestrated with docker-compose and fronted by an ALB.
 
 <div class="mermaid">
-{% include_relative docs/blueprints/lamp-ec2-docker.mmd %}
+{% include_relative lamp-ec2-docker.mmd %}
 </div>
 
 ### LAMP on AWS ECS (Fargate)
@@ -27,7 +27,7 @@ Apache/PHP and MySQL run as containers on one EC2 instance, orchestrated with do
 LAMP packaged into containers and run as an ECS service on Fargate, behind an ALB, with RDS MySQL.
 
 <div class="mermaid">
-{% include_relative docs/blueprints/lamp-ecs.mmd %}
+{% include_relative lamp-ecs.mmd %}
 </div>
 
 ### LAMP on DigitalOcean Droplet (VM)
@@ -35,7 +35,7 @@ LAMP packaged into containers and run as an ECS service on Fargate, behind an AL
 Traditional LAMP installed directly on a Droplet, with DO Managed MySQL and an optional DO Load Balancer.
 
 <div class="mermaid">
-{% include_relative docs/blueprints/lamp-do-vm.mmd %}
+{% include_relative lamp-do-vm.mmd %}
 </div>
 
 ### LAMP on DigitalOcean Droplet with docker-compose
@@ -43,7 +43,7 @@ Traditional LAMP installed directly on a Droplet, with DO Managed MySQL and an o
 Apache/PHP and MySQL as containers on a Droplet, orchestrated by docker-compose and optionally fronted by a DO Load Balancer.
 
 <div class="mermaid">
-{% include_relative docs/blueprints/lamp-do-docker.mmd %}
+{% include_relative lamp-do-docker.mmd %}
 </div>
 
 See also:

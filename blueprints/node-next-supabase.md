@@ -7,7 +7,7 @@ permalink: /blueprints/node-next-supabase/
 This blueprint shows a Node.js / Next.js application backed by Supabase (Postgres, Auth, Storage, Edge Functions).
 
 <div class="mermaid">
-{% include_relative docs/blueprints/node-next-supabase.mmd %}
+{% include_relative node-next-supabase.mmd %}
 </div>
 
 See also:

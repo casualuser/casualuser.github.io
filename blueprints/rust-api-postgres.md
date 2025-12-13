@@ -7,7 +7,7 @@ permalink: /blueprints/rust-api-postgres/
 This blueprint shows a Rust API service backed by Postgres and Redis, typically deployed behind an ingress or reverse proxy.
 
 <div class="mermaid">
-{% include_relative docs/blueprints/rust-api-postgres.mmd %}
+{% include_relative rust-api-postgres.mmd %}
 </div>
 
 See also:

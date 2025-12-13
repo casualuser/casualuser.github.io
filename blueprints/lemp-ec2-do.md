@@ -7,7 +7,7 @@ permalink: /blueprints/lemp-ec2-do/
 This blueprint shows a LEMP (Linux, Nginx, MySQL/MariaDB, PHP-FPM) stack on AWS EC2 or a DigitalOcean Droplet.
 
 <div class="mermaid">
-{% include_relative docs/blueprints/lemp-ec2-do.mmd %}
+{% include_relative lemp-ec2-do.mmd %}
 </div>
 
 See also:

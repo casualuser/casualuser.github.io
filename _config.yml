@@ -12,7 +12,6 @@ social:
     - "https://linkedin.com/in/casualuser"
     - "https://upwork.com/freelancers/casualuser"
 header_pages:
-  - index.md
   - services.md
   - solutions.md
   - news.md

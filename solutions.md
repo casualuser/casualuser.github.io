@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Architecture Solutions & Blueprints
+navigation_title: "Solutions"
 permalink: /solutions/
 description: "Explore our gallery of production-ready architecture blueprints for Kubernetes, Serverless, AI, and Modern Web stacks."
 ---

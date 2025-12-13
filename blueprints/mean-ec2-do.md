@@ -7,7 +7,7 @@ permalink: /blueprints/mean-ec2-do/
 This blueprint shows a MEAN (MongoDB, Express, Angular, Node.js) stack on AWS EC2 or a DigitalOcean Droplet.
 
 <div class="mermaid">
-{% include_relative docs/blueprints/mean-ec2-do.mmd %}
+{% include_relative mean-ec2-do.mmd %}
 </div>
 
 See also:

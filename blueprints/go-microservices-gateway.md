@@ -7,7 +7,7 @@ permalink: /blueprints/go-microservices-gateway/
 This blueprint shows Go microservices exposed via an API gateway or ingress, with Postgres, Redis, and observability.
 
 <div class="mermaid">
-{% include_relative docs/blueprints/go-microservices-gateway.mmd %}
+{% include_relative go-microservices-gateway.mmd %}
 </div>
 
 See also:
