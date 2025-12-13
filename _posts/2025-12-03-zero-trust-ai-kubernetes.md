@@ -5,7 +5,7 @@ date: 2025-12-03
 categories: ["news"]
 tags: ["kubernetes", "zero-trust", "ai", "security", "devops"]
 source_url: https://www.cncf.io/blog/2025/10/10/a-blueprint-for-zero-trust-ai-on-kubernetes/
-image_prompt: Blueprint diagram of Kubernetes pods running AI workloads secured by zero-trust network policies, mTLS locks, and observability flows.
+image: /assets/news/2025-12-03-zero-trust-ai-kubernetes.png
 image_alt: Zero-trust security architecture for AI on Kubernetes.
 
 AI workloads on Kubernetes amplify traditional risks like lateral movement, exposed endpoints, and credential leaks, with elevated stakes from sensitive training data and high-cost inference. Default Kubernetes networking permits unrestricted pod-to-pod communication, enabling a single compromise to propagate across clusters housing LLMs, feature stores, and inference gateways.

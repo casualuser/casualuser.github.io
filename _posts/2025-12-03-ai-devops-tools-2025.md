@@ -5,7 +5,7 @@ date: 2025-12-03
 categories: ["news"]
 tags: ["AI", "DevOps", "tools", "IaC", "observability"]
 source_url: https://spacelift.io/blog/ai-devops-tools
-image_prompt: Illustration of AI neural networks overlaying DevOps pipelines, logs, code reviews, and cloud infrastructure dashboards.
+image: /assets/news/2025-12-03-ai-devops-tools-2025.png
 image_alt: AI enhancing DevOps workflows visualization
 ---
 

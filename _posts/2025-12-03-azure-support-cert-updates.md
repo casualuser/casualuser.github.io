@@ -5,7 +5,7 @@ date: 2025-12-03
 categories: ["news"]
 tags: ["azure", "certifications", "microsoft", "devops"]
 source_url: https://techcommunity.microsoft.com/blog/skills-hub-blog/announcing-updates-to-azure-and-support-engineer-training-and-certification-port/3719266
-image_prompt: Illustration of a certification roadmap shifting from narrow Azure icons like IoT and Teams to broader cloud admin and networking paths on a hybrid cloud background.
+image: /assets/news/2025-12-03-azure-support-cert-updates.png
 image_alt: Azure certification evolution from niche to role-based certifications.
 
 Microsoft is retiring several niche Azure and support engineer certifications effective July 31, 2023, including Azure Stack Hub Operator, Azure IoT Developer, Azure Support Engineer for Connectivity, Exchange Online Support Engineer, and Teams Support Engineer. This move aligns training with real-world responsibilities by emphasizing broader, role-based certifications that better support hybrid and multi-cloud environments.
