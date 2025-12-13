@@ -3,11 +3,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  <link rel="icon" href="{{ "/assets/logo.svg" | relative_url }}" type="image/svg+xml">
-  <link rel="icon" href="{{ "/assets/favicon-16.png" | relative_url }}" type="image/png" sizes="16x16">
-  <link rel="icon" href="{{ "/assets/favicon-32.png" | relative_url }}" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="{{ "/assets/apple-touch-icon-180.png" | relative_url }}" sizes="180x180">
+  <link rel="stylesheet" href="{{ " /assets/main.css" | relative_url }}">
+  <link rel="icon" href="{{ " /assets/logo.svg" | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ " /assets/favicon-16.png" | relative_url }}" type="image/png" sizes="16x16">
+  <link rel="icon" href="{{ " /assets/favicon-32.png" | relative_url }}" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{ " /assets/apple-touch-icon-180.png" | relative_url }}" sizes="180x180">
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include google-analytics.html -%}
@@ -16,9 +16,8 @@
   <script>
     // Initialize Supabase client
     const supabaseUrl = 'https://pqbbjgeapylcengbuvee.supabase.co'
-    const supabaseKey = 'SUPABASE_ANON_KEY_PLACEHOLDER' // We will replace this with env var or just keep it if it's anon
-    // Actually, anon key is safe to expose. I need to get it from api repo .env or user.
+    const supabaseKey = 'sb_publishable_Aqc0xmRqDDvAJ35oZ1FiXw_gmpaxcsx'
     // construct global client
-    window.supabase = window.supabase ? window.supabase : supabase.createClient(supabaseUrl, 'SUPABASE_ANON_KEY')
+    window.supabase = window.supabase ? window.supabase : supabase.createClient(supabaseUrl, supabaseKey)
   </script>
 </head>
