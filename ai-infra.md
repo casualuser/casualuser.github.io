@@ -2,6 +2,7 @@
 layout: page
 title: "AI & LLM Infrastructure"
 permalink: /ai-infra/
+description: "Production-grade AI & LLM infrastructure services. RAG pipelines, model integration, compliance-aware deployments. Expert AI infrastructure consulting for SaaS companies."
 ---
 Webomage designs and operates production-grade AI/LLM infrastructure that connects models, data, and applications with robust cloud and DevOps practices.
 

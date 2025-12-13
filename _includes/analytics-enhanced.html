@@ -1,0 +1,280 @@
+<script>
+    (function () {
+        if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+        // Enhanced analytics tracking
+        function sendEnhancedEvent(eventData) {
+            try {
+                var payload = {
+                    ...eventData,
+                    anonId: getAnonId(),
+                    sessionId: getSessionId(),
+                    timestamp: Date.now(),
+                    userAgent: navigator.userAgent,
+                    viewportWidth: window.innerWidth,
+                    viewportHeight: window.innerHeight,
+                    deviceType: getDeviceType(),
+                    path: window.location.pathname,
+                    referrer: document.referrer || null
+                };
+
+                var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+                if (navigator.sendBeacon) {
+                    var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+                    navigator.sendBeacon(url, blob);
+                } else {
+                    fetch(url, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        keepalive: true,
+                        body: JSON.stringify(payload),
+                    }).catch(function () { });
+                }
+            } catch (e) { }
+        }
+
+        // Get anonymous ID
+        function getAnonId() {
+            var anonId = localStorage.getItem('wm_anon_id');
+            if (!anonId) {
+                anonId = getUUID();
+                localStorage.setItem('wm_anon_id', anonId);
+            }
+            return anonId;
+        }
+
+        // Get session ID
+        function getSessionId() {
+            var sessionId = sessionStorage.getItem('wm_session_id');
+            if (!sessionId) {
+                sessionId = getUUID();
+                sessionStorage.setItem('wm_session_id', sessionId);
+            }
+            return sessionId;
+        }
+
+        // Generate UUID
+        function getUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        // Detect device type
+        function getDeviceType() {
+            var width = window.innerWidth;
+            if (width < 768) return 'mobile';
+            if (width < 1024) return 'tablet';
+            return 'desktop';
+        }
+
+        // Throttle function
+        function throttle(func, wait) {
+            var timeout;
+            return function executedFunction() {
+                var context = this;
+                var args = arguments;
+                var later = function () {
+                    timeout = null;
+                    func.apply(context, args);
+                };
+                if (!timeout) timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Enhanced scroll depth tracking
+        function initScrollTracking() {
+            var maxScroll = 0;
+            var thresholds = [25, 50, 75, 90, 100];
+
+            window.addEventListener('scroll', throttle(function () {
+                try {
+                    var scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                    var achievedThreshold = thresholds.find(function (t) { return scrollPercent >= t && maxScroll < t; });
+
+                    if (achievedThreshold) {
+                        maxScroll = achievedThreshold;
+                        sendEnhancedEvent({
+                            eventType: 'scroll_depth',
+                            percentage: achievedThreshold,
+                            label: 'scroll_' + achievedThreshold + 'percent'
+                        });
+                    }
+                } catch (e) { }
+            }, 1000));
+        }
+
+        // Time on page tracking
+        function initTimeTracking() {
+            var startTime = Date.now();
+
+            window.addEventListener('beforeunload', function () {
+                try {
+                    var timeSpent = Math.round((Date.now() - startTime) / 1000);
+                    if (timeSpent >= 10) { // Only track sessions longer than 10 seconds
+                        sendEnhancedEvent({
+                            eventType: 'time_on_page',
+                            seconds: timeSpent,
+                            label: 'time_spent'
+                        });
+                    }
+                } catch (e) { }
+            });
+
+            // Also track at intervals for better accuracy
+            setTimeout(function () {
+                sendEnhancedEvent({
+                    eventType: 'engagement_30s',
+                    seconds: 30,
+                    label: '30_second_mark'
+                });
+            }, 30000);
+        }
+
+        // Form submission tracking
+        function initFormTracking() {
+            document.addEventListener('submit', function (e) {
+                try {
+                    var form = e.target;
+                    var formData = new FormData(form);
+                    var fieldCount = 0;
+
+                    // Count completed fields
+                    for (var pair of formData.entries()) {
+                        if (pair[1] && pair[1].trim()) {
+                            fieldCount++;
+                        }
+                    }
+
+                    sendEnhancedEvent({
+                        eventType: 'form_submission',
+                        formId: form.id || form.name || 'unknown_form',
+                        fieldsCompleted: fieldCount,
+                        label: 'form_submit_' + (form.id || form.name || 'unknown')
+                    });
+                } catch (err) { }
+            });
+        }
+
+        // External link tracking
+        function initExternalLinkTracking() {
+            document.addEventListener('click', function (e) {
+                try {
+                    var link = e.target.closest('a[href]');
+                    if (link) {
+                        var href = link.getAttribute('href');
+
+                        // Check if it's an external link
+                        if (href && (href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel'))) {
+                            var isExternal = !href.includes(window.location.hostname);
+
+                            sendEnhancedEvent({
+                                eventType: isExternal ? 'external_link_click' : 'internal_link_click',
+                                href: href,
+                                label: isExternal ? 'external_link' : 'internal_link',
+                                domain: isExternal ? new URL(href).hostname : window.location.hostname
+                            });
+                        }
+                    }
+                } catch (err) { }
+            });
+        }
+
+        // Rage click detection
+        function initRageClickTracking() {
+            var clickCounts = {};
+            var timeWindow = 2000; // 2 seconds
+            var clickThreshold = 3;
+
+            document.addEventListener('click', function (e) {
+                try {
+                    var element = e.target.closest('a, button, [onclick]') || e.target;
+                    var elementKey = element.tagName + ':' + (element.id || element.className || element.textContent.substring(0, 50));
+
+                    var now = Date.now();
+
+                    if (!clickCounts[elementKey]) {
+                        clickCounts[elementKey] = { count: 0, firstClick: now };
+                    }
+
+                    clickCounts[elementKey].count++;
+
+                    // Check if user is rage clicking
+                    if (clickCounts[elementKey].count >= clickThreshold && (now - clickCounts[elementKey].firstClick) <= timeWindow) {
+                        sendEnhancedEvent({
+                            eventType: 'rage_click',
+                            label: 'rage_click_detected',
+                            element: elementKey,
+                            clickCount: clickCounts[elementKey].count
+                        });
+
+                        // Reset to avoid spam
+                        clickCounts[elementKey] = { count: 0, firstClick: now };
+                    }
+
+                    // Clean old entries
+                    Object.keys(clickCounts).forEach(function (key) {
+                        if (now - clickCounts[key].firstClick > timeWindow) {
+                            delete clickCounts[key];
+                        }
+                    });
+                } catch (err) { }
+            });
+        }
+
+        // Exit intent detection
+        function initExitIntentTracking() {
+            var exitIntentTriggered = false;
+
+            document.addEventListener('mouseleave', function (e) {
+                if (!exitIntentTriggered && e.clientY <= 0) {
+                    exitIntentTriggered = true;
+                    sendEnhancedEvent({
+                        eventType: 'exit_intent',
+                        label: 'exit_intent_detected'
+                    });
+                }
+            });
+        }
+
+        // Search query tracking
+        function initSearchTracking() {
+            // Track search inputs if they exist
+            var searchInputs = document.querySelectorAll('input[type="search"], input[name*="search"], input[placeholder*="search" i]');
+
+            searchInputs.forEach(function (input) {
+                var searchTerm = '';
+                input.addEventListener('input', throttle(function () {
+                    if (input.value && input.value.length > 2) {
+                        searchTerm = input.value;
+                        sendEnhancedEvent({
+                            eventType: 'search_query',
+                            query: searchTerm,
+                            label: 'search_attempt'
+                        });
+                    }
+                }, 2000));
+            });
+        }
+
+        // Initialize all tracking
+        document.addEventListener('DOMContentLoaded', function () {
+            initScrollTracking();
+            initTimeTracking();
+            initFormTracking();
+            initExternalLinkTracking();
+            initRageClickTracking();
+            initExitIntentTracking();
+            initSearchTracking();
+
+            // Send initial page engagement event
+            sendEnhancedEvent({
+                eventType: 'page_engagement',
+                label: 'page_loaded'
+            });
+        });
+
+    })();
+</script>

@@ -1,294 +1,296 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
-  {%- include head.html -%}
+{%- include head.html -%}
 
-  <body>
+<body>
 
-    <a href="#" class="scroll-to-top" aria-label="Scroll to top">▲ Top</a>
+  <a href="#" class="scroll-to-top" aria-label="Scroll to top">▲ Top</a>
 
-    {%- include header.html -%}
+  {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
-      <div class="site-bg-slideshow" aria-hidden="true">
-        <div class="site-bg-slide site-bg-slide-1"></div>
-        <div class="site-bg-slide site-bg-slide-2"></div>
-        <div class="site-bg-slide site-bg-slide-3"></div>
-        <div class="site-bg-slide site-bg-slide-4"></div>
-        <div class="site-bg-slide site-bg-slide-5"></div>
-      </div>
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
+  <main class="page-content" aria-label="Content">
+    <div class="site-bg-slideshow" aria-hidden="true">
+      <div class="site-bg-slide site-bg-slide-1"></div>
+      <div class="site-bg-slide site-bg-slide-2"></div>
+      <div class="site-bg-slide site-bg-slide-3"></div>
+      <div class="site-bg-slide site-bg-slide-4"></div>
+      <div class="site-bg-slide site-bg-slide-5"></div>
+    </div>
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
 
-    {%- include footer.html -%}
+  {%- include footer.html -%}
 
-    <script>
-      (function() {
-        var btn = document.querySelector('.scroll-to-top');
-        if (!btn) return;
+  <script>
+    (function () {
+      var btn = document.querySelector('.scroll-to-top');
+      if (!btn) return;
 
-        window.addEventListener('scroll', function() {
-          if (window.scrollY > 150) {
-            btn.classList.add('is-visible');
-          } else {
-            btn.classList.remove('is-visible');
-          }
-        });
-
-        btn.addEventListener('click', function(event) {
-          event.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      })();
-    </script>
-
-    <script>
-      (function() {
-        var slides = Array.prototype.slice.call(document.querySelectorAll('.site-bg-slide'));
-        if (!slides.length) return;
-
-        // Base delays (seconds) from CSS: 0, 8, 16, 24, 32
-        var delays = [0, 8, 16, 24, 32].slice(0, slides.length);
-
-        // Fisher-Yates shuffle
-        for (var i = delays.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1));
-          var tmp = delays[i];
-          delays[i] = delays[j];
-          delays[j] = tmp;
-        }
-
-        slides.forEach(function(slide, idx) {
-          slide.style.animationDelay = delays[idx] + 's';
-        });
-      })();
-    </script>
-
-    <script>
-      (function() {
-        var header = document.querySelector('header.site-header');
-        var footer = document.querySelector('footer.site-footer');
-        if (!header || !footer) return;
-
-        function measureBand(element) {
-          // Prefer the inner .wrapper so we exclude outer borders/shadows.
-          var target = element.querySelector('.wrapper') || element;
-          var rect = target.getBoundingClientRect();
-          return rect.height || target.offsetHeight || 0;
-        }
-
-        function updateBands() {
-          var measuredHeader = measureBand(header);
-          var measuredFooter = measureBand(footer);
-
-          // Clamp to minima derived from the more generous (Firefox) layout
-          // so that engines which under-estimate (e.g. some Chrome builds)
-          // still get a band that is at least this tall.
-          var headerMin = 58;  // px, inner header content band
-          var footerMin = 112; // px, inner footer content band
-
-          var headerH = Math.max(measuredHeader, headerMin);
-          var footerH = Math.max(measuredFooter, footerMin);
-
-          // Small fixed padding so we always have a solid dark band
-          // directly under the header and above the footer, even if
-          // fonts or layout shift slightly after load.
-          var headerPad = 4;
-          var footerPad = 4;
-
-          var root = document.documentElement;
-          root.style.setProperty('--header-band-height', (headerH + headerPad) + 'px');
-          root.style.setProperty('--footer-band-height', (footerH + footerPad) + 'px');
-        }
-
-        function scheduleUpdates() {
-          updateBands();
-          // Re-run after small delays to catch late font/layout changes
-          // that some engines (e.g. Chrome) apply after window load.
-          setTimeout(updateBands, 250);
-          setTimeout(updateBands, 1000);
-        }
-
-        if (document.readyState === 'complete') {
-          scheduleUpdates();
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 150) {
+          btn.classList.add('is-visible');
         } else {
-          window.addEventListener('load', scheduleUpdates);
+          btn.classList.remove('is-visible');
         }
+      });
 
-        window.addEventListener('resize', updateBands);
-      })();
-    </script>
+      btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
 
-    <script>
-      (function() {
-        var form = document.getElementById('contact-form');
-        if (!form) return;
+  <script>
+    (function () {
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.site-bg-slide'));
+      if (!slides.length) return;
 
-        var fields = [
-          { id: 'name', required: true, minLength: 2 },
-          { id: 'email', required: true, type: 'email' },
-          { id: 'message', required: true, minLength: 10 }
-        ];
+      // Base delays (seconds) from CSS: 0, 8, 16, 24, 32
+      var delays = [0, 8, 16, 24, 32].slice(0, slides.length);
 
-        var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
-        var submitOriginalText = submitBtn ? submitBtn.textContent : null;
-        var hasSentSubmitEvent = false;
+      // Fisher-Yates shuffle
+      for (var i = delays.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = delays[i];
+        delays[i] = delays[j];
+        delays[j] = tmp;
+      }
 
-        function findFieldWrapper(el) {
-          while (el && el !== form) {
-            if (el.classList && el.classList.contains('contact-form-field')) {
-              return el;
-            }
-            el = el.parentNode;
+      slides.forEach(function (slide, idx) {
+        slide.style.animationDelay = delays[idx] + 's';
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var header = document.querySelector('header.site-header');
+      var footer = document.querySelector('footer.site-footer');
+      if (!header || !footer) return;
+
+      function measureBand(element) {
+        // Prefer the inner .wrapper so we exclude outer borders/shadows.
+        var target = element.querySelector('.wrapper') || element;
+        var rect = target.getBoundingClientRect();
+        return rect.height || target.offsetHeight || 0;
+      }
+
+      function updateBands() {
+        var measuredHeader = measureBand(header);
+        var measuredFooter = measureBand(footer);
+
+        // Clamp to minima derived from the more generous (Firefox) layout
+        // so that engines which under-estimate (e.g. some Chrome builds)
+        // still get a band that is at least this tall.
+        var headerMin = 58;  // px, inner header content band
+        var footerMin = 112; // px, inner footer content band
+
+        var headerH = Math.max(measuredHeader, headerMin);
+        var footerH = Math.max(measuredFooter, footerMin);
+
+        // Small fixed padding so we always have a solid dark band
+        // directly under the header and above the footer, even if
+        // fonts or layout shift slightly after load.
+        var headerPad = 4;
+        var footerPad = 4;
+
+        var root = document.documentElement;
+        root.style.setProperty('--header-band-height', (headerH + headerPad) + 'px');
+        root.style.setProperty('--footer-band-height', (footerH + footerPad) + 'px');
+      }
+
+      function scheduleUpdates() {
+        updateBands();
+        // Re-run after small delays to catch late font/layout changes
+        // that some engines (e.g. Chrome) apply after window load.
+        setTimeout(updateBands, 250);
+        setTimeout(updateBands, 1000);
+      }
+
+      if (document.readyState === 'complete') {
+        scheduleUpdates();
+      } else {
+        window.addEventListener('load', scheduleUpdates);
+      }
+
+      window.addEventListener('resize', updateBands);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+
+      var fields = [
+        { id: 'name', required: true, minLength: 2 },
+        { id: 'email', required: true, type: 'email' },
+        { id: 'message', required: true, minLength: 10 }
+      ];
+
+      var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+      var submitOriginalText = submitBtn ? submitBtn.textContent : null;
+      var hasSentSubmitEvent = false;
+
+      function findFieldWrapper(el) {
+        while (el && el !== form) {
+          if (el.classList && el.classList.contains('contact-form-field')) {
+            return el;
           }
-          return null;
+          el = el.parentNode;
+        }
+        return null;
+      }
+
+      function showError(input, message) {
+        var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+        if (!fieldWrapper) return;
+
+        var errorEl = fieldWrapper.querySelector('.contact-error');
+        if (!errorEl) {
+          errorEl = document.createElement('div');
+          errorEl.className = 'contact-error';
+          fieldWrapper.appendChild(errorEl);
         }
 
-        function showError(input, message) {
-          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
-          if (!fieldWrapper) return;
+        errorEl.textContent = message;
+        fieldWrapper.classList.add('contact-field-invalid');
+      }
 
-          var errorEl = fieldWrapper.querySelector('.contact-error');
-          if (!errorEl) {
-            errorEl = document.createElement('div');
-            errorEl.className = 'contact-error';
-            fieldWrapper.appendChild(errorEl);
+      function clearError(input) {
+        var fieldWrapper = findFieldWrapper(input) || input.parentNode;
+        if (!fieldWrapper) return;
+
+        fieldWrapper.classList.remove('contact-field-invalid');
+        var errorEl = fieldWrapper.querySelector('.contact-error');
+        if (errorEl) {
+          errorEl.textContent = '';
+        }
+      }
+
+      function validateField(field) {
+        var input = document.getElementById(field.id);
+        if (!input) return true;
+
+        clearError(input);
+
+        var value = (input.value || '').trim();
+
+        if (field.required && !value) {
+          showError(input, 'This field is required.');
+          return false;
+        }
+
+        if (field.minLength && value.length < field.minLength) {
+          showError(input, 'Please enter at least ' + field.minLength + ' characters.');
+          return false;
+        }
+
+        if (field.type === 'email') {
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (value && !emailPattern.test(value)) {
+            showError(input, 'Please enter a valid email address.');
+            return false;
           }
-
-          errorEl.textContent = message;
-          fieldWrapper.classList.add('contact-field-invalid');
         }
 
-        function clearError(input) {
-          var fieldWrapper = findFieldWrapper(input) || input.parentNode;
-          if (!fieldWrapper) return;
+        return true;
+      }
 
-          fieldWrapper.classList.remove('contact-field-invalid');
-          var errorEl = fieldWrapper.querySelector('.contact-error');
-          if (errorEl) {
-            errorEl.textContent = '';
+      function sendContactSubmitEvent() {
+        try {
+          if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+          var payload = {
+            path: window.location.pathname,
+            referrer: document.referrer || null,
+            eventType: "cta_click",
+            label: "contact_form_submit",
+            href: "/contact/"
+          };
+
+          var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
+
+          if (navigator.sendBeacon) {
+            var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+            navigator.sendBeacon(url, blob);
+          } else {
+            fetch(url, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              keepalive: true,
+              body: JSON.stringify(payload)
+            }).catch(function () { });
+          }
+        } catch (e) { }
+      }
+
+      form.addEventListener('submit', function (event) {
+        var isValid = true;
+
+        for (var i = 0; i < fields.length; i++) {
+          if (!validateField(fields[i])) {
+            isValid = false;
           }
         }
 
-        function validateField(field) {
-          var input = document.getElementById(field.id);
-          if (!input) return true;
+        if (!isValid) {
+          event.preventDefault();
 
+          var firstInvalid = form.querySelector('.contact-field-invalid input, .contact-field-invalid textarea');
+          if (firstInvalid && typeof firstInvalid.focus === 'function') {
+            firstInvalid.focus();
+          }
+          return;
+        }
+
+        if (submitBtn && !submitBtn.disabled) {
+          submitBtn.disabled = true;
+          if (submitOriginalText != null) {
+            submitBtn.textContent = 'Sending…';
+          }
+          form.classList.add('contact-form-submitting');
+        }
+
+        if (!hasSentSubmitEvent) {
+          hasSentSubmitEvent = true;
+          sendContactSubmitEvent();
+        }
+      });
+
+      fields.forEach(function (field) {
+        var input = document.getElementById(field.id);
+        if (!input) return;
+
+        input.addEventListener('blur', function () {
+          validateField(field);
+        });
+
+        input.addEventListener('input', function () {
           clearError(input);
-
-          var value = (input.value || '').trim();
-
-          if (field.required && !value) {
-            showError(input, 'This field is required.');
-            return false;
-          }
-
-          if (field.minLength && value.length < field.minLength) {
-            showError(input, 'Please enter at least ' + field.minLength + ' characters.');
-            return false;
-          }
-
-          if (field.type === 'email') {
-            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (value && !emailPattern.test(value)) {
-              showError(input, 'Please enter a valid email address.');
-              return false;
-            }
-          }
-
-          return true;
-        }
-
-        function sendContactSubmitEvent() {
-          try {
-            if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
-
-            var payload = {
-              path: window.location.pathname,
-              referrer: document.referrer || null,
-              eventType: "cta_click",
-              label: "contact_form_submit",
-              href: "/contact/"
-            };
-
-            var url = "https://pqbbjgeapylcengbuvee.functions.supabase.co/log-event";
-
-            if (navigator.sendBeacon) {
-              var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
-              navigator.sendBeacon(url, blob);
-            } else {
-              fetch(url, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                keepalive: true,
-                body: JSON.stringify(payload)
-              }).catch(function () {});
-            }
-          } catch (e) {}
-        }
-
-        form.addEventListener('submit', function(event) {
-          var isValid = true;
-
-          for (var i = 0; i < fields.length; i++) {
-            if (!validateField(fields[i])) {
-              isValid = false;
-            }
-          }
-
-          if (!isValid) {
-            event.preventDefault();
-
-            var firstInvalid = form.querySelector('.contact-field-invalid input, .contact-field-invalid textarea');
-            if (firstInvalid && typeof firstInvalid.focus === 'function') {
-              firstInvalid.focus();
-            }
-            return;
-          }
-
-          if (submitBtn && !submitBtn.disabled) {
-            submitBtn.disabled = true;
-            if (submitOriginalText != null) {
-              submitBtn.textContent = 'Sending…';
-            }
-            form.classList.add('contact-form-submitting');
-          }
-
-          if (!hasSentSubmitEvent) {
-            hasSentSubmitEvent = true;
-            sendContactSubmitEvent();
-          }
         });
+      });
+    })();
+  </script>
 
-        fields.forEach(function(field) {
-          var input = document.getElementById(field.id);
-          if (!input) return;
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    (function () {
+      if (!window.mermaid) return;
+      mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    })();
+  </script>
 
-          input.addEventListener('blur', function() {
-            validateField(field);
-          });
+  {%- include analytics-log-event.html -%}
+  {%- include analytics-cta-tracking.html -%}
+  {%- include analytics-heatmapjs.html -%}
+  {%- include analytics-enhanced.html -%}
+  {%- include performance-optimization.html -%}
 
-          input.addEventListener('input', function() {
-            clearError(input);
-          });
-        });
-      })();
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script>
-      (function() {
-        if (!window.mermaid) return;
-        mermaid.initialize({ startOnLoad: true, theme: 'default' });
-      })();
-    </script>
-
-    {%- include analytics-log-event.html -%}
-    {%- include analytics-cta-tracking.html -%}
-    {%- include analytics-heatmapjs.html -%}
-
-  </body>
+</body>
 
 </html>

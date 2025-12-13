@@ -3,7 +3,7 @@ layout: page
 title: Engineering Services & Consulting
 navigation_title: "Services"
 permalink: /services/
-description: "Expert services in Kubernetes adoption, Platform Engineering, AI Infrastructure, and Cloud Security."
+description: "Expert DevOps consulting services. Kubernetes adoption, Platform Engineering, AI Infrastructure, Cloud Security. AWS, Terraform, GitOps. Get your infrastructure audit today."
 ---
 
 Webomage is a small, senior engineering agency focused on DevOps, integrations, AI/LLM, fullstack backends, and compliance-aware infrastructure. If you're considering work in any of these areas, see [How We Work](/process/) for a quick overview of delivery phases.

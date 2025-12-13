@@ -1,0 +1,161 @@
+<script>
+    // Performance optimization scripts
+    (function () {
+        'use strict';
+
+        // Lazy loading for images
+        function initLazyLoading() {
+            if ('IntersectionObserver' in window) {
+                var imageObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            var img = entry.target;
+                            var src = img.getAttribute('data-src');
+                            var srcset = img.getAttribute('data-srcset');
+
+                            if (src) {
+                                img.src = src;
+                                img.removeAttribute('data-src');
+                            }
+                            if (srcset) {
+                                img.srcset = srcset;
+                                img.removeAttribute('data-srcset');
+                            }
+
+                            img.classList.remove('lazy');
+                            imageObserver.unobserve(img);
+
+                            // Track image load event
+                            if (typeof sendEnhancedEvent === 'function') {
+                                sendEnhancedEvent({
+                                    eventType: 'image_loaded',
+                                    label: 'lazy_image_loaded',
+                                    src: src || img.src
+                                });
+                            }
+                        }
+                    });
+                }, {
+                    rootMargin: '50px 0px',
+                    threshold: 0.01
+                });
+
+                var lazyImages = document.querySelectorAll('img[data-src], img[data-srcset]');
+                lazyImages.forEach(function (img) {
+                    imageObserver.observe(img);
+                });
+            } else {
+                // Fallback for older browsers
+                var lazyImages = document.querySelectorAll('img[data-src]');
+                lazyImages.forEach(function (img) {
+                    img.src = img.getAttribute('data-src');
+                    img.removeAttribute('data-src');
+                });
+            }
+        }
+
+        // Critical CSS loading
+        function loadCriticalCSS() {
+            var criticalCSS = document.getElementById('critical-css');
+            if (criticalCSS) {
+                var styles = document.createElement('style');
+                styles.textContent = criticalCSS.textContent;
+                document.head.appendChild(styles);
+                criticalCSS.remove();
+            }
+        }
+
+        // Resource priority optimization
+        function optimizeResourceLoading() {
+            // Defer non-critical resources
+            var scripts = document.querySelectorAll('script[data-defer]');
+            scripts.forEach(function (script) {
+                script.defer = true;
+            });
+
+            // Load non-critical CSS asynchronously
+            var stylesheets = document.querySelectorAll('link[rel="stylesheet"][data-async]');
+            stylesheets.forEach(function (link) {
+                link.media = 'print';
+                link.onload = function () {
+                    this.media = 'all';
+                };
+            });
+        }
+
+        // Performance monitoring
+        function monitorPerformance() {
+            if ('PerformanceObserver' in window) {
+                var observer = new PerformanceObserver(function (list) {
+                    list.getEntries().forEach(function (entry) {
+                        if (entry.entryType === 'largest-contentful-paint') {
+                            // Track LCP for analytics
+                            if (typeof sendEnhancedEvent === 'function') {
+                                sendEnhancedEvent({
+                                    eventType: 'performance_metric',
+                                    label: 'lcp_measurement',
+                                    value: Math.round(entry.startTime)
+                                });
+                            }
+                        }
+                    });
+                });
+
+                observer.observe({ entryTypes: ['largest-contentful-paint'] });
+            }
+        }
+
+        // Initialize on DOM ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function () {
+                loadCriticalCSS();
+                initLazyLoading();
+                optimizeResourceLoading();
+                monitorPerformance();
+            });
+        } else {
+            loadCriticalCSS();
+            initLazyLoading();
+            optimizeResourceLoading();
+            monitorPerformance();
+        }
+
+    })();
+</script>
+
+<style>
+    /* Critical CSS for above-the-fold content */
+    .lazy {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .lazy.loaded {
+        opacity: 1;
+    }
+
+    /* Optimize font loading */
+    @font-face {
+        font-display: swap;
+    }
+
+    /* Improve rendering performance */
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Reduce layout shifts */
+    .header,
+    .footer {
+        contain: layout;
+    }
+
+    .content {
+        contain: layout style;
+    }
+</style>
