@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: Test Verification: Validating Local MLX Connectivity
+title: "Test Verification: Validating Local MLX Connectivity"
 date: 2025-12-13
 categories: ["news"]
 tags: []
